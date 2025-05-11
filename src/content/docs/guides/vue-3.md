@@ -7,7 +7,7 @@ This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It al
 
 ## Setup
 
-First, download the [Vue training ground repo](https://github.com/simpledevio/vue-training-ground), unzip it, and open it in your editor. Then, run this command in the terminal to install the packages listed in package.json.
+First, visit the [Vue training ground repo](https://github.com/simpledevio/vue-training-ground). Press the green Code button and click Download ZIP. Unzip the file and then open it in your editor. Then, run this command in the terminal to install the packages listed in package.json.
 
 ```bash
 npm install
@@ -38,6 +38,7 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 ## HTML
 
 ### Hello World
+
 The simplest Vue component you can have is an empty template element. You can kind of think of the template element like the body element in a normal HTML file.
 
 ```vue
@@ -45,6 +46,7 @@ The simplest Vue component you can have is an empty template element. You can ki
 ```
 
 Inside the template element you can put HTML elements or Vue components. In our file, we have an h1 element already added.
+
 ```vue
 <!-- HelloWorld.vue -->
 <template>
@@ -80,7 +82,9 @@ Add a p element after the h1 element with some placeholder text.
 After saving, you should see both elements appear on screen.
 
 ### App.vue
+
 Before we look at our next topic, open up App.vue so you can see how it's importing HelloWorld.vue.
+
 ```vue {3,7}
 <!-- App.vue -->
 <script setup>
@@ -93,9 +97,11 @@ import HelloWorld from './components/HelloWorld';
 ```
 
 ### Slots
+
 Next, let's learn about slots. Slots allow you to make your components more flexible by letting the same component display different text depending on what you pass into the component.
 
 Back in HelloWorld.vue, let's replace the h1 and p elements with slot.
+
 ```vue {3}
 <!-- HelloWorld.vue -->
 <template>
@@ -130,6 +136,7 @@ In HelloWorld.vue, change `<slot />` into `<slot></slot>`.
 ```
 
 Now add the text `Fallback content` inside the tags.
+
 ```vue {3}
 <!-- HelloWorld.vue -->
 <template>
@@ -168,6 +175,7 @@ For this section let's reset HelloWorld.vue back to this.
 You can add a `style` attribute to an element just like in normal HTML.
 
 **Task:** Add `style="color: red;"` to the h1 element.
+
 ```vue "style="color: red;""
 <!-- HelloWorld.vue -->
 <template>
@@ -179,6 +187,7 @@ You can add a `style` attribute to an element just like in normal HTML.
 After saving, you should see the h1 element turn red in the browser.
 
 ### style element
+
 You can also add a `<style>` element to style a component. Use the `scoped` attribute to limit the styles to just a component. If you leave it off, the styles could affect other components.
 
 **Task:** Delete the style attribute. Then add the style element with the scoped attribute after the template element with the following rule.
@@ -200,6 +209,7 @@ h1 {
 After saving, you should see that the h1 element is still red.
 
 ### class attribute
+
 You can use a `class` attribute just like in normal HTML.
 
 Task: Add a class attribute with the value of heading. Change the h1 selector to .heading.
@@ -222,6 +232,7 @@ After saving, you should see that the h1 element is still red.
 ## JS
 
 ### Add a variable
+
 For this section, we're going to create a new file called Counter.vue. Add the following code to it.
 
 ```vue {2-4}
@@ -259,6 +270,7 @@ Add a script element above the template element. Add the `setup` attribute. This
 ```
 
 Create a count constant and replace `0` with `{{ count }}`.
+
 ```vue {3, 7}
 <!-- Counter.vue -->
 <script setup>
@@ -273,6 +285,7 @@ const count = 0;
 After saving, the button should still look the same. It still doesn't do anything yet.
 
 ### Make it reactive
+
 Next, import ref inside script. Notice the destructuring syntax. Wrap `0` in `ref()` and add `v-on:click="count++"` to the button tag. `ref()` means that when the count variable changes, the number on the screen should change as well.
 
 ```vue {3,8} "ref(0)"
@@ -290,6 +303,7 @@ const count = ref(0);
 After saving, the number on the button will go up when you click on it.
 
 ### Shorthand
+
 Replace `v-on:` with the `@` symbol.
 
 ```vue "@"
@@ -307,6 +321,7 @@ const count = ref(0);
 After saving, the number on the button should still go up when you click on it.
 
 ### Use a function
+
 Create a function called `increment`. Then replace `count++` with `increment`. Notice that you have to use count.value++ inside the script element instead of count++ directly.
 
 ```vue {6-8, 12}
@@ -326,6 +341,7 @@ function increment() {
 ```
 
 ### Conditional
+
 Let's add a message that will display when you reach a certain count.
 
 Task: Add an `h1` element with the `v-if` directive. The h1 will show when the count is greater than 10.
