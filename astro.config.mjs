@@ -9,14 +9,14 @@ export default defineConfig({
 		starlight({
 			title: 'JS Training Grounds',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/simpledevio/js-training-grounds',
 			},
 			sidebar: [
 				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Vue 3 Tutorial', slug: 'guides/vue-3' },
+						{ label: 'Vue 3', slug: 'guides/vue-3' },
 					],
 				},
 				// {
@@ -28,6 +28,7 @@ export default defineConfig({
         // Replace the default themes with a custom set of bundled themes:
         // "dracula" (a dark theme) and "solarized-light"
         // themes: ['light-plus', 'dark-plus'],
+        // themes: ['dark-plus'],
       },
 		}),
 	],

@@ -1,36 +1,32 @@
 ---
 title: JS Training Grounds
-description: Get started building your docs site with Starlight.
+description: Quick, local tutorials on JS topics.
 template: splash
 hero:
-  tagline: Quick, local tutorials.
-  image:
-    file: ../../assets/houston.webp
+  tagline: Quick, local tutorials on JS topics.
+  # image:
+  #   file: ../../assets/houston.webp
   actions:
     - text: Vue 3 Guide
       link: /guides/vue-3/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## How it works
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Open the guide" icon="open-book">
+		Visit the guide for the topic you want to learn.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Download repo" icon="download">
+		Visit the link for the right training ground repo. Download it, unzip it, and open it in your code editor.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Run commands" icon="laptop">
+		Run the commands to set up your project. (Usually you just run npm install, npm run dev, and then open the web page in your web browser.)
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Start learning!" icon="rocket">
+		Now you can start following along with the tutorials in your own editor!
 	</Card>
 </CardGrid>

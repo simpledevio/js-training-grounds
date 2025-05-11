@@ -7,13 +7,13 @@ This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It al
 
 ## Setup
 
-After downloading this project and opening it in your editor, run this command in the terminal.
+First, download the [Vue training ground repo](https://github.com/simpledevio/vue-training-ground), unzip it, and open it in your editor. Then, run this command in the terminal to install the packages listed in package.json.
 
 ```bash
 npm install
 ```
 
-Then run this command.
+Then run this command to start the dev server.
 
 ```bash
 npm run dev
@@ -31,14 +31,15 @@ VITE v6.1.0  ready in 340 ms
 ➜  press h + enter to show help
 ```
 
-You should now be able to see your web app on http://localhost:5173/. The web page should say __Hello World__.
+Visit http://localhost:5173/ in your browser. The web page should say **Hello World**.
 
-In your editor, you will see several files. However, for now, you will mainly be working in `HelloWorld.vue` and `App.vue`. First we'll start with `HelloWorld.vue`.
+In your editor, you'll see several files. However, for now you'll mainly be working in `HelloWorld.vue` and `App.vue`. First we'll start with `HelloWorld.vue`.
 
 ## HTML
 
 ### Hello World
 The simplest Vue component you can have is an empty template element. You can kind of think of the template element like the body element in a normal HTML file.
+
 ```vue
 <template></template>
 ```
@@ -114,6 +115,8 @@ import HelloWorld from './components/HelloWorld';
 ```
 
 The web page should now say "This is some slot content!".
+
+#### Fallback content
 
 Now let's update the slot so it can display fallback content if nothing gets passed to the component.
 
@@ -218,7 +221,7 @@ After saving, you should see that the h1 element is still red.
 
 ## JS
 
-### Variable
+### Add a variable
 For this section, we're going to create a new file called Counter.vue. Add the following code to it.
 
 ```vue {2-4}
@@ -425,6 +428,8 @@ const todos = [
 </template>
 ```
 
+You should now see a list in your browser.
+
 Next, add the addTodo() function to the script code and add the input and button elements.
 
 ```vue
@@ -460,6 +465,7 @@ function addTodo() {
 After saving, you should have a working todo list in your browser.
 
 ### Props
+
 Let's revisit HelloWorld.vue. Earlier we saw how to pass content to a child component using slots. There's another way to pass information to a child component called props.
 
 ```vue
@@ -485,7 +491,8 @@ import HelloWorld from './components/HelloWorld';
 </template>
 ```
 
-Here is another way to define props.
+Here's another way to define props.
+
 ```vue
 <!-- HelloWorld.vue -->
 <script setup>
@@ -524,6 +531,7 @@ const isActive = ref(true);
 ```
 
 You can shorten `v-bind:class` to just `:class`.
+
 ```vue ":class="{red: isActive}"" "@click="isActive = !isActive""
 <script setup>
 import { ref } from 'vue';
