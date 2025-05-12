@@ -36,7 +36,8 @@ export default defineConfig({
         // Replace the default themes with a custom set of bundled themes:
         // "dracula" (a dark theme) and "solarized-light"
         // themes: ['light-plus', 'dark-plus'],
-        // themes: ['dark-plus'],
+        themes: ['starlight-light', 'dark-plus'],
+				useStarlightUiThemeColors: true,
       },
 		}),
 	],
