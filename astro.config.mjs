@@ -12,6 +12,14 @@ export default defineConfig({
 				github: 'https://github.com/simpledevio/js-training-grounds',
 			},
 			sidebar: [
+				// { slug: 'about' },
+				{
+					label: 'Introduction',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'About', slug: 'about' },
+					],
+				},
 				{
 					label: 'Guides',
 					items: [

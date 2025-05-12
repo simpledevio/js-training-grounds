@@ -35,6 +35,10 @@ Visit http://localhost:5173/ in your browser. The web page should say **Hello Wo
 
 In your editor, you'll see several files. However, for now you'll mainly be working in `HelloWorld.vue` and `App.vue`. First we'll start with `HelloWorld.vue`.
 
+### Stackblitz
+
+If you prefer to work online, you can also open the [Vue training ground repo on Stackblitz](https://stackblitz.com/github/simpledevio/vue-training-ground?file=src/components/HelloWorld.vue) and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
+
 ## HTML
 
 ### Hello World
