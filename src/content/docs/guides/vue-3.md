@@ -7,7 +7,7 @@ This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It al
 
 ## Setup
 
-First, visit the [Vue training ground repo](https://github.com/simpledevio/vue-training-ground). Press the green Code button and click Download ZIP. Unzip the file and then open it in your editor. Then, run this command in the terminal to install the packages listed in package.json.
+First, visit the [Vue training ground repo](https://github.com/simpledevio/vue-training-ground). Press the green **Code** button and click **Download ZIP**. Unzip the file and then open it in your editor. Then, run this command in the terminal to install the packages listed in `package.json`.
 
 ```bash
 npm install
@@ -71,9 +71,9 @@ After saving, you should see the browser show your name.
 
 ### Multiple roots
 
-You can have more than one element as a direct child of the template element.
+You can have more than one element as a direct child of the `<template>` element.
 
-Add a p element after the h1 element with some placeholder text.
+Add a `<p>` element after the `<h1>` element with some placeholder text.
 
 ```vue "<p>Lorem ipsum dolor...</p>"
 <!-- HelloWorld.vue -->
@@ -87,7 +87,7 @@ After saving, you should see both elements appear on screen.
 
 ### App.vue
 
-Before we look at our next topic, open up App.vue so you can see how it's importing HelloWorld.vue.
+Before we look at our next topic, open up `App.vue` so you can see how it's importing `HelloWorld.vue`.
 
 ```vue {3,7}
 <!-- App.vue -->
@@ -102,9 +102,9 @@ import HelloWorld from './components/HelloWorld';
 
 ### Slots
 
-Next, let's learn about slots. Slots allow you to make your components more flexible by letting the same component display different text depending on what you pass into the component.
+Next, let's learn about slots. **Slots** allow you to make your components more flexible by letting the same component display different text depending on what you pass into the component.
 
-Back in HelloWorld.vue, let's replace the h1 and p elements with slot.
+Back in `HelloWorld.vue`, let's replace the `<h1>` and `<p>` elements with slot.
 
 ```vue {3}
 <!-- HelloWorld.vue -->
@@ -130,7 +130,7 @@ The web page should now say "This is some slot content!".
 
 Now let's update the slot so it can display fallback content if nothing gets passed to the component.
 
-In HelloWorld.vue, change `<slot />` into `<slot></slot>`.
+In `HelloWorld.vue`, change `<slot />` into `<slot></slot>`.
 
 ```vue {3}
 <!-- HelloWorld.vue -->
@@ -148,7 +148,7 @@ Now add the text `Fallback content` inside the tags.
 </template>
 ```
 
-Now delete the text from the HelloWorld component in App.vue.
+Now delete the text from the `<HelloWorld>` component in `App.vue`.
 
 ```vue {7}
 <!-- App.vue -->
@@ -164,7 +164,7 @@ The web page should now say "Fallback content".
 
 ## CSS
 
-For this section let's reset HelloWorld.vue back to this.
+For this section let's reset `HelloWorld.vue` back to this.
 
 ```vue
 <!-- HelloWorld.vue -->
@@ -188,13 +188,13 @@ You can add a `style` attribute to an element just like in normal HTML.
 </template>
 ```
 
-After saving, you should see the h1 element turn red in the browser.
+After saving, you should see the `<h1>` element turn red in the browser.
 
 ### style element
 
 You can also add a `<style>` element to style a component. Use the `scoped` attribute to limit the styles to just a component. If you leave it off, the styles could affect other components.
 
-**Task:** Delete the style attribute. Then add the style element with the scoped attribute after the template element with the following rule.
+**Task:** Delete the `style` attribute. Then add the `<style>` element with the `scoped` attribute after the template element with the following rule.
 
 ```vue {7-11}
 <!-- HelloWorld.vue -->
@@ -210,13 +210,13 @@ h1 {
 </style>
 ```
 
-After saving, you should see that the h1 element is still red.
+After saving, you should see that the `<h1>` element is still red.
 
 ### class attribute
 
 You can use a `class` attribute just like in normal HTML.
 
-Task: Add a class attribute with the value of heading. Change the h1 selector to .heading.
+**Task:** Add a class attribute with the value of heading. Change the `h1` selector to `.heading`.
 
 ```vue "class="heading"" ".heading"
 <!-- HelloWorld.vue -->
@@ -231,13 +231,13 @@ Task: Add a class attribute with the value of heading. Change the h1 selector to
 </style>
 ```
 
-After saving, you should see that the h1 element is still red.
+After saving, you should see that the `<h1>` element is still red.
 
 ## JS
 
 ### Add a variable
 
-For this section, we're going to create a new file called Counter.vue. Add the following code to it.
+For this section, we're going to create a new file called `Counter.vue`. Add the following code to it.
 
 ```vue {2-4}
 <!-- Counter.vue -->
@@ -246,7 +246,7 @@ For this section, we're going to create a new file called Counter.vue. Add the f
 </template>
 ```
 
-Next, make sure to import it into App.vue.
+Next, make sure to import it into `App.vue`.
 
 ```vue {3,7}
 <!-- App.vue -->
@@ -261,7 +261,7 @@ import Counter from './components/Counter';
 
 After saving you should see the button appear on screen. It doesn't do anything yet if you click on it.
 
-Add a script element above the template element. Add the `setup` attribute. This will make it easier to write some things. If you leave it off, you have to write some of your JS code in a slightly different way.
+Add a `script` element above the `template` element. Add the `setup` attribute. This will make it easier to write some things. If you leave it off, you have to write some of your JS code in a slightly different way.
 
 ```vue {2-3}
 <!-- Counter.vue -->
@@ -290,7 +290,7 @@ After saving, the button should still look the same. It still doesn't do anythin
 
 ### Make it reactive
 
-Next, import ref inside script. Notice the destructuring syntax. Wrap `0` in `ref()` and add `v-on:click="count++"` to the button tag. `ref()` means that when the count variable changes, the number on the screen should change as well.
+Next, import `ref` inside `script`. Notice the destructuring syntax. Wrap `0` in `ref()` and add `v-on:click="count++"` to the button tag. `ref()` means that when the count variable changes, the number on the screen should change as well.
 
 ```vue {3,8} "ref(0)"
 <!-- Counter.vue -->
@@ -326,7 +326,7 @@ After saving, the number on the button should still go up when you click on it.
 
 ### Use a function
 
-Create a function called `increment`. Then replace `count++` with `increment`. Notice that you have to use count.value++ inside the script element instead of count++ directly.
+Create a function called `increment()`. Then replace `count++` with `increment`. Notice that you have to use `count.value++` inside the script element instead of `count++` directly.
 
 ```vue {6-8, 12}
 <!-- Counter.vue -->
@@ -348,7 +348,7 @@ function increment() {
 
 Let's add a message that will display when you reach a certain count.
 
-Task: Add an `h1` element with the `v-if` directive. The h1 will show when the count is greater than 10.
+Task: Add an `<h1>` element with the `v-if` directive. The `<h1>` will show when the count is greater than 10.
 
 ```vue {12}
 <!-- Counter.vue -->
@@ -367,7 +367,7 @@ function increment() {
 </template>
 ```
 
-Now add an h1 element with the v-else directive. This h1 will show when the count is 10 or less.
+Now add an `<h1>` element with the `v-else` directive. This `<h1>` will show when the count is 10 or less.
 
 ```vue {13}
 <!-- Counter.vue -->
@@ -387,7 +387,7 @@ function increment() {
 </template>
 ```
 
-Now add an h1 with a v-else-if directive in the middle. This message will be displayed when count is greater than 5 but less than 11.
+Now add an `<h1>` with a `v-else-if` directive in the middle. This message will be displayed when count is greater than 5 but less than 11.
 
 ```vue {13}
 <!-- Counter.vue -->
@@ -410,7 +410,7 @@ function increment() {
 
 ### List
 
-Let's create a new file called ListExample.vue. Add the following script element to it. This is the data we're going to display.
+Let's create a new file called `ListExample.vue`. Add the following script element to it. This is the data we're going to display.
 
 ```vue
 <!-- ListExample.vue -->
@@ -425,7 +425,7 @@ const todos = [
 </script>
 ```
 
-Next, add the template code after the script code. The template code uses a v-for directive to loop through the todos constant.
+Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the todos constant.
 
 ```vue
 <!-- ListExample.vue -->
@@ -450,7 +450,7 @@ const todos = [
 
 You should now see a list in your browser.
 
-Next, add the addTodo() function to the script code and add the input and button elements.
+Next, add the `addTodo()` function to the script code and add the input and button elements.
 
 ```vue
 <!-- ListExample.vue -->
@@ -486,7 +486,7 @@ After saving, you should have a working todo list in your browser.
 
 ### Props
 
-Let's revisit HelloWorld.vue. Earlier we saw how to pass content to a child component using slots. There's another way to pass information to a child component called props.
+Let's revisit `HelloWorld.vue`. Earlier we saw how to pass content to a child component using slots. There's another way to pass information to a child component called **props**.
 
 ```vue
 <!-- HelloWorld.vue -->
@@ -499,7 +499,8 @@ const props = defineProps(['name'])
 </template>
 ```
 
-In App.vue, you would add an attribute to HelloWorld called name with the value you want to pass in.
+In App.vue, you would add an attribute to `<HelloWorld>` called `name` with the value you want to pass in.
+
 ```vue
 <!-- App.vue -->
 <script setup>
@@ -528,7 +529,7 @@ const props = defineProps({
 
 ### CSS + JS
 
-Update HelloWorld.vue so it has the following code.
+Let's learn how to toggle classes in Vue. Update `HelloWorld.vue` so it has the following code.
 
 ```vue "v-bind:class="{red: isActive}"" "@click="isActive = !isActive""
 <!-- HelloWorld.vue -->
@@ -550,9 +551,12 @@ const isActive = ref(true);
 </style>
 ```
 
+Now when you click the button, the text should toggle between red and black.
+
 You can shorten `v-bind:class` to just `:class`.
 
-```vue ":class="{red: isActive}"" "@click="isActive = !isActive""
+```vue ":class"
+<!-- HelloWorld.vue -->
 <script setup>
 import { ref } from 'vue';
 
@@ -571,9 +575,12 @@ const isActive = ref(true);
 </style>
 ```
 
-```vue
+You can move the object into the `script` tag. Make sure to use the `reactive()` function.
+
+```vue "{ ref, reactive }" {6-8} ":class="classObject""
+<!-- HelloWorld.vue -->
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 const isActive = ref(true);
 const classObject = reactive({
@@ -593,9 +600,12 @@ const classObject = reactive({
 </style>
 ```
 
-```vue
+You can also use a computed property.
+
+```vue "{ ref, computed }" {6-8}
+<!-- HelloWorld.vue -->
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const isActive = ref(true);
 const classObject = computed(() => ({
