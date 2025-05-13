@@ -36,3 +36,29 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 ### Stackblitz
 
 If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/svelte-5-training-ground?file=src/lib/HelloWorld.svelte" target="_blank">Svelte training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
+
+## HTML
+
+### Hello World
+
+The simplest Svelte component you can have is an empty file.
+
+```svelte
+
+```
+
+In our file, we have an `<h1>` element already added.
+
+```vue
+<!-- HelloWorld.svelte -->
+<h1>Hello World</h1>
+```
+
+**Task:** To make it more personal, change `World` to your name.
+
+```vue "John"
+<!-- HelloWorld.svelte -->
+<h1>Hello John</h1>
+```
+
+After saving, you should see the browser show your name.
