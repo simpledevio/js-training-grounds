@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import astroExpressiveCode from 'astro-expressive-code';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +11,6 @@ export default defineConfig({
 				github: 'https://github.com/simpledevio/js-training-grounds',
 			},
 			sidebar: [
-				// { slug: 'about' },
 				{
 					label: 'Introduction',
 					items: [
@@ -30,15 +28,9 @@ export default defineConfig({
 						// { label: 'TypeScript (Coming Soon)', slug: 'guides/typescript' },
 					],
 				},
-				// {
-				// 	label: 'Reference',
-				// 	autogenerate: { directory: 'reference' },
-				// },
 			],
 			expressiveCode: {
-        // Replace the default themes with a custom set of bundled themes:
-        // "dracula" (a dark theme) and "solarized-light"
-        // themes: ['light-plus', 'dark-plus'],
+        // Replace the default themes with a custom set of bundled themes
         themes: ['starlight-light', 'dark-plus'],
 				useStarlightUiThemeColors: true,
       },
