@@ -42,6 +42,7 @@ export default defineConfig({
         themes: ['starlight-light', 'dark-plus'],
 				useStarlightUiThemeColors: true,
       },
+			lastUpdated: true,
 		}),
 	],
 });
