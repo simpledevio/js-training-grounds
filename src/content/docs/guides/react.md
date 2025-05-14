@@ -31,8 +31,36 @@ You should see something like this in your terminal.
 
 Visit <a href="http://localhost:5173/" target="_blank">localhost:5173</a> in your browser. The web page should say **Hello World**.
 
-In your editor, you'll see several files. However, for now you'll mainly be working in `App.jsx`.
+In your editor, you'll see several files. However, for now you'll mainly be working in `src/components/HelloWorld.jsx`.
 
 ### Stackblitz
 
-If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/react-training-ground?file=src/App.jsx" target="_blank">React training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
+If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/react-training-ground?file=src/components/HelloWorld.jsx" target="_blank">React training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
+
+## HTML
+
+### Hello World
+
+In our file, we have an `<h1>` element already added.
+
+```jsx
+<!-- HelloWorld.jsx -->
+function HelloWorld() {
+  return <h1>Hello World</h1>;
+}
+
+export default HelloWorld;
+```
+
+**Task:** To make it more personal, change `World` to your name.
+
+```jsx "John"
+<!-- HelloWorld.jsx -->
+function HelloWorld() {
+  return <h1>Hello John</h1>;
+}
+
+export default HelloWorld;
+```
+
+After saving, you should see the browser show your name.
