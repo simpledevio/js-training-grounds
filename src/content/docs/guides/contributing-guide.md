@@ -34,7 +34,7 @@ You should see something like this in your terminal.
 01:11:49 watching for file changes...
 ```
 
-Visit <a href="http://localhost:4321/" target="_blank">localhost:4321</a> in your browser. The web page should say **Hello World**.
+Visit <a href="http://localhost:4321/" target="_blank">localhost:4321</a> in your browser, then click on the **Example Guide** button.
 
 In your editor, you'll see several files. However, for now you'll mainly be working in `src/content/docs/guides/example.md`.
 
