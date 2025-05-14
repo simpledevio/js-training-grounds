@@ -43,13 +43,13 @@ If you prefer to work online, you can also open the <a href="https://stackblitz.
 
 ### Hello World
 
-The simplest Vue component you can have is an empty template element. You can kind of think of the template element like the body element in a normal HTML file.
+The simplest Vue component you can have is an empty `<template>` element. You can kind of think of the `<template>` element like the `<body>` element in a normal HTML file.
 
 ```vue
 <template></template>
 ```
 
-Inside the template element you can put HTML elements or Vue components. In our file, we have an h1 element already added.
+Inside the template element you can put HTML elements or Vue components. In our file, we have an `<h1>` element already added.
 
 ```vue
 <!-- HelloWorld.vue -->
@@ -58,7 +58,7 @@ Inside the template element you can put HTML elements or Vue components. In our 
 </template>
 ```
 
-To make it more personal, change `World` to your name.
+**Task:** To make it more personal, change `World` to your name.
 
 ```vue "John"
 <!-- HelloWorld.vue -->
@@ -73,7 +73,7 @@ After saving, you should see the browser show your name.
 
 You can have more than one element as a direct child of the `<template>` element.
 
-Add a `<p>` element after the `<h1>` element with some placeholder text.
+**Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
 
 ```vue "<p>Lorem ipsum dolor...</p>"
 <!-- HelloWorld.vue -->
@@ -112,6 +112,8 @@ Back in `HelloWorld.vue`, let's replace the `<h1>` and `<p>` elements with slot.
   <slot />
 </template>
 ```
+
+Then change `<HelloWorld />` from a self-closing tag to an opening and closing tag and add some slot content in between the tags.
 
 ```vue {7}
 <!-- App.vue -->
@@ -261,7 +263,7 @@ import Counter from './components/Counter';
 
 After saving you should see the button appear on screen. It doesn't do anything yet if you click on it.
 
-Add a `script` element above the `template` element. Add the `setup` attribute. This will make it easier to write some things. If you leave it off, you have to write some of your JS code in a slightly different way.
+Add a `<script>` element above the `<template>` element. Add the `setup` attribute. This will make it easier to write some things. If you leave it off, you have to write some of your JS code in a slightly different way.
 
 ```vue {2-3}
 <!-- Counter.vue -->
@@ -273,7 +275,7 @@ Add a `script` element above the `template` element. Add the `setup` attribute. 
 </template>
 ```
 
-Create a count constant and replace `0` with `{{ count }}`.
+Create a `count` constant and replace `0` with `{{ count }}`.
 
 ```vue {3, 7}
 <!-- Counter.vue -->
@@ -290,7 +292,7 @@ After saving, the button should still look the same. It still doesn't do anythin
 
 ### Make it reactive
 
-Next, import `ref` inside `script`. Notice the destructuring syntax. Wrap `0` in `ref()` and add `v-on:click="count++"` to the button tag. `ref()` means that when the count variable changes, the number on the screen should change as well.
+Next, import `ref` inside `script`. Notice the destructuring syntax. Wrap `0` in `ref()` and add `v-on:click="count++"` to the button tag. `ref()` means that when the `count` variable changes, the number on the screen should change as well.
 
 ```vue {3,8} "ref(0)"
 <!-- Counter.vue -->
