@@ -346,6 +346,8 @@ function increment() {
 </template>
 ```
 
+After saving, the number on the button should still go up when you click on it.
+
 ### Conditional
 
 Let's add a message that will display when you reach a certain count.
@@ -501,7 +503,7 @@ const props = defineProps(['name'])
 </template>
 ```
 
-In App.vue, you would add an attribute to `<HelloWorld>` called `name` with the value you want to pass in.
+In `App.vue`, you would add an attribute to `<HelloWorld>` called `name` with the value you want to pass in.
 
 ```vue
 <!-- App.vue -->
@@ -577,7 +579,7 @@ const isActive = ref(true);
 </style>
 ```
 
-You can move the object into the `script` tag. Make sure to use the `reactive()` function.
+You can move the object into the `<script>` element. Make sure to use the `reactive()` function.
 
 ```vue "{ ref, reactive }" {6-8} ":class="classObject""
 <!-- HelloWorld.vue -->
