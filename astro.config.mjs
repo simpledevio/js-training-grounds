@@ -25,6 +25,7 @@ export default defineConfig({
 						{ label: 'Vue 3', slug: 'guides/vue-3' },
 						{ label: 'React (Coming Soon)', slug: 'guides/react' },
 						{ label: 'Svelte 5 (Coming Soon)', slug: 'guides/svelte-5' },
+						{ label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
 						// { label: 'TypeScript (Coming Soon)', slug: 'guides/typescript' },
 					],
 				},
@@ -35,6 +36,7 @@ export default defineConfig({
 				useStarlightUiThemeColors: true,
       },
 			lastUpdated: true,
+			pagination: false,
 		}),
 	],
 });
