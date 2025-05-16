@@ -431,7 +431,7 @@ const todos = [
 
 Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the todos constant.
 
-```vue
+```vue {12-18}
 <!-- ListExample.vue -->
 <script setup>
 let id = 0;
@@ -454,9 +454,9 @@ const todos = [
 
 You should now see a list in your browser.
 
-Next, add the `addTodo()` function to the script code and add the input and button elements.
+Next, add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
-```vue
+```vue {13-16, 25-26}
 <!-- ListExample.vue -->
 <script setup>
 import { ref } from 'vue';
@@ -488,11 +488,95 @@ function addTodo() {
 
 After saving, you should have a working todo list in your browser.
 
+### Remove items
+
+```vue {18-20, 27}
+<!-- ListExample.vue -->
+<script setup>
+import { ref } from 'vue';
+let id = 0;
+const newTodo = ref('');
+
+const todos = ref([
+  { id: id++, text: 'Learn HTML' },
+  { id: id++, text: 'Learn JavaScript' },
+  { id: id++, text: 'Learn Vue' }
+]);
+
+function addTodo() {
+  todos.value.push({ id: id++, text: newTodo.value });
+  newTodo.value = '';
+}
+
+function removeTodo(todo) {
+  todos.value = todos.value.filter((t) => t !== todo)
+}
+</script>
+
+<template>
+<ul>
+  <li v-for="todo in todos" :key="todo.id">
+    {{ todo.text }}
+    <button @click="removeTodo(todo)">X</button>
+  </li>
+</ul>
+<input v-model="newTodo">
+<button @click="addTodo">Add Todo</button>
+</template>
+```
+
+### Computed property
+
+```vue {6, 8-10, 13-17, 32, 39-41} ", computed" /todo in (filteredTodos)/
+<!-- ListExample.vue -->
+<script setup>
+import { ref, computed } from 'vue';
+let id = 0;
+const newTodo = ref('');
+const hideCompleted = ref(false);
+const todos = ref([
+  { id: id++, text: 'Learn HTML', done: true },
+  { id: id++, text: 'Learn JavaScript', done: true },
+  { id: id++, text: 'Learn Vue', done: false }
+]);
+
+const filteredTodos = computed(() => {
+  return hideCompleted.value
+    ? todos.value.filter((t) => !t.done)
+    : todos.value
+})
+
+function addTodo() {
+  todos.value.push({ id: id++, text: newTodo.value });
+  newTodo.value = '';
+}
+
+function removeTodo(todo) {
+  todos.value = todos.value.filter((t) => t !== todo)
+}
+</script>
+
+<template>
+<ul>
+  <li v-for="todo in filteredTodos" :key="todo.id">
+    <input type="checkbox" v-model="todo.done">
+    {{ todo.text }}
+    <button @click="removeTodo(todo)">X</button>
+  </li>
+</ul>
+<input v-model="newTodo">
+<button @click="addTodo">Add Todo</button>
+  <button @click="hideCompleted = !hideCompleted">
+    {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+  </button>
+</template>
+```
+
 ### Props
 
 Let's revisit `HelloWorld.vue`. Earlier we saw how to pass content to a child component using slots. There's another way to pass information to a child component called **props**.
 
-```vue
+```vue {3} "{{ name }}"
 <!-- HelloWorld.vue -->
 <script setup>
 const props = defineProps(['name'])
@@ -505,7 +589,7 @@ const props = defineProps(['name'])
 
 In `App.vue`, you would add an attribute to `<HelloWorld>` called `name` with the value you want to pass in.
 
-```vue
+```vue 'name="John"'
 <!-- App.vue -->
 <script setup>
 import HelloWorld from './components/HelloWorld';
@@ -518,7 +602,7 @@ import HelloWorld from './components/HelloWorld';
 
 Here's another way to define props.
 
-```vue
+```vue {3-5}
 <!-- HelloWorld.vue -->
 <script setup>
 const props = defineProps({
