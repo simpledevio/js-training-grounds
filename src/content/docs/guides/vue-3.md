@@ -454,6 +454,8 @@ const todos = [
 
 You should now see a list in your browser.
 
+### Add items
+
 Next, add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
 ```vue {13-16, 25-26}
@@ -490,6 +492,9 @@ After saving, you should have a working todo list in your browser.
 
 ### Remove items
 
+- Add the `removeTodos()` function
+- Add a `<button>` element inside the `v-for` loop
+
 ```vue {18-20, 27}
 <!-- ListExample.vue -->
 <script setup>
@@ -525,7 +530,19 @@ function removeTodo(todo) {
 </template>
 ```
 
+After saving, you should be able to remove the items using the X buttons.
+
 ### Computed property
+
+Let's learn how to toggle the completed items in the todo list. To do this, we need to use a **computed property**.
+
+- Import `computed` from `'vue'`
+- Add a `hideCompleted` constant with a value of `ref(false)`
+- Add a `done` property to each object in `todos` with a value of `true` or `false`
+- Add the `filteredTodos` constant
+- Change `todos` to `filteredTodos` in the `v-for` attribute
+- Add a checkbox `<input>`
+- Add a `<button>` to toggle the completed items
 
 ```vue {6, 8-10, 13-17, 32, 39-41} ", computed" /todo in (filteredTodos)/
 <!-- ListExample.vue -->
@@ -571,6 +588,8 @@ function removeTodo(todo) {
   </button>
 </template>
 ```
+
+After saving, you should be able to hide or show the completed items.
 
 ### Props
 
