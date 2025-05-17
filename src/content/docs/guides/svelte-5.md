@@ -104,6 +104,14 @@ You can add a `style` attribute to an element just like in normal HTML.
 
 After saving, you should see the `<h1>` element turn red in the browser.
 
+There is another syntax called the `style:` directive. You type `style`, then a colon, then the property name, then an equals sign, and finally the value in quotes. This is useful if you have a lot of inline styles.
+
+```svelte "style:color = "red""
+<!-- HelloWorld.svelte -->
+<h1 style:color = "red">Hello World</h1>
+<p>Lorem ipsum dolor...</p>
+```
+
 ### style element
 
 You can also add a `<style>` element to style a component. The styles are limited to just the component by default.

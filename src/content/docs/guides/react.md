@@ -131,6 +131,26 @@ export default HelloWorld;
 
 After saving, you should see the `<h1>` element turn red in the browser.
 
+You can also create a style object ahead of time instead of putting the object inline.
+
+```jsx {2-4} "{myStyle}"
+// HelloWorld.jsx
+const myStyle= {
+  color: 'red'
+}
+
+function HelloWorld() {
+  return (
+    <>
+      <h1 style={myStyle}>Hello John</h1>
+      <p>Lorem ipsum dolor...</p>
+    </>
+  );
+}
+
+export default HelloWorld;
+```
+
 ### External CSS File
 
 You typically add styles using external CSS files. Create a CSS file inside `src/components` called `HelloWorld.css`.
