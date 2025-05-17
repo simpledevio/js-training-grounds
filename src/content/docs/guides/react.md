@@ -64,3 +64,131 @@ export default HelloWorld;
 ```
 
 After saving, you should see the browser show your name.
+
+### Multiple elements
+
+In React, a component must return a single JSX element. However, you can have multiple elements within a parent element.
+
+**Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
+
+```jsx "<p>Lorem ipsum dolor...</p>"
+// HelloWorld.jsx
+function HelloWorld() {
+  return (
+    <>
+      <h1>Hello John</h1>
+      <p>Lorem ipsum dolor...</p>
+    </>
+  );
+}
+
+export default HelloWorld;
+```
+
+Notice that we've wrapped our elements in `<>` and `</>`. This is a React Fragment, which allows us to return multiple elements without adding an extra node to the DOM.
+
+After saving, you should see both elements appear on screen.
+
+### App.jsx
+
+Before we look at our next topic, open up `App.jsx` so you can see how it's importing `HelloWorld.jsx`.
+
+```jsx {3,7}
+// App.jsx
+import './App.css';
+import HelloWorld from './components/HelloWorld';
+
+function App() {
+  return (
+    <HelloWorld />
+  );
+}
+
+export default App;
+```
+
+## CSS
+
+### style attribute
+
+You can add a `style` attribute to an element just like in normal HTML, but in React you pass an object instead of a string.
+
+**Task:** Add `style={{ color: 'red' }}` to the h1 element.
+
+```jsx "style={{ color: 'red' }}"
+// HelloWorld.jsx
+function HelloWorld() {
+  return (
+    <>
+      <h1 style={{ color: 'red' }}>Hello John</h1>
+      <p>Lorem ipsum dolor...</p>
+    </>
+  );
+}
+
+export default HelloWorld;
+```
+
+After saving, you should see the `<h1>` element turn red in the browser.
+
+### External CSS File
+
+You typically add styles using external CSS files. Create a CSS file inside `src/components` called `HelloWorld.css`.
+
+```css
+/* HelloWorld.css */
+h1 {
+  color: red;
+}
+```
+
+**Task:** Delete the inline `style` attribute. Create `HelloWorld.css` and import it into `HelloWorld.jsx`.
+
+```jsx
+// HelloWorld.jsx
+import './HelloWorld.css';
+
+function HelloWorld() {
+  return (
+    <>
+      <h1>Hello John</h1>
+      <p>Lorem ipsum dolor...</p>
+    </>
+  );
+}
+
+export default HelloWorld;
+```
+
+After saving, you should see that the `<h1>` element is still red. Styles imported this way are global by default.
+
+### `className` Attribute
+
+To apply CSS classes, React uses the `className` attribute instead of `class` (because `class` is a reserved keyword in JavaScript).
+
+**Task:** In `HelloWorld.css`, change the `h1` selector to a class selector, e.g., `.heading`. Then, add `className="heading"` to the `<h1>` element in `HelloWorld.jsx`.
+
+```css
+/* HelloWorld.css */
+.heading {
+  color: red;
+}
+```
+
+```jsx
+// HelloWorld.jsx
+import './HelloWorld.css';
+
+function HelloWorld() {
+  return (
+    <>
+      <h1 className="heading">Hello John</h1>
+      <p>Lorem ipsum dolor...</p>
+    </>
+  );
+}
+
+export default HelloWorld;
+```
+
+After saving, the `<h1>` element should still be red.

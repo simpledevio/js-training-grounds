@@ -49,16 +49,94 @@ The simplest Svelte component you can have is an empty file.
 
 In our file, we have an `<h1>` element already added.
 
-```vue
+```svelte
 <!-- HelloWorld.svelte -->
 <h1>Hello World</h1>
 ```
 
 **Task:** To make it more personal, change `World` to your name.
 
-```vue "John"
+```svelte "John"
 <!-- HelloWorld.svelte -->
 <h1>Hello John</h1>
 ```
 
 After saving, you should see the browser show your name.
+
+### Multiple roots
+
+You can have more than one element.
+
+**Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
+
+```svelte "<p>Lorem ipsum dolor...</p>"
+<!-- HelloWorld.svelte -->
+<h1>Hello John</h1>
+<p>Lorem ipsum dolor...</p>
+```
+
+### App.svelte
+
+Before we look at our next topic, open up `App.svelte` so you can see how it's importing `HelloWorld.svelte`.
+
+```svelte {3,6}
+<!-- App.svelte -->
+<script>
+  import HelloWorld from './lib/HelloWorld.svelte'
+</script>
+
+<HelloWorld />
+```
+
+## CSS
+
+### style attribute
+
+You can add a `style` attribute to an element just like in normal HTML.
+
+**Task:** Add `style="color: red;"` to the h1 element.
+
+```svelte "style="color: red;""
+<!-- HelloWorld.svelte -->
+<h1 style="color: red;">Hello World</h1>
+<p>Lorem ipsum dolor...</p>
+```
+
+After saving, you should see the `<h1>` element turn red in the browser.
+
+### style element
+
+You can also add a `<style>` element to style a component. The styles are limited to just the component by default.
+
+**Task:** Delete the `style` attribute. Then add the `<style>` element with the following rule.
+
+```svelte {5-9}
+<!-- HelloWorld.svelte -->
+<h1>Hello World</h1>
+<p>Lorem ipsum dolor...</p>
+
+<style>
+h1 {
+  color: red;
+}
+</style>
+```
+
+### class attribute
+
+You can use a `class` attribute just like in normal HTML.
+
+**Task:** Add a class attribute with the value of heading. Change the `h1` selector to `.heading`.
+
+```svelte "class="heading"" ".heading"
+<!-- HelloWorld.svelte -->
+<h1 class="heading">Hello World</h1>
+
+<style>
+.heading {
+  color: red;
+}
+</style>
+```
+
+After saving, you should see that the `<h1>` element is still red.
