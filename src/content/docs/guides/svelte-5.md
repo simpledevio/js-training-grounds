@@ -140,3 +140,85 @@ You can use a `class` attribute just like in normal HTML.
 ```
 
 After saving, you should see that the `<h1>` element is still red.
+
+## JS
+
+### Add a variable
+
+For this section, we're going to create a new file called `Counter.svelte`. Add the following code to it.
+
+```svelte {2-4}
+<!-- Counter.svelte -->
+<button>Count: 0</button>
+```
+
+Next, make sure to import it into `App.svelte`.
+
+```svelte {3,7}
+<!-- App.svelte -->
+<script>
+import Counter from './lib/Counter.svelte';
+</script>
+
+<Counter />
+```
+
+After saving you should see the button appear on screen. It doesn't do anything yet if you click on it.
+
+Add a `<script>` element above the `<button>` element.
+
+```svelte {2-4}
+<!-- Counter.svelte -->
+<script>
+
+</script>
+
+<button>Count: 0</button>
+```
+
+Create a `count` variable and use the `$state()` rune to initialize it. Also, replace `0` with `{ count }` in the `<button>` element.
+
+```svelte {3, 7}
+<!-- Counter.svelte -->
+<script>
+let count = $state(0);
+</script>
+
+<button>Count: { count }</button>
+```
+
+After saving, the button should still look the same. It still doesn't do anything yet.
+
+### Make it reactive
+
+Next, add `onclick={ count++ }` to the button tag.
+
+```svelte "onclick={ count++ }"
+<!-- Counter.svelte -->
+<script>
+let count = $state(0);
+</script>
+
+<button onclick={ count++ }>Count: { count }</button>
+```
+
+After saving, the number on the button will go up when you click on it.
+
+### Use a function
+
+Create a function called `increment()`. Then replace `count++` with `increment`.
+
+```svelte {5-7} "{increment}"
+<!-- Counter.svelte -->
+<script>
+let count = $state(0);
+
+function increment() {
+  count++;
+}
+</script>
+
+<button onclick={increment}>Count: { count }</button>
+```
+
+After saving, the number on the button should still go up when you click on it.

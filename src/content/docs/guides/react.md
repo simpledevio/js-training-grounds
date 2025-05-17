@@ -192,3 +192,100 @@ export default HelloWorld;
 ```
 
 After saving, the `<h1>` element should still be red.
+
+## JS
+
+### Add a state variable
+
+For this section, we're going to create a new file called `Counter.jsx`. Add the following code to it.
+
+```jsx
+// Counter.jsx
+function Counter() {
+  return (
+    <button>Count: 0</button>
+  );
+}
+
+export default Counter;
+```
+
+Next, make sure to import it into `App.jsx`.
+
+```jsx {2,6}
+// App.jsx
+import Counter from './components/Counter';
+
+function App() {
+  return (
+    <Counter />
+  );
+}
+
+export default App;
+```
+
+After saving you should see the button appear on screen. It doesn't do anything yet if you click on it.
+
+Import `useState` from React and create a state variable for count.
+
+```jsx {2,5}
+// HelloWorld.jsx
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button>Count: {count}</button>
+  );
+}
+
+export default Counter;
+```
+
+After saving, the button should still look the same. It still doesn't do anything yet.
+
+### Make it reactive
+
+Next, add an `onClick` handler to the button that increments the count.
+
+```jsx "onClick={() => setCount(count + 1)}"
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+  );
+}
+
+export default Counter;
+```
+
+After saving, the number on the button will go up when you click on it.
+
+### Use a function
+
+Create a function called `increment()`. Then replace the inline function with a reference to `increment`.
+
+```jsx {6-8,11}
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={increment}>Count: {count}</button>
+  );
+}
+
+export default Counter;
+```
+
+After saving, the number on the button should still go up when you click on it.
