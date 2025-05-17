@@ -7,9 +7,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'JS Training Grounds',
-			social: {
-				github: 'https://github.com/simpledevio/js-training-grounds',
-			},
+			social: [{
+				icon: 'github', label:'GitHub', href: 'https://github.com/simpledevio/js-training-grounds',
+			}],
 			sidebar: [
 				{
 					label: 'Introduction',
