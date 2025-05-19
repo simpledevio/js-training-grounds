@@ -43,8 +43,7 @@ If you prefer to work online, you can also open the <a href="https://stackblitz.
 
 In our file, we have an `<h1>` element already added.
 
-```jsx
-<!-- HelloWorld.jsx -->
+```jsx title="HelloWorld.jsx"
 function HelloWorld() {
   return <h1>Hello World</h1>;
 }
@@ -54,8 +53,7 @@ export default HelloWorld;
 
 **Task:** To make it more personal, change `World` to your name.
 
-```jsx "John"
-<!-- HelloWorld.jsx -->
+```jsx title="HelloWorld.jsx" "John"
 function HelloWorld() {
   return <h1>Hello John</h1>;
 }
@@ -71,8 +69,7 @@ In React, a component must return a single JSX element. However, you can have mu
 
 **Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
 
-```jsx "<p>Lorem ipsum dolor...</p>"
-// HelloWorld.jsx
+```jsx title="HelloWorld.jsx" "<p>Lorem ipsum dolor...</p>"
 function HelloWorld() {
   return (
     <>
@@ -93,8 +90,7 @@ After saving, you should see both elements appear on screen.
 
 Before we look at our next topic, open up `App.jsx` so you can see how it's importing `HelloWorld.jsx`.
 
-```jsx {3,7}
-// App.jsx
+```jsx title="App.jsx" {2, 6}
 import './App.css';
 import HelloWorld from './components/HelloWorld';
 
@@ -115,8 +111,7 @@ You can add a `style` attribute to an element just like in normal HTML, but in R
 
 **Task:** Add `style={{ color: 'red' }}` to the h1 element.
 
-```jsx "style={{ color: 'red' }}"
-// HelloWorld.jsx
+```jsx title="HelloWorld.jsx" "style={{ color: 'red' }}"
 function HelloWorld() {
   return (
     <>
@@ -133,8 +128,7 @@ After saving, you should see the `<h1>` element turn red in the browser.
 
 You can also create a style object ahead of time instead of putting the object inline.
 
-```jsx {2-4} "{myStyle}"
-// HelloWorld.jsx
+```jsx title="HelloWorld.jsx" {1-3} "{myStyle}"
 const myStyle= {
   color: 'red'
 }
@@ -155,8 +149,7 @@ export default HelloWorld;
 
 You typically add styles using external CSS files. Create a CSS file inside `src/components` called `HelloWorld.css`.
 
-```css
-/* HelloWorld.css */
+```css title="HelloWorld.css"
 h1 {
   color: red;
 }
@@ -164,8 +157,7 @@ h1 {
 
 **Task:** Delete the inline `style` attribute. Create `HelloWorld.css` and import it into `HelloWorld.jsx`.
 
-```jsx
-// HelloWorld.jsx
+```jsx title="HelloWorld.jsx" {1}
 import './HelloWorld.css';
 
 function HelloWorld() {
@@ -188,15 +180,13 @@ To apply CSS classes, React uses the `className` attribute instead of `class` (b
 
 **Task:** In `HelloWorld.css`, change the `h1` selector to a class selector, e.g., `.heading`. Then, add `className="heading"` to the `<h1>` element in `HelloWorld.jsx`.
 
-```css
-/* HelloWorld.css */
+```css title="HelloWorld.css" ".heading"
 .heading {
   color: red;
 }
 ```
 
-```jsx
-// HelloWorld.jsx
+```jsx title="HelloWorld.jsx" 'className="heading"'
 import './HelloWorld.css';
 
 function HelloWorld() {
@@ -219,8 +209,7 @@ After saving, the `<h1>` element should still be red.
 
 For this section, we're going to create a new file called `Counter.jsx`. Add the following code to it.
 
-```jsx
-// Counter.jsx
+```jsx title="Counter.jsx"
 function Counter() {
   return (
     <button>Count: 0</button>
@@ -232,8 +221,7 @@ export default Counter;
 
 Next, make sure to import it into `App.jsx`.
 
-```jsx {2,6}
-// App.jsx
+```jsx title="App.jsx" {1, 5}
 import Counter from './components/Counter';
 
 function App() {
@@ -249,8 +237,7 @@ After saving you should see the button appear on screen. It doesn't do anything 
 
 Import `useState` from React and create a state variable for count.
 
-```jsx {2,5}
-// HelloWorld.jsx
+```jsx title="Counter.jsx" {1, 4}
 import { useState } from 'react';
 
 function Counter() {
@@ -270,7 +257,7 @@ After saving, the button should still look the same. It still doesn't do anythin
 
 Next, add an `onClick` handler to the button that increments the count.
 
-```jsx "onClick={() => setCount(count + 1)}"
+```jsx title="Counter.jsx" "onClick={() => setCount(count + 1)}"
 import { useState } from 'react';
 
 function Counter() {
@@ -290,7 +277,7 @@ After saving, the number on the button will go up when you click on it.
 
 Create a function called `increment()`. Then replace the inline function with a reference to `increment`.
 
-```jsx {6-8,11}
+```jsx title="Counter.jsx" {6-8, 11}
 import { useState } from 'react';
 
 function Counter() {
