@@ -117,9 +117,9 @@ You can also add a `<style>` element to style a component. The styles are limite
 <p>Lorem ipsum dolor...</p>
 
 <style>
-h1 {
-  color: red;
-}
+  h1 {
+    color: red;
+  }
 </style>
 ```
 
@@ -133,9 +133,9 @@ You can use a `class` attribute just like in normal HTML.
 <h1 class="heading">Hello World</h1>
 
 <style>
-.heading {
-  color: red;
-}
+  .heading {
+    color: red;
+  }
 </style>
 ```
 
@@ -155,7 +155,7 @@ Next, make sure to import it into `App.svelte`.
 
 ```svelte title="App.svelte" {2, 5}
 <script>
-import Counter from './lib/Counter.svelte';
+  import Counter from './lib/Counter.svelte';
 </script>
 
 <Counter />
@@ -177,7 +177,7 @@ Create a `count` variable and use the `$state()` rune to initialize it. Also, re
 
 ```svelte title="Counter.svelte" {2} "{ count }"
 <script>
-let count = $state(0);
+  let count = $state(0);
 </script>
 
 <button>Count: { count }</button>
@@ -191,7 +191,7 @@ Next, add `onclick={ count++ }` to the button tag.
 
 ```svelte title="Counter.svelte" "onclick={ count++ }"
 <script>
-let count = $state(0);
+  let count = $state(0);
 </script>
 
 <button onclick={ count++ }>Count: { count }</button>
@@ -205,11 +205,11 @@ Create a function called `increment()`. Then replace `count++` with `increment`.
 
 ```svelte title="Counter.svelte" {4-6} "{increment}"
 <script>
-let count = $state(0);
+  let count = $state(0);
 
-function increment() {
-  count++;
-}
+  function increment() {
+    count++;
+  }
 </script>
 
 <button onclick={increment}>Count: { count }</button>
