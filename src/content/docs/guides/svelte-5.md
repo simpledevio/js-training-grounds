@@ -49,15 +49,13 @@ The simplest Svelte component you can have is an empty file.
 
 In our file, we have an `<h1>` element already added.
 
-```svelte
-<!-- HelloWorld.svelte -->
+```svelte title="HelloWorld.svelte"
 <h1>Hello World</h1>
 ```
 
 **Task:** To make it more personal, change `World` to your name.
 
-```svelte "John"
-<!-- HelloWorld.svelte -->
+```svelte title="HelloWorld.svelte" "John"
 <h1>Hello John</h1>
 ```
 
@@ -69,8 +67,7 @@ You can have more than one element.
 
 **Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
 
-```svelte "<p>Lorem ipsum dolor...</p>"
-<!-- HelloWorld.svelte -->
+```svelte title="HelloWorld.svelte" "<p>Lorem ipsum dolor...</p>"
 <h1>Hello John</h1>
 <p>Lorem ipsum dolor...</p>
 ```
@@ -79,8 +76,7 @@ You can have more than one element.
 
 Before we look at our next topic, open up `App.svelte` so you can see how it's importing `HelloWorld.svelte`.
 
-```svelte {3,6}
-<!-- App.svelte -->
+```svelte title="App.svelte" {2, 5}
 <script>
   import HelloWorld from './lib/HelloWorld.svelte'
 </script>
@@ -96,8 +92,7 @@ You can add a `style` attribute to an element just like in normal HTML.
 
 **Task:** Add `style="color: red;"` to the h1 element.
 
-```svelte "style="color: red;""
-<!-- HelloWorld.svelte -->
+```svelte title="HelloWorld.svelte" "style="color: red;""
 <h1 style="color: red;">Hello World</h1>
 <p>Lorem ipsum dolor...</p>
 ```
@@ -106,8 +101,7 @@ After saving, you should see the `<h1>` element turn red in the browser.
 
 There is another syntax called the `style:` directive. You type `style`, then a colon, then the property name, then an equals sign, and finally the value in quotes. This is useful if you have a lot of inline styles.
 
-```svelte "style:color = "red""
-<!-- HelloWorld.svelte -->
+```svelte title="HelloWorld.svelte" "style:color = "red""
 <h1 style:color = "red">Hello World</h1>
 <p>Lorem ipsum dolor...</p>
 ```
@@ -118,8 +112,7 @@ You can also add a `<style>` element to style a component. The styles are limite
 
 **Task:** Delete the `style` attribute. Then add the `<style>` element with the following rule.
 
-```svelte {5-9}
-<!-- HelloWorld.svelte -->
+```svelte title="HelloWorld.svelte" {4-8}
 <h1>Hello World</h1>
 <p>Lorem ipsum dolor...</p>
 
@@ -136,8 +129,7 @@ You can use a `class` attribute just like in normal HTML.
 
 **Task:** Add a class attribute with the value of heading. Change the `h1` selector to `.heading`.
 
-```svelte "class="heading"" ".heading"
-<!-- HelloWorld.svelte -->
+```svelte title="HelloWorld.svelte" "class="heading"" ".heading"
 <h1 class="heading">Hello World</h1>
 
 <style>
@@ -155,15 +147,13 @@ After saving, you should see that the `<h1>` element is still red.
 
 For this section, we're going to create a new file called `Counter.svelte`. Add the following code to it.
 
-```svelte {2-4}
-<!-- Counter.svelte -->
+```svelte title="Counter.svelte" {2-4}
 <button>Count: 0</button>
 ```
 
 Next, make sure to import it into `App.svelte`.
 
-```svelte {3,7}
-<!-- App.svelte -->
+```svelte title="App.svelte" {2, 5}
 <script>
 import Counter from './lib/Counter.svelte';
 </script>
@@ -175,8 +165,7 @@ After saving you should see the button appear on screen. It doesn't do anything 
 
 Add a `<script>` element above the `<button>` element.
 
-```svelte {2-4}
-<!-- Counter.svelte -->
+```svelte title="Counter.svelte" {1-3}
 <script>
 
 </script>
@@ -186,8 +175,7 @@ Add a `<script>` element above the `<button>` element.
 
 Create a `count` variable and use the `$state()` rune to initialize it. Also, replace `0` with `{ count }` in the `<button>` element.
 
-```svelte {3, 7}
-<!-- Counter.svelte -->
+```svelte title="Counter.svelte" {2} "{ count }"
 <script>
 let count = $state(0);
 </script>
@@ -201,8 +189,7 @@ After saving, the button should still look the same. It still doesn't do anythin
 
 Next, add `onclick={ count++ }` to the button tag.
 
-```svelte "onclick={ count++ }"
-<!-- Counter.svelte -->
+```svelte title="Counter.svelte" "onclick={ count++ }"
 <script>
 let count = $state(0);
 </script>
@@ -216,8 +203,7 @@ After saving, the number on the button will go up when you click on it.
 
 Create a function called `increment()`. Then replace `count++` with `increment`.
 
-```svelte {5-7} "{increment}"
-<!-- Counter.svelte -->
+```svelte title="Counter.svelte" {4-6} "{increment}"
 <script>
 let count = $state(0);
 
