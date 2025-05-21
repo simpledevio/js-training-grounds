@@ -21,6 +21,6 @@ npm run dev
 
 This command converts `main.ts` into `main.js`. It'll update the file every time you save. Use `Ctrl + C` to stop this process.
 
-Open the index.html file in your browser. The web page should say **Hello World**. You can also use the Live Preview extension to open up index.html on localhost:3000.
+Open the `index.html` file in your browser. The web page should say **Hello World**. You can also use the Live Preview extension to open up `index.html` on localhost:3000.
 
 In your editor, you'll see several files. However, for now you'll mainly be working in `main.ts`.
