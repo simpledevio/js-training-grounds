@@ -196,11 +196,10 @@ function greeting() {
 
 ## File name
 
-To add a file name to the top of the code snippet, add a comment at the top of the snippet with the filename. In this example, we're adding `// HelloWorld.js`.
+To add a file name to the top of the code snippet, add the title attribute to the top of the snippet with the filename. In this example, we're adding `title="HelloWorld.js"`.
 
 ````md
-```js {1-2, 4} ""Hello World""
-// HelloWorld.js
+```js title="HelloWorld.js" {1-2, 4} ""Hello World""
 // Javascript code with syntax highlighting.
 function greeting() {
   console.log("Hello World");
@@ -208,15 +207,14 @@ function greeting() {
 ```
 ````
 
-```js {1-2, 4} ""Hello World""
-// HelloWorld.js
+```js title="HelloWorld.js" {1-2, 4} ""Hello World""
 // Javascript code with syntax highlighting.
 function greeting() {
   console.log("Hello World");
 }
 ```
 
-Notice that adding the file name throws off the line highlighting. The comment we added throws the line numbers off by one. To fix it, increase all of the numbers by one.
+<!-- Notice that adding the file name throws off the line highlighting. The comment we added throws the line numbers off by one. To fix it, increase all of the numbers by one.
 
 ````md
 ```js {2-3, 5} ""Hello World""
@@ -234,4 +232,4 @@ function greeting() {
 function greeting() {
   console.log("Hello World");
 }
-```
+``` -->
