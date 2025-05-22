@@ -213,23 +213,3 @@ function greeting() {
   console.log("Hello World");
 }
 ```
-
-<!-- Notice that adding the file name throws off the line highlighting. The comment we added throws the line numbers off by one. To fix it, increase all of the numbers by one.
-
-````md
-```js {2-3, 5} ""Hello World""
-// HelloWorld.js
-// Javascript code with syntax highlighting.
-function greeting() {
-  console.log("Hello World");
-}
-```
-````
-
-```js {2-3, 5} ""Hello World""
-// HelloWorld.js
-// Javascript code with syntax highlighting.
-function greeting() {
-  console.log("Hello World");
-}
-``` -->
