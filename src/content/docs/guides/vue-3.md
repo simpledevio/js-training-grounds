@@ -335,14 +335,9 @@ Let's add a message that will display when you reach a certain count.
 
 Task: Add an `<h1>` element with the `v-if` directive. The `<h1>` will show when the count is greater than 10.
 
-```vue title="Counter.vue" {11}
+```vue title="Counter.vue" {6}
 <script setup>
-import { ref } from 'vue';
-const count = ref(0);
-
-function increment() {
-  count.value++;
-}
+// ...
 </script>
 
 <template>
@@ -353,14 +348,9 @@ function increment() {
 
 Now add an `<h1>` element with the `v-else` directive. This `<h1>` will show when the count is 10 or less.
 
-```vue title="Counter.vue" {12}
+```vue title="Counter.vue" {7}
 <script setup>
-import { ref } from 'vue';
-const count = ref(0);
-
-function increment() {
-  count.value++;
-}
+// ...
 </script>
 
 <template>
@@ -372,14 +362,9 @@ function increment() {
 
 Now add an `<h1>` with a `v-else-if` directive in the middle. This message will be displayed when count is greater than 5 but less than 11.
 
-```vue title="Counter.vue" {12}
+```vue title="Counter.vue" {7}
 <script setup>
-import { ref } from 'vue';
-const count = ref(0);
-
-function increment() {
-  count.value++;
-}
+// ...
 </script>
 
 <template>
@@ -408,23 +393,17 @@ const todos = [
 
 Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the todos constant.
 
-```vue title="ListExample.vue" {11-17}
+```vue title="ListExample.vue" {5-11}
 <script setup>
-let id = 0;
-
-const todos = [
-  { id: id++, text: 'Learn HTML' },
-  { id: id++, text: 'Learn JavaScript' },
-  { id: id++, text: 'Learn Vue' }
-]
+// ...
 </script>
 
 <template>
-<ul>
-  <li v-for="todo in todos" :key="todo.id">
-    {{ todo.text }}
-  </li>
-</ul>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+    </li>
+  </ul>
 </template>
 ```
 
@@ -434,17 +413,9 @@ You should now see a list in your browser.
 
 Next, add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
-```vue title="ListExample.vue" {12-15, 24-25}
+```vue title="ListExample.vue" {4-7, 16-17}
 <script setup>
-import { ref } from 'vue';
-let id = 0;
-const newTodo = ref('');
-
-const todos = ref([
-  { id: id++, text: 'Learn HTML' },
-  { id: id++, text: 'Learn JavaScript' },
-  { id: id++, text: 'Learn Vue' }
-]);
+// ...
 
 function addTodo() {
   todos.value.push({ id: id++, text: newTodo.value });
@@ -453,13 +424,13 @@ function addTodo() {
 </script>
 
 <template>
-<ul>
-  <li v-for="todo in todos" :key="todo.id">
-    {{ todo.text }}
-  </li>
-</ul>
-<input v-model="newTodo">
-<button @click="addTodo">Add Todo</button>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+    </li>
+  </ul>
+  <input v-model="newTodo">
+  <button @click="addTodo">Add Todo</button>
 </template>
 ```
 
@@ -470,22 +441,9 @@ After saving, you should have a working todo list in your browser.
 - Add the `removeTodos()` function
 - Add a `<button>` element inside the `v-for` loop
 
-```vue title="ListExample.vue" {17-19, 26}
+```vue title="ListExample.vue" {4-6, 13}
 <script setup>
-import { ref } from 'vue';
-let id = 0;
-const newTodo = ref('');
-
-const todos = ref([
-  { id: id++, text: 'Learn HTML' },
-  { id: id++, text: 'Learn JavaScript' },
-  { id: id++, text: 'Learn Vue' }
-]);
-
-function addTodo() {
-  todos.value.push({ id: id++, text: newTodo.value });
-  newTodo.value = '';
-}
+// ...
 
 function removeTodo(todo) {
   todos.value = todos.value.filter((t) => t !== todo)
@@ -493,14 +451,14 @@ function removeTodo(todo) {
 </script>
 
 <template>
-<ul>
-  <li v-for="todo in todos" :key="todo.id">
-    {{ todo.text }}
-    <button @click="removeTodo(todo)">X</button>
-  </li>
-</ul>
-<input v-model="newTodo">
-<button @click="addTodo">Add Todo</button>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
+  <input v-model="newTodo">
+  <button @click="addTodo">Add Todo</button>
 </template>
 ```
 
@@ -518,7 +476,7 @@ Let's learn how to toggle the completed items in the todo list. To do this, we n
 - Add a checkbox `<input>`
 - Add a `<button>` to toggle the completed items
 
-```vue title="ListExample.vue" {5, 7-9, 12-16, 31, 38-40} ", computed" /todo in (filteredTodos)/
+```vue title="ListExample.vue" {5, 7-9, 12-16, 24, 31-33} ", computed" /todo in (filteredTodos)/
 <script setup>
 import { ref, computed } from 'vue';
 let id = 0;
@@ -536,26 +494,19 @@ const filteredTodos = computed(() => {
     : todos.value
 })
 
-function addTodo() {
-  todos.value.push({ id: id++, text: newTodo.value });
-  newTodo.value = '';
-}
-
-function removeTodo(todo) {
-  todos.value = todos.value.filter((t) => t !== todo)
-}
+// addTodo() and removeTodo(todo)...
 </script>
 
 <template>
-<ul>
-  <li v-for="todo in filteredTodos" :key="todo.id">
-    <input type="checkbox" v-model="todo.done">
-    {{ todo.text }}
-    <button @click="removeTodo(todo)">X</button>
-  </li>
-</ul>
-<input v-model="newTodo">
-<button @click="addTodo">Add Todo</button>
+  <ul>
+    <li v-for="todo in filteredTodos" :key="todo.id">
+      <input type="checkbox" v-model="todo.done">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
+  <input v-model="newTodo">
+  <button @click="addTodo">Add Todo</button>
   <button @click="hideCompleted = !hideCompleted">
     {{ hideCompleted ? 'Show all' : 'Hide completed' }}
   </button>
@@ -616,8 +567,8 @@ const isActive = ref(true);
 </script>
 
 <template>
-<h1 v-bind:class="{red: isActive}">Hello World</h1>
-<button @click="isActive = !isActive">Toggle</button>
+  <h1 v-bind:class="{red: isActive}">Hello World</h1>
+  <button @click="isActive = !isActive">Toggle</button>
 </template>
 
 <style>
@@ -639,15 +590,11 @@ const isActive = ref(true);
 </script>
 
 <template>
-<h1 :class="{red: isActive}">Hello World</h1>
-<button @click="isActive = !isActive">Toggle</button>
+  <h1 :class="{red: isActive}">Hello World</h1>
+  <button @click="isActive = !isActive">Toggle</button>
 </template>
 
-<style>
-.red {
-  color: red;
-}
-</style>
+<style>/* ... */</style>
 ```
 
 You can move the object into the `<script>` element. Make sure to use the `reactive()` function.
@@ -663,15 +610,11 @@ const classObject = reactive({
 </script>
 
 <template>
-<h1 :class="classObject">Hello World</h1>
-<button @click="isActive = !isActive">Toggle</button>
+  <h1 :class="classObject">Hello World</h1>
+  <button @click="isActive = !isActive">Toggle</button>
 </template>
 
-<style>
-.red {
-  color: red;
-}
-</style>
+<style>/* ... */</style>
 ```
 
 You can also use a computed property.
@@ -687,13 +630,9 @@ const classObject = computed(() => ({
 </script>
 
 <template>
-<h1 :class="classObject">Hello World</h1>
-<button @click="isActive = !isActive">Toggle</button>
+  <h1 :class="classObject">Hello World</h1>
+  <button @click="isActive = !isActive">Toggle</button>
 </template>
 
-<style>
-.red {
-  color: red;
-}
-</style>
+<style>/* ... */</style>
 ```
