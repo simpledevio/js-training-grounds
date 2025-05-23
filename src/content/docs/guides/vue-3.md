@@ -413,7 +413,7 @@ You should now see a list in your browser.
 
 Next, add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
-```vue title="ListExample.vue" {4-7, 16-17}
+```vue title="ListExample.vue" {4-7, 11-12}
 <script setup>
 // ...
 
@@ -424,13 +424,13 @@ function addTodo() {
 </script>
 
 <template>
+  <input v-model="newTodo">
+  <button @click="addTodo">Add Todo</button>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
       {{ todo.text }}
     </li>
   </ul>
-  <input v-model="newTodo">
-  <button @click="addTodo">Add Todo</button>
 </template>
 ```
 
@@ -441,7 +441,7 @@ After saving, you should have a working todo list in your browser.
 - Add the `removeTodos()` function
 - Add a `<button>` element inside the `v-for` loop
 
-```vue title="ListExample.vue" {4-6, 13}
+```vue title="ListExample.vue" {4-6, 15}
 <script setup>
 // ...
 
@@ -451,14 +451,14 @@ function removeTodo(todo) {
 </script>
 
 <template>
+  <input v-model="newTodo">
+  <button @click="addTodo">Add Todo</button>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
       {{ todo.text }}
       <button @click="removeTodo(todo)">X</button>
     </li>
   </ul>
-  <input v-model="newTodo">
-  <button @click="addTodo">Add Todo</button>
 </template>
 ```
 
@@ -476,7 +476,7 @@ Let's learn how to toggle the completed items in the todo list. To do this, we n
 - Add a checkbox `<input>`
 - Add a `<button>` to toggle the completed items
 
-```vue title="ListExample.vue" {5, 7-9, 12-16, 24, 31-33} ", computed" /todo in (filteredTodos)/
+```vue title="ListExample.vue" {5, 7-9, 12-16, 26, 31-33} ", computed" /todo in (filteredTodos)/
 <script setup>
 import { ref, computed } from 'vue';
 let id = 0;
@@ -498,6 +498,8 @@ const filteredTodos = computed(() => {
 </script>
 
 <template>
+  <input v-model="newTodo">
+  <button @click="addTodo">Add Todo</button>
   <ul>
     <li v-for="todo in filteredTodos" :key="todo.id">
       <input type="checkbox" v-model="todo.done">
@@ -505,8 +507,6 @@ const filteredTodos = computed(() => {
       <button @click="removeTodo(todo)">X</button>
     </li>
   </ul>
-  <input v-model="newTodo">
-  <button @click="addTodo">Add Todo</button>
   <button @click="hideCompleted = !hideCompleted">
     {{ hideCompleted ? 'Show all' : 'Hide completed' }}
   </button>
