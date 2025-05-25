@@ -300,16 +300,59 @@ After saving, the number on the button should still go up when you click on it.
 ### Conditional
 
 
+
+```jsx title=".jsx"
+
+```
+
+
+
 ### List
+
+
+
+```jsx title=".jsx"
+
+```
+
 
 
 ### Add items
 
 
+
+```jsx title=".jsx"
+
+```
+
+
+
 ### Remove items
+
+
+
+```jsx title=".jsx"
+
+```
+
 
 
 ### Props
 
 
+
+```jsx title=".jsx"
+
+```
+
+
+
 ### CSS + JS
+
+
+
+```jsx title=".jsx"
+
+```
+
+

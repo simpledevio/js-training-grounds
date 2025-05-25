@@ -220,19 +220,69 @@ After saving, the number on the button should still go up when you click on it.
 ### Conditional
 
 
+
+```svelte title=".svelte"
+
+```
+
+
+
 ### List
+
+
+
+```svelte title=".svelte"
+
+```
+
 
 
 ### Add items
 
 
+
+```svelte title=".svelte"
+
+```
+
+
+
 ### Remove items
+
+
+
+```svelte title=".svelte"
+
+```
+
 
 
 ### Derived state
 
 
+
+```svelte title=".svelte"
+
+```
+
+
+
 ### Props
 
 
+
+```svelte title=".svelte"
+
+```
+
+
+
 ### CSS + JS
+
+
+
+```svelte title=".svelte"
+
+```
+
+
