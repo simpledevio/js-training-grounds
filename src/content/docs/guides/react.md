@@ -296,3 +296,20 @@ export default Counter;
 ```
 
 After saving, the number on the button should still go up when you click on it.
+
+### Conditional
+
+
+### List
+
+
+### Add items
+
+
+### Remove items
+
+
+### Props
+
+
+### CSS + JS

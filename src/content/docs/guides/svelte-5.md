@@ -216,3 +216,23 @@ Create a function called `increment()`. Then replace `count++` with `increment`.
 ```
 
 After saving, the number on the button should still go up when you click on it.
+
+### Conditional
+
+
+### List
+
+
+### Add items
+
+
+### Remove items
+
+
+### Derived state
+
+
+### Props
+
+
+### CSS + JS
