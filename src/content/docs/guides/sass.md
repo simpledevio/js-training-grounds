@@ -23,3 +23,45 @@ This command converts `src/main.scss` into `dist/main.css`. It'll update the fil
 Open the `index.html` file in your browser. The web page should say **Hello World**. You can also use the Live Preview extension to open up `index.html` on localhost:3000.
 
 In your editor, you'll see several files. However, for now you'll mainly be working in `src/main.scss`.
+
+## Comments
+
+```scss title="main.scss"
+
+```
+
+## Variables
+
+```scss title="main.scss"
+
+```
+
+## Nesting
+
+```scss title="main.scss"
+
+```
+
+## Partials and Modules
+
+```scss title="main.scss"
+
+```
+
+## Mixins
+
+```scss title="main.scss"
+
+```
+
+## Inheritance
+
+```scss title="main.scss"
+
+```
+
+## Operators
+
+```scss title="main.scss"
+
+```
