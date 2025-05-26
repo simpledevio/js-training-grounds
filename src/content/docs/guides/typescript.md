@@ -27,19 +27,19 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 
 ## Basic types
 
-```ts title="main.scss"
+```ts title="main.ts"
 
 ```
 
 ## Arrays
 
-```ts title="main.scss"
+```ts title="main.ts"
 
 ```
 
 ## Tuples
 
-```ts title="main.scss"
+```ts title="main.ts"
 
 ```
 
@@ -52,18 +52,18 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 
 ## Interfaces
 
-```ts title="main.scss"
+```ts title="main.ts"
 
 ```
 
 ## Functions
 
-```ts title="main.scss"
+```ts title="main.ts"
 
 ```
 
 ## Union
 
-```ts title="main.scss"
+```ts title="main.ts"
 
 ```
