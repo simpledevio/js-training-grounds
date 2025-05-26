@@ -24,3 +24,46 @@ This command converts `main.ts` into `main.js`. It'll update the file every time
 Open the `index.html` file in your browser. The web page should say **Hello World**. You can also use the Live Preview extension to open up `index.html` on localhost:3000.
 
 In your editor, you'll see several files. However, for now you'll mainly be working in `main.ts`.
+
+## Basic types
+
+```ts title="main.scss"
+
+```
+
+## Arrays
+
+```ts title="main.scss"
+
+```
+
+## Tuples
+
+```ts title="main.scss"
+
+```
+
+
+## Enums
+
+```ts title="main.ts"
+
+```
+
+## Interfaces
+
+```ts title="main.scss"
+
+```
+
+## Functions
+
+```ts title="main.scss"
+
+```
+
+## Union
+
+```ts title="main.scss"
+
+```
