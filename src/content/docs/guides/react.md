@@ -301,8 +301,25 @@ After saving, the number on the button should still go up when you click on it.
 
 
 
-```jsx title=".jsx"
+```jsx title="Counter.jsx"
+import { useState } from 'react';
 
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      {count > 10 && <h1>Good job!</h1>}
+      <button onClick={increment}>Count: {count}</button>
+    </div>
+  );
+}
+
+export default Counter;
 ```
 
 
