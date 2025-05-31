@@ -187,7 +187,7 @@ After saving, the button should still look the same. It still doesn't do anythin
 
 ### Make it reactive
 
-Next, add `onclick={ count++ }` to the button tag.
+Next, add `onclick={ count++ }` to the `<button>` tag.
 
 ```svelte title="Counter.svelte" "onclick={ count++ }"
 <script>
