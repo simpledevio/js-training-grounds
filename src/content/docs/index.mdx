@@ -6,6 +6,9 @@ head:
     content: Quick, text-based coding tutorials | JS Training Grounds
 description: Quick, text-based coding tutorials.
 template: splash
+banner:
+  content: |
+    <a href="https://github.com/simpledevio/js-training-grounds" target="_blank">Star ⭐️ this project on GitHub!</a>
 hero:
   tagline: Quick, text-based coding tutorials.
   actions:
@@ -22,20 +25,20 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## How it works
 
-<CardGrid stagger>
-	<Card title="Open the guide" icon="open-book">
+<CardGrid>
+	<Card title="1. Open the guide" icon="open-book">
 		Visit the guide for the topic you want to learn.
 	</Card>
 
-	<Card title="Download repo" icon="download">
-		Visit the link for the right training ground repo. Download it, unzip it, and open it in your code editor.
+	<Card title="2. Download repo" icon="download">
+		Visit the link for the right training ground repo. Download it, unzip it, and open it in your code editor. (Some tutorials also have a link to a Stackblitz project, which you can open in your web browser and edit online.)
 	</Card>
 
-	<Card title="Run commands" icon="laptop">
-		Run the commands to set up your project. (Usually you just run npm install, npm run dev, and then open the web page in your web browser.)
+	<Card title="3. Run commands" icon="laptop">
+		Run the commands to set up your project. (Usually you just run `npm install`, `npm run dev`, and then open the web page in your web browser.)
 	</Card>
 
-	<Card title="Start learning!" icon="rocket">
+	<Card title="4. Start learning!" icon="rocket">
 		Now you can start following along with the tutorials in your own editor!
 	</Card>
 </CardGrid>
