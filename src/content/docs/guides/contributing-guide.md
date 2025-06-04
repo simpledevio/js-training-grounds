@@ -284,4 +284,6 @@ Assuming you don't delete your fork from GitHub or your local machine, you shoul
 14. Merge pull request
 15. Sync fork with main repo
 
-Assuming everything looks good in your pull request, we'll merge your pull request into our main branch. Remember to sync your main branch with our main branch after we merge your pull request.
+Assuming everything looks good in your pull request, we'll merge your pull request into our main branch. Remember to sync your main branch with our main branch after we merge your pull request (Step 15).
+
+If you're making a larger contribution to a tutorial, the most important thing is that the code snippets work. We should be able to copy and paste them into a project and they should work. The second most important thing is that the tutorials make sense and fit in with our structure.
