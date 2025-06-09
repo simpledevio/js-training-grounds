@@ -324,11 +324,34 @@ export default Counter;
 
 
 
+```jsx title="Counter.jsx"
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      {count > 10 ? <h1>Good job!</h1> : <h1>Let's get started</h1>}
+      <button onClick={increment}>Count: {count}</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+
+
 ### List
 
 
 
-```jsx title=".jsx"
+```jsx title="ListExample.jsx"
 
 ```
 
@@ -338,7 +361,7 @@ export default Counter;
 
 
 
-```jsx title=".jsx"
+```jsx title="ListExample.jsx"
 
 ```
 
@@ -348,7 +371,7 @@ export default Counter;
 
 
 
-```jsx title=".jsx"
+```jsx title="ListExample.jsx"
 
 ```
 
@@ -358,7 +381,7 @@ export default Counter;
 
 
 
-```jsx title=".jsx"
+```jsx title="HelloWorld.jsx"
 
 ```
 
@@ -368,7 +391,7 @@ export default Counter;
 
 
 
-```jsx title=".jsx"
+```jsx title="HelloWorld.jsx"
 
 ```
 
