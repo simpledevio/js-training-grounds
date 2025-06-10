@@ -301,7 +301,7 @@ After saving, the number on the button should still go up when you click on it.
 
 
 
-```jsx title="Counter.jsx"
+```jsx title="Counter.jsx" {12}
 import { useState } from 'react';
 
 function Counter() {
@@ -324,7 +324,7 @@ export default Counter;
 
 
 
-```jsx title="Counter.jsx"
+```jsx title="Counter.jsx" {12}
 import { useState } from 'react';
 
 function Counter() {
@@ -347,12 +347,63 @@ export default Counter;
 
 
 
+```jsx title="Counter.jsx" {10-17, 21}
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  let message;
+  if (count > 10) {
+    message = <h1>Good job!</h1>;
+  } else if (count > 5) {
+    message = <h1>Not bad</h1>;
+  } else {
+    message = <h1>Let's get started</h1>;
+  }
+
+  return (
+    <div>
+      {message}
+      <button onClick={increment}>Count: {count}</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+
+
 ### List
 
 
 
-```jsx title="ListExample.jsx"
+```jsx title="TodoList.jsx"
+import { useState } from 'react';
 
+function TodoList() {
+  let id = 0;
+  const [todos, setTodos] = useState([
+    { id: id++, text: 'Learn HTML' },
+    { id: id++, text: 'Learn JavaScript' },
+    { id: id++, text: 'Learn React' }
+  ]);
+
+  return (
+    <ul>
+      {todos.map(todo => (
+        <li key={todo.id}>{todo.text}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default TodoList;
 ```
 
 
@@ -361,7 +412,7 @@ export default Counter;
 
 
 
-```jsx title="ListExample.jsx"
+```jsx title="TodoList.jsx"
 
 ```
 
@@ -371,7 +422,7 @@ export default Counter;
 
 
 
-```jsx title="ListExample.jsx"
+```jsx title="TodoList.jsx"
 
 ```
 
