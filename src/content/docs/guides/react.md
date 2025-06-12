@@ -387,19 +387,21 @@ export default Counter;
 import { useState } from 'react';
 
 function TodoList() {
-  let id = 0;
-  const [todos, setTodos] = useState([
-    { id: id++, text: 'Learn HTML' },
-    { id: id++, text: 'Learn JavaScript' },
-    { id: id++, text: 'Learn React' }
+  const [items, setItems] = useState([
+    { id: crypto.randomUUID(), text: 'Buy groceries' },
+    { id: crypto.randomUUID(), text: 'Read a book' },
+    { id: crypto.randomUUID(), text: 'Go for a walk' },
   ]);
 
   return (
-    <ul>
-      {todos.map(todo => (
-        <li key={todo.id}>{todo.text}</li>
-      ))}
-    </ul>
+    <div>
+      <h2>Todo List</h2>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -412,8 +414,44 @@ export default TodoList;
 
 
 
-```jsx title="TodoList.jsx"
+```jsx title="TodoList.jsx" {9-18, 28-32}
+import { useState } from 'react';
 
+function TodoList() {
+  const [items, setItems] = useState([
+    { id: crypto.randomUUID(), text: 'Buy groceries' },
+    { id: crypto.randomUUID(), text: 'Read a book' },
+    { id: crypto.randomUUID(), text: 'Go for a walk' },
+  ]);
+  const [newItem, setNewItem] = useState("");
+
+  const handleAdd = () => {
+    if (newItem.trim() === "") return;
+    setItems([
+      ...items,
+      { id: crypto.randomUUID(), text: newItem }
+    ]);
+    setNewItem("");
+  };
+
+  return (
+    <div>
+      <h2>Todo List</h2>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+      <input
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+      <button onClick={handleAdd}>Add</button>
+    </div>
+  );
+}
+
+export default TodoList;
 ```
 
 
@@ -422,7 +460,53 @@ export default TodoList;
 
 
 
-```jsx title="TodoList.jsx"
+```jsx title="TodoList.jsx" {20-22, 31-33}
+import React, { useState } from "react";
+
+function TodoList() {
+  const [items, setItems] = useState([
+    { id: crypto.randomUUID(), text: "Buy groceries" },
+    { id: crypto.randomUUID(), text: "Read a book" },
+    { id: crypto.randomUUID(), text: "Go for a walk" }
+  ]);
+  const [newItem, setNewItem] = useState("");
+
+  const handleAdd = () => {
+    if (newItem.trim() === "") return;
+    setItems([
+      ...items,
+      { id: crypto.randomUUID(), text: newItem }
+    ]);
+    setNewItem("");
+  };
+
+  const handleDelete = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
+  return (
+    <div>
+      <h2>Todo List</h2>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            {item.text}{" "}
+            <button onClick={() => handleDelete(item.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+      <input
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+      <button onClick={handleAdd}>Add</button>
+    </div>
+  );
+}
+
+export default TodoList;
 
 ```
 
