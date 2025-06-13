@@ -205,6 +205,37 @@ After saving, the `<h1>` element should still be red.
 
 ## JS
 
+
+
+### Props
+
+
+
+```jsx title="HelloWorld.jsx" "{name}"
+function HelloWorld({name}) {
+  return <h1>Hello {name}</h1>;
+}
+
+export default HelloWorld;
+```
+
+
+
+```jsx title="App.jsx" 'name="John"'
+import './App.css';
+import HelloWorld from './components/HelloWorld';
+
+function App() {
+  return (
+    <HelloWorld name="John" />
+  );
+}
+
+export default App;
+```
+
+
+
 ### Add a state variable
 
 For this section, we're going to create a new file called `Counter.jsx`. Add the following code to it.
@@ -526,26 +557,32 @@ export default TodoList;
 
 
 
-### Props
-
-
-
-```jsx title="HelloWorld.jsx"
-function HelloWorld({name}) {
-  return <h1>Hello {name}</h1>;
-}
-
-export default HelloWorld;
-```
-
-
-
 ### CSS + JS
 
 
 
 ```jsx title="HelloWorld.jsx"
+import { useState } from 'react';
+import './HelloWorld.css';
 
+function HelloWorld() {
+  const [isActive, setIsActive] = useState(true);
+
+  return (
+    <>
+      <h1 className={isActive ? 'red' : ''}>Hello World</h1>
+      <button onClick={() => setIsActive(!isActive)}>
+        Toggle
+      </button>
+    </>
+  );
+}
 ```
 
 
+
+```css title="HelloWorld.css"
+.red {
+  color: red;
+}
+```
