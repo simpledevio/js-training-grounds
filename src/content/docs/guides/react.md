@@ -410,6 +410,20 @@ export default TodoList;
 
 
 
+```jsx title="App.jsx" {1, 5}
+import TodoList from './components/TodoList';
+
+function App() {
+  return (
+    <TodoList />
+  );
+}
+
+export default App;
+```
+
+
+
 ### Add items
 
 
@@ -517,7 +531,11 @@ export default TodoList;
 
 
 ```jsx title="HelloWorld.jsx"
+function HelloWorld({name}) {
+  return <h1>Hello {name}</h1>;
+}
 
+export default HelloWorld;
 ```
 
 
