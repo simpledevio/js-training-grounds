@@ -557,6 +557,85 @@ export default TodoList;
 
 
 
+### Filter items
+
+
+
+```jsx title="TodoList.jsx" {25-35, 45-50, 54-58} "filteredItems.map"
+import React, { useState } from "react";
+
+function TodoList() {
+  const [items, setItems] = useState([
+    { id: crypto.randomUUID(), text: "Buy groceries" },
+    { id: crypto.randomUUID(), text: "Read a book" },
+    { id: crypto.randomUUID(), text: "Go for a walk" }
+  ]);
+  const [newItem, setNewItem] = useState("");
+  const [hideCompleted, setHideCompleted] = React.useState(false);
+
+  const handleAdd = () => {
+    if (newItem.trim() === "") return;
+    setItems([
+      ...items,
+      { id: crypto.randomUUID(), text: newItem }
+    ]);
+    setNewItem("");
+  };
+
+  const handleDelete = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
+  const toggleItem = (id) => {
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  };
+
+  const filteredItems = hideCompleted
+        ? items.filter((item) => !item.completed)
+        : items;
+
+  return (
+    <div>
+      <h2>Todo List</h2>
+      <input
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+      <button onClick={handleAdd}>Add</button>
+      <input
+        type="checkbox"
+        checked={hideCompleted}
+        onChange={() => setHideCompleted(!hideCompleted)}
+      />
+      <label>Hide Completed</label>
+      <ul>
+        {filteredItems.map((item) => (
+          <li key={item.id}>
+            <input
+              type="checkbox"
+              checked={item.completed}
+              onChange={() => toggleItem(item.id)}
+            />
+            {item.text}{" "}
+            <button onClick={() => handleDelete(item.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoList;
+```
+
+
+
 ### CSS + JS
 
 
