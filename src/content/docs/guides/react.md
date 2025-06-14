@@ -459,7 +459,7 @@ export default App;
 
 
 
-```jsx title="TodoList.jsx" {9-18, 28-32}
+```jsx title="TodoList.jsx" {9-18, 23-27}
 import { useState } from 'react';
 
 function TodoList() {
@@ -482,16 +482,16 @@ function TodoList() {
   return (
     <div>
       <h2>Todo List</h2>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>{item.text}</li>
-        ))}
-      </ul>
       <input
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
       />
       <button onClick={handleAdd}>Add</button>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -505,7 +505,7 @@ export default TodoList;
 
 
 
-```jsx title="TodoList.jsx" {20-22, 31-33}
+```jsx title="TodoList.jsx" {20-22, 36-38}
 import React, { useState } from "react";
 
 function TodoList() {
@@ -532,6 +532,11 @@ function TodoList() {
   return (
     <div>
       <h2>Todo List</h2>
+      <input
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+      <button onClick={handleAdd}>Add</button>
       <ul>
         {items.map((item) => (
           <li key={item.id}>
@@ -542,11 +547,6 @@ function TodoList() {
           </li>
         ))}
       </ul>
-      <input
-        value={newItem}
-        onChange={(e) => setNewItem(e.target.value)}
-      />
-      <button onClick={handleAdd}>Add</button>
     </div>
   );
 }
