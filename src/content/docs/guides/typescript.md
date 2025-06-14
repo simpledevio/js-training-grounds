@@ -28,7 +28,10 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 ## Basic types
 
 ```ts title="main.ts"
-
+// String, number, boolean
+let text: string = "Hello World";
+let age: number = 42;
+let isDone: boolean = true;
 ```
 
 ## Arrays
