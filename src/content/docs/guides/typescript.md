@@ -56,6 +56,21 @@ let person: [string, number] = ["Alice", 30];
 
 ```ts title="main.ts"
 // Enums
+enum Direction {}
+```
+
+```ts title="main.ts"
+// Enums
+enum Direction {
+  Up,
+  Down,
+  Left,
+  Right
+}
+```
+
+```ts title="main.ts"
+// Enums
 enum Direction {
   Up,
   Down,
@@ -67,6 +82,20 @@ let move: Direction = Direction.Up;
 ```
 
 ## Interfaces
+
+```ts title="main.ts"
+// Interfaces
+interface User {}
+```
+
+```ts title="main.ts"
+// Interfaces
+interface User {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+}
+```
 
 ```ts title="main.ts"
 // Interfaces
@@ -90,6 +119,13 @@ let user1: User = {
 function greet(name: string): string {
   return `Hello, ${name}`;
 }
+```
+
+```ts title="main.ts"
+// Functions
+function greet(name: string): string {
+  return `Hello, ${name}`;
+}
 
 function add(a: number, b: number): number {
   return a + b;
@@ -102,6 +138,6 @@ function add(a: number, b: number): number {
 // Union
 let value: string | number;
 
-value = "Hello";
+value = "Hello World";
 value = 123;
 ```
