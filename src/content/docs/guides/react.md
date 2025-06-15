@@ -505,7 +505,7 @@ export default TodoList;
 
 
 
-```jsx title="TodoList.jsx" {20-22, 36-38}
+```jsx title="TodoList.jsx" {20-22, 36-38} collapse={1-18} collapseStyle='collapsible-auto'
 import React, { useState } from "react";
 
 function TodoList() {
