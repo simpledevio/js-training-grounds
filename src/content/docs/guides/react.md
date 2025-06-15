@@ -506,7 +506,7 @@ export default TodoList;
 
 
 ```jsx title="TodoList.jsx" {20-22, 36-38} collapse={1-18} collapseStyle='collapsible-auto'
-import React, { useState } from "react";
+import { useState } from "react";
 
 function TodoList() {
   const [items, setItems] = useState([
@@ -559,19 +559,79 @@ export default TodoList;
 
 ### Filter items
 
-
-
-```jsx title="TodoList.jsx" {25-35, 45-50, 54-58} "filteredItems.map"
-import React, { useState } from "react";
+```jsx title="TodoList.jsx" {24-30, 43-47} ", completed: false"
+import { useState } from "react";
 
 function TodoList() {
   const [items, setItems] = useState([
-    { id: crypto.randomUUID(), text: "Buy groceries" },
-    { id: crypto.randomUUID(), text: "Read a book" },
-    { id: crypto.randomUUID(), text: "Go for a walk" }
+    { id: crypto.randomUUID(), text: "Buy groceries", completed: false },
+    { id: crypto.randomUUID(), text: "Read a book", completed: false },
+    { id: crypto.randomUUID(), text: "Go for a walk", completed: false }
   ]);
   const [newItem, setNewItem] = useState("");
-  const [hideCompleted, setHideCompleted] = React.useState(false);
+
+  const handleAdd = () => {
+    if (newItem.trim() === "") return;
+    setItems([
+      ...items,
+      { id: crypto.randomUUID(), text: newItem }
+    ]);
+    setNewItem("");
+  };
+
+  const handleDelete = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
+  const toggleItem = (id) => {
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  };
+
+  return (
+    <div>
+      <h2>Todo List</h2>
+      <input
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+      <button onClick={handleAdd}>Add</button>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            <input
+              type="checkbox"
+              checked={item.completed}
+              onChange={() => toggleItem(item.id)}
+            />
+            {item.text}{" "}
+            <button onClick={() => handleDelete(item.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoList;
+```
+
+```jsx title="TodoList.jsx" {10, 33-35, 45-50} "filteredItems.map"
+import { useState } from "react";
+
+function TodoList() {
+  const [items, setItems] = useState([
+    { id: crypto.randomUUID(), text: "Buy groceries", completed: false },
+    { id: crypto.randomUUID(), text: "Read a book", completed: false },
+    { id: crypto.randomUUID(), text: "Go for a walk", completed: false }
+  ]);
+  const [newItem, setNewItem] = useState("");
+  const [hideCompleted, setHideCompleted] = useState(false);
 
   const handleAdd = () => {
     if (newItem.trim() === "") return;
