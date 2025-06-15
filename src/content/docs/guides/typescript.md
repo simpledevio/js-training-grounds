@@ -37,36 +37,71 @@ let isDone: boolean = true;
 ## Arrays
 
 ```ts title="main.ts"
-
+// Arrays
+let fruits: string[] = ["apple", "banana", "cherry"];
+let scores: number[] = [95, 82, 76];
+let flags: boolean[] = [true, false, true];
 ```
 
 ## Tuples
 
 ```ts title="main.ts"
-
+// Tuples
+let coords: [number, number] = [10, 20];
+let person: [string, number] = ["Alice", 30];
 ```
 
 
 ## Enums
 
 ```ts title="main.ts"
+// Enums
+enum Direction {
+  Up,
+  Down,
+  Left,
+  Right
+}
 
+let move: Direction = Direction.Up;
 ```
 
 ## Interfaces
 
 ```ts title="main.ts"
+// Interfaces
+interface User {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+}
 
+let user1: User = {
+  name: "John",
+  age: 25,
+  isAdmin: false
+};
 ```
 
 ## Functions
 
 ```ts title="main.ts"
+// Functions
+function greet(name: string): string {
+  return `Hello, ${name}`;
+}
 
+function add(a: number, b: number): number {
+  return a + b;
+}
 ```
 
 ## Union
 
 ```ts title="main.ts"
+// Union
+let value: string | number;
 
+value = "Hello";
+value = 123;
 ```
