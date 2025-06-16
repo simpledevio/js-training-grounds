@@ -26,6 +26,7 @@ export default defineConfig({
 						{ label: 'React (Coming Soon)', slug: 'guides/react' },
 						{ label: 'Svelte 5 (Coming Soon)', slug: 'guides/svelte-5' },
 						{ label: 'TypeScript (Coming Soon)', slug: 'guides/typescript' },
+						{ label: 'Next.js (Coming Soon)', slug: 'guides/next-js' },
 						{ label: 'Tailwind (Coming Soon)', slug: 'guides/tailwind' },
 						{ label: 'Sass (Coming Soon)', slug: 'guides/sass' },
 						{ label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
