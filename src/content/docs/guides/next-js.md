@@ -72,6 +72,11 @@ export default function Home() {
 }
 ```
 
+## Layout
+```jsx title="app/layout.js"
+
+```
+
 ## Image component
 
 ```jsx title="/.js"
@@ -80,6 +85,16 @@ export default function Home() {
 
 ## Fonts
 
+```jsx title="/.js"
+
+```
+
+## Global styles
+```jsx title="/.js"
+
+```
+
+## CSS modules
 ```jsx title="/.js"
 
 ```
