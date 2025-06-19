@@ -71,3 +71,15 @@ export default function Home() {
   );
 }
 ```
+
+## Image component
+
+```jsx title="/.js"
+
+```
+
+## Fonts
+
+```jsx title="/.js"
+
+```
