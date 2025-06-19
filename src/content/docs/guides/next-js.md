@@ -40,3 +40,34 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 ### Stackblitz
 
 If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/next-training-ground?file=app/page.js" target="_blank">Next.js training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
+
+## Create a page
+
+```jsx title="app/about/page.js"
+export default function About() {
+  return (
+    <div>
+      <main>
+        <h1>About</h1>
+      </main>
+    </div>
+  );
+}
+```
+
+## Create a link
+
+```jsx title="app/page.js"
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div>
+      <main>
+        <h1>Hello World</h1>
+        <Link href="/about">About</Link>
+      </main>
+    </div>
+  );
+}
+```
