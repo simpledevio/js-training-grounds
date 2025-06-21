@@ -90,16 +90,28 @@ export default function Home() {
 ```
 
 ## Global styles
+
+```css title="/.css"
+
+```
+
 ```jsx title="/.js"
 
 ```
 
 ## CSS modules
+
+```css title="/.css"
+
+```
+
 ```jsx title="/.js"
 
 ```
 
 ## Metadata
+
+
 ```jsx title="/.js"
 
 ```
