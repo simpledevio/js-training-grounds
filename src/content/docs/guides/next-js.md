@@ -98,3 +98,8 @@ export default function Home() {
 ```jsx title="/.js"
 
 ```
+
+## Metadata
+```jsx title="/.js"
+
+```
