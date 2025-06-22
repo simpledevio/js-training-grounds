@@ -209,7 +209,7 @@ After saving, the `<h1>` element should still be red.
 
 ### Props
 
-
+Add a name prop to the `HelloWorld` component.
 
 ```jsx title="HelloWorld.jsx" "{name}"
 function HelloWorld({name}) {
@@ -219,7 +219,7 @@ function HelloWorld({name}) {
 export default HelloWorld;
 ```
 
-
+Then pass in the name prop to the `HelloWorld` component inside `App.jsx`.
 
 ```jsx title="App.jsx" 'name="John"'
 import './App.css';
@@ -416,7 +416,7 @@ This will display a heading with the phrase "Good job!" in the browser if the co
 
 ### List
 
-For this section, we’re going to create a new file called TodoList.jsx. Add the following code to it.
+For this section, we’re going to create a new file called `TodoList.jsx`. Add the following code to it.
 
 ```jsx title="TodoList.jsx"
 import { useState } from 'react';
@@ -443,7 +443,7 @@ function TodoList() {
 export default TodoList;
 ```
 
-Next, make sure to import it into App.jsx.
+Next, make sure to import it into `App.jsx`.
 
 ```jsx title="App.jsx" {1, 5}
 import TodoList from './components/TodoList';
@@ -461,7 +461,7 @@ export default App;
 
 ### Add items
 
-Next, add a newItem state variable, the handleAdd() function and the input element.
+Next, add a newItem state variable, the `handleAdd()` function and the `<input>` element.
 
 ```jsx title="TodoList.jsx" {9-18, 23-27}
 import { useState } from 'react';
@@ -507,7 +507,7 @@ export default TodoList;
 
 ### Remove items
 
-Next, add the handleDelete() function and the button element.
+Next, add the `handleDelete()` function and the `<button>` element.
 
 ```jsx title="TodoList.jsx" {20-22, 36-38} collapse={1-18}
 import { useState } from "react";
@@ -562,7 +562,7 @@ export default TodoList;
 
 ### Filter items
 
-Next, add the toggleItem() function and the input element. Also, add a completed property to each item in the list of items.
+Next, add the `toggleItem()` function and the `<input>` element. Also, add a completed property to each item in the list of items.
 
 ```jsx title="TodoList.jsx" {24-30, 43-47} ", completed: false" collapse={9-22}
 import { useState } from "react";
@@ -705,11 +705,15 @@ export default TodoList;
 
 ### CSS + JS
 
+For this section, create a new file called `HelloWorld.css` in the components folder.
+
 ```css title="HelloWorld.css"
 .red {
   color: red;
 }
 ```
+
+Next, import that file inside HelloWorld.jsx. Then, use a ternary operator with the className prop to toggle the class. Also, add an onClick prop with an inline function that toggles the isActive state variable.
 
 ```jsx title="HelloWorld.jsx" {2} "className={isActive ? 'red' : ''}" "onClick={() => setIsActive(!isActive)}"
 import { useState } from 'react';
