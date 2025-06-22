@@ -416,7 +416,7 @@ This will display a heading with the phrase "Good job!" in the browser if the co
 
 ### List
 
-
+For this section, we’re going to create a new file called TodoList.jsx. Add the following code to it.
 
 ```jsx title="TodoList.jsx"
 import { useState } from 'react';
@@ -443,7 +443,7 @@ function TodoList() {
 export default TodoList;
 ```
 
-
+Next, make sure to import it into App.jsx.
 
 ```jsx title="App.jsx" {1, 5}
 import TodoList from './components/TodoList';
