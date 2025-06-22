@@ -330,7 +330,7 @@ After saving, the number on the button should still go up when you click on it.
 
 ### Conditional
 
-
+If you only need an if condition, you can use the `&&` syntax in the return statement.
 
 ```jsx title="Counter.jsx" {12}
 import { useState } from 'react';
@@ -353,7 +353,9 @@ function Counter() {
 export default Counter;
 ```
 
+This will display a heading with the phrase "Good job!" in the browser if the count is larger than 10. Try clicking on the button more than 10 times to test it out.
 
+If you need an if and an else statement you can use a ternary operator in the return statement.
 
 ```jsx title="Counter.jsx" {12}
 import { useState } from 'react';
@@ -376,7 +378,9 @@ function Counter() {
 export default Counter;
 ```
 
+This will display a heading with the phrase "Good job!" in the browser if the count is larger than 10. If not, it will display the phrase "Let's get started". Try clicking on the button more than 10 times to test it out.
 
+If you need a more complicated conditional structure, you can use an if/else if/else statement outside of the return statement.
 
 ```jsx title="Counter.jsx" {10-17, 21}
 import { useState } from 'react';
@@ -408,7 +412,7 @@ function Counter() {
 export default Counter;
 ```
 
-
+This will display a heading with the phrase "Good job!" in the browser if the count is larger than 10. If the count is between 5 and 10, it will say "Not bad". If it's less than 5, it will say "Let's get started". Try clicking on the button more than 10 times to test it out.
 
 ### List
 
