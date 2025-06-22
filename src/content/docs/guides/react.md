@@ -461,7 +461,7 @@ export default App;
 
 ### Add items
 
-
+Next, add a newItem state variable, the handleAdd() function and the input element.
 
 ```jsx title="TodoList.jsx" {9-18, 23-27}
 import { useState } from 'react';
@@ -507,9 +507,9 @@ export default TodoList;
 
 ### Remove items
 
+Next, add the handleDelete() function and the button element.
 
-
-```jsx title="TodoList.jsx" {20-22, 36-38} collapse={1-18} collapseStyle='collapsible-auto'
+```jsx title="TodoList.jsx" {20-22, 36-38} collapse={1-18}
 import { useState } from "react";
 
 function TodoList() {
@@ -556,14 +556,15 @@ function TodoList() {
 }
 
 export default TodoList;
-
 ```
 
 
 
 ### Filter items
 
-```jsx title="TodoList.jsx" {24-30, 43-47} ", completed: false"
+Next, add the toggleItem() function and the input element. Also, add a completed property to each item in the list of items.
+
+```jsx title="TodoList.jsx" {24-30, 43-47} ", completed: false" collapse={9-22}
 import { useState } from "react";
 
 function TodoList() {
@@ -625,7 +626,9 @@ function TodoList() {
 export default TodoList;
 ```
 
-```jsx title="TodoList.jsx" {10, 33-35, 45-50} "filteredItems.map"
+Next, add a hideCompleted state variable and a filteredItems variable.
+
+```jsx title="TodoList.jsx" {10, 33-35, 45-50} "filteredItems.map" collapse={12-31}
 import { useState } from "react";
 
 function TodoList() {
@@ -702,9 +705,13 @@ export default TodoList;
 
 ### CSS + JS
 
+```css title="HelloWorld.css"
+.red {
+  color: red;
+}
+```
 
-
-```jsx title="HelloWorld.jsx"
+```jsx title="HelloWorld.jsx" {2} "className={isActive ? 'red' : ''}" "onClick={() => setIsActive(!isActive)}"
 import { useState } from 'react';
 import './HelloWorld.css';
 
@@ -719,13 +726,5 @@ function HelloWorld() {
       </button>
     </>
   );
-}
-```
-
-
-
-```css title="HelloWorld.css"
-.red {
-  color: red;
 }
 ```
