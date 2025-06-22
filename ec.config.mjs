@@ -6,5 +6,6 @@ export default {
   plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
   defaultProps: {
     showLineNumbers: false,
+    collapseStyle: 'collapsible-auto',
   }
 }
