@@ -391,6 +391,16 @@ const todos = [
 </script>
 ```
 
+```vue title="App.vue" {2, 6}
+<script setup>
+import ListExample from './components/ListExample';
+</script>
+
+<template>
+  <ListExample />
+</template>
+```
+
 Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the todos constant.
 
 ```vue title="ListExample.vue" {5-11}
