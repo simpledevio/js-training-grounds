@@ -19,6 +19,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🚀 Project Structure
 
+**NOTE: To see all the files in the project inside VS Code, comment out the list of files in `.vscode/settings.json`.**
+
 Inside of your Astro + Starlight project, you'll see the following folders and files:
 
 ```
@@ -40,6 +42,8 @@ Images can be added to `src/assets/` and embedded in Markdown with a relative li
 
 Static assets, like favicons, can be placed in the `public/` directory.
 
-## 👀 Want to learn more?
+## 👀 Resources
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- [Starlight documentation](https://starlight.astro.build/)
+- [Astro documentation](https://docs.astro.build)
+- [Astro Discord server](https://astro.build/chat)
