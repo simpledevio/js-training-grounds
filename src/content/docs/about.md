@@ -1,6 +1,6 @@
 ---
 title: About
-description: A guide in my new Starlight docs site.
+description: Learn more about JS Training Grounds.
 ---
 
 **JS Training Grounds** is a new project from the Simple Dev team. It's a brand new set of tutorials focused on intermediate JS topics, like React, TypeScript, Next.js, Tailwind, etc. Since the tutorials are focused on intermediate topics, we assume you have a basic understanding of VS Code, HTML, CSS, JS, Git, GitHub, and npm.

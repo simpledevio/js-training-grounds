@@ -1,6 +1,6 @@
 ---
-title: Svelte 5 Tutorial
-description: A guide in my new Starlight docs site.
+title: Svelte 5 Quickstart (Coming Soon)
+description: An interactive quickstart tutorial for Svelte 5.
 ---
 
 This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It also assumes you know what a JS framework is for.

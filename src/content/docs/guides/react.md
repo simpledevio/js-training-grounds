@@ -1,5 +1,5 @@
 ---
-title: React Tutorial (Coming Soon)
+title: React Quickstart (Coming Soon)
 description: An interactive quickstart tutorial for React.
 ---
 

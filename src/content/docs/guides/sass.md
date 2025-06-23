@@ -1,6 +1,6 @@
 ---
-title: Sass Tutorial
-description: A guide in my new Starlight docs site.
+title: Sass Quickstart (Coming Soon)
+description: An interactive quickstart tutorial for Sass.
 ---
 
 This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It also assumes you know what Sass is for.

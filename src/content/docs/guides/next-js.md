@@ -1,6 +1,6 @@
 ---
-title: Next.js Tutorial
-description: A guide in my new Starlight docs site.
+title: Next.js Quickstart (Coming Soon)
+description: An interactive quickstart tutorial for Next.js.
 ---
 
 This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It also assumes you know what a JS framework is for.
