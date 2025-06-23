@@ -462,7 +462,7 @@ export default App;
 
 Next, add a newItem state variable, the `handleAdd()` function and the `<input>` element.
 
-```jsx title="TodoList.jsx" {9-18, 22-26}
+```jsx title="TodoList.jsx" {9-17, 21-25} collapse={1-8}
 import { useState } from 'react';
 
 function TodoList() {
@@ -474,7 +474,6 @@ function TodoList() {
   const [newItem, setNewItem] = useState("");
 
   const handleAdd = () => {
-    if (newItem.trim() === "") return;
     setItems([
       ...items,
       { id: crypto.randomUUID(), text: newItem }
@@ -507,7 +506,7 @@ export default TodoList;
 
 Next, add the `handleDelete()` function and the `<button>` element.
 
-```jsx title="TodoList.jsx" {20-22, 35-37} collapse={1-18}
+```jsx title="TodoList.jsx" {19-21, 34-36} collapse={1-18}
 import { useState } from "react";
 
 function TodoList() {
@@ -519,7 +518,6 @@ function TodoList() {
   const [newItem, setNewItem] = useState("");
 
   const handleAdd = () => {
-    if (newItem.trim() === "") return;
     setItems([
       ...items,
       { id: crypto.randomUUID(), text: newItem }
@@ -561,7 +559,7 @@ export default TodoList;
 
 Next, add the `toggleItem()` function and the `<input>` element. Also, add a completed property to each item in the list of items.
 
-```jsx title="TodoList.jsx" {24-30, 42-46} ", completed: false" collapse={9-22}
+```jsx title="TodoList.jsx" {23-29, 41-45} ", completed: false" collapse={9-22}
 import { useState } from "react";
 
 function TodoList() {
@@ -573,7 +571,6 @@ function TodoList() {
   const [newItem, setNewItem] = useState("");
 
   const handleAdd = () => {
-    if (newItem.trim() === "") return;
     setItems([
       ...items,
       { id: crypto.randomUUID(), text: newItem }
@@ -624,7 +621,7 @@ export default TodoList;
 
 Next, add a hideCompleted state variable and a filteredItems variable.
 
-```jsx title="TodoList.jsx" {10, 33-35, 44-49} "filteredItems.map" collapse={12-31}
+```jsx title="TodoList.jsx" {10, 32-34, 43-48} "filteredItems.map" collapse={12-30}
 import { useState } from "react";
 
 function TodoList() {
@@ -637,7 +634,6 @@ function TodoList() {
   const [hideCompleted, setHideCompleted] = useState(false);
 
   const handleAdd = () => {
-    if (newItem.trim() === "") return;
     setItems([
       ...items,
       { id: crypto.randomUUID(), text: newItem }
