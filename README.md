@@ -1,10 +1,10 @@
 # JS Training Grounds
 
-Open source, up-to-date, text-based coding tutorials.
+Quick, text-based coding tutorials on intermediate JS topics like React, TypeScript, Next.js, Tailwind, and more.
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -17,7 +17,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 🚀 Project Structure
+## Project Structure
 
 **NOTE: To see all the files in the project inside VS Code, comment out the list of files in `.vscode/settings.json`.**
 
@@ -42,7 +42,7 @@ Images can be added to `src/assets/` and embedded in Markdown with a relative li
 
 Static assets, like favicons, can be placed in the `public/` directory.
 
-## 👀 Resources
+## Resources
 
 - [Starlight documentation](https://starlight.astro.build/)
 - [Astro documentation](https://docs.astro.build)
