@@ -129,7 +129,7 @@ After saving, you should see the `<h1>` element turn red in the browser.
 You can also create a style object ahead of time instead of putting the object inline.
 
 ```jsx title="HelloWorld.jsx" {1-3} "{myStyle}"
-const myStyle= {
+const myStyle = {
   color: 'red'
 }
 
@@ -234,7 +234,7 @@ function App() {
 export default App;
 ```
 
-
+The page should display whatever name you passed in.
 
 ### Add a state variable
 
@@ -266,9 +266,9 @@ export default App;
 
 After saving you should see the button appear on screen. It doesn't do anything yet if you click on it.
 
-Import `useState` from React and create a state variable for count.
+Back in `Counter,jsx`, import `useState` from React and create a state variable for count. Replace the number `0` with `{count}`.
 
-```jsx title="Counter.jsx" {1, 4}
+```jsx title="Counter.jsx" {1, 4} "{count}"
 import { useState } from 'react';
 
 function Counter() {
@@ -302,7 +302,7 @@ function Counter() {
 export default Counter;
 ```
 
-After saving, the number on the button will go up when you click on it.
+After saving, the number on the button will go up by 1 when you click on it.
 
 ### Use a function
 
@@ -326,9 +326,11 @@ function Counter() {
 export default Counter;
 ```
 
-After saving, the number on the button should still go up when you click on it.
+After saving, the number on the button should still go up by 1 when you click on it.
 
 ### Conditional
+
+Let's learn how to display elements conditionally.
 
 If you only need an if condition, you can use the `&&` syntax in the return statement.
 
