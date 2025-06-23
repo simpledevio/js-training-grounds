@@ -216,6 +216,26 @@ function greeting() {
 }
 ```
 
+### Collapse
+
+To collapse multiple lines of code, add the collapse attribute with a range of lines. In this example, we're collapsing lines 2 through 4.
+
+````md
+```js title="HelloWorld.js" collapse={2-4}
+// Javascript code with syntax highlighting.
+function greeting() {
+  console.log("Hello World");
+}
+```
+````
+
+```js title="HelloWorld.js" collapse={2-4}
+// Javascript code with syntax highlighting.
+function greeting() {
+  console.log("Hello World");
+}
+```
+
 ## Writing Style
 
 The tutorials on this site should follow this pattern for each section:
@@ -253,9 +273,9 @@ You can see that it has the heading, the various explanations, and the code snip
 
 ## Formatting Rules
 
-- The main rule for our Markdown files is make sure you leave 1 blank line above and below an element. This goes for headings, paragraphs, code snippets, etc. You can view the raw Markdown in our GitHub repo to see examples of this.
-- Use 1 set of asterisks for marking text as italic.
-- Use 2 sets of asterisks instead of 2 underscores for marking text as bold.
+1. The main rule for our Markdown files is make sure you leave 1 blank line above and below an element. This goes for headings, paragraphs, code snippets, etc. You can view the raw Markdown in our GitHub repo to see examples of this.
+2. Use 1 set of asterisks for marking text as italic.
+3. Use 2 sets of asterisks instead of 2 underscores for marking text as bold.
 
 ## Forking Repo
 
@@ -268,22 +288,23 @@ After being assigned the task, you can move on to the setup portion.
 ### Setup
 3. Fork the repo (you only have to do this once)
 4. Clone fork to local machine
-5. Create a new branch on your fork
+5. Run `npm install` to install packages
+6. Create a new branch on your fork
 
-Assuming you don't delete your fork from GitHub or your local machine, you should only have to do steps 3 and 4 once. You *should* do step 5 every time you're assigned a new task.
+Assuming you don't delete your fork from GitHub or your local machine, you should only have to do steps 3 and 4 once. You *should* do step 6 every time you're assigned a new task. (You may have to run `npm install` again if we install more packages in the project later.)
 
 ### Local development
 6. Start dev server using `npm run dev`
-7. Edit files
-8. Stop dev server
+7. Edit file
+8. Stop dev server using Ctrl + C
 9. Create a production build using `npm run build`
 10. Preview the production build using `npm run preview`
-11. Commit files
+11. Commit file
 12. Push to GitHub
-13. Open pull request
+13. Open pull request from your repo on github.com (button should appear)
 14. Merge pull request
 15. Sync fork with main repo
 
-Assuming everything looks good in your pull request, we'll merge your pull request into our main branch. Remember to sync your main branch with our main branch after we merge your pull request (Step 15).
+Assuming everything looks good in your pull request, we'll merge your pull request into our main branch (Step 14). Remember to sync your main branch with our main branch after we merge your pull request (Step 15).
 
-If you're making a larger contribution to a tutorial, the most important thing is that the code snippets work. We should be able to copy and paste them into a project and they should work. The second most important thing is that the tutorials make sense and fit in with our structure.
+If you're making a larger contribution to a tutorial, the most important thing is that the code snippets work. We should be able to copy and paste them into the training ground repos or Stackblitz links and they should work. The second most important thing is that the tutorials make sense and fit in with our structure.
