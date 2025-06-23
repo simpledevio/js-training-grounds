@@ -377,9 +377,9 @@ Now add an `<h1>` with a `v-else-if` directive in the middle. This message will 
 
 ### List
 
-Let's create a new file called `ListExample.vue`. Add the following script element to it. This is the data we're going to display.
+Let's create a new file called `TodoList.vue`. Add the following script element to it. This is the data we're going to display.
 
-```vue title="ListExample.vue"
+```vue title="TodoList.vue"
 <script setup>
 let id = 0;
 
@@ -393,17 +393,17 @@ const todos = [
 
 ```vue title="App.vue" {2, 6}
 <script setup>
-import ListExample from './components/ListExample';
+import TodoList from './components/TodoList';
 </script>
 
 <template>
-  <ListExample />
+  <TodoList />
 </template>
 ```
 
 Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the todos constant.
 
-```vue title="ListExample.vue" {5-11}
+```vue title="TodoList.vue" {5-11}
 <script setup>
 // ...
 </script>
@@ -423,7 +423,7 @@ You should now see a list in your browser.
 
 Next, add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
-```vue title="ListExample.vue" {4-7, 11-12}
+```vue title="TodoList.vue" {4-7, 11-12}
 <script setup>
 // ...
 
@@ -451,7 +451,7 @@ After saving, you should have a working todo list in your browser.
 - Add the `removeTodos()` function
 - Add a `<button>` element inside the `v-for` loop
 
-```vue title="ListExample.vue" {4-6, 15}
+```vue title="TodoList.vue" {4-6, 15}
 <script setup>
 // ...
 
@@ -486,7 +486,7 @@ Let's learn how to toggle the completed items in the todo list. To do this, we n
 - Add a checkbox `<input>`
 - Add a `<button>` to toggle the completed items
 
-```vue title="ListExample.vue" {5, 7-9, 12-16, 26, 31-33} ", computed" /todo in (filteredTodos)/
+```vue title="TodoList.vue" {5, 7-9, 12-16, 26, 31-33} ", computed" /todo in (filteredTodos)/
 <script setup>
 import { ref, computed } from 'vue';
 let id = 0;
