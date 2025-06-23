@@ -429,14 +429,13 @@ function TodoList() {
   ]);
 
   return (
-    <div>
-      <h2>Todo List</h2>
+    <>
       <ul>
         {items.map((item) => (
           <li key={item.id}>{item.text}</li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
@@ -463,7 +462,7 @@ export default App;
 
 Next, add a newItem state variable, the `handleAdd()` function and the `<input>` element.
 
-```jsx title="TodoList.jsx" {9-18, 23-27}
+```jsx title="TodoList.jsx" {9-18, 22-26}
 import { useState } from 'react';
 
 function TodoList() {
@@ -484,8 +483,7 @@ function TodoList() {
   };
 
   return (
-    <div>
-      <h2>Todo List</h2>
+    <>
       <input
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
@@ -496,7 +494,7 @@ function TodoList() {
           <li key={item.id}>{item.text}</li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
@@ -509,7 +507,7 @@ export default TodoList;
 
 Next, add the `handleDelete()` function and the `<button>` element.
 
-```jsx title="TodoList.jsx" {20-22, 36-38} collapse={1-18}
+```jsx title="TodoList.jsx" {20-22, 35-37} collapse={1-18}
 import { useState } from "react";
 
 function TodoList() {
@@ -534,8 +532,7 @@ function TodoList() {
   };
 
   return (
-    <div>
-      <h2>Todo List</h2>
+    <>
       <input
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
@@ -551,7 +548,7 @@ function TodoList() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
@@ -564,7 +561,7 @@ export default TodoList;
 
 Next, add the `toggleItem()` function and the `<input>` element. Also, add a completed property to each item in the list of items.
 
-```jsx title="TodoList.jsx" {24-30, 43-47} ", completed: false" collapse={9-22}
+```jsx title="TodoList.jsx" {24-30, 42-46} ", completed: false" collapse={9-22}
 import { useState } from "react";
 
 function TodoList() {
@@ -597,8 +594,7 @@ function TodoList() {
   };
 
   return (
-    <div>
-      <h2>Todo List</h2>
+    <>
       <input
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
@@ -619,7 +615,7 @@ function TodoList() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
@@ -628,7 +624,7 @@ export default TodoList;
 
 Next, add a hideCompleted state variable and a filteredItems variable.
 
-```jsx title="TodoList.jsx" {10, 33-35, 45-50} "filteredItems.map" collapse={12-31}
+```jsx title="TodoList.jsx" {10, 33-35, 44-49} "filteredItems.map" collapse={12-31}
 import { useState } from "react";
 
 function TodoList() {
@@ -666,8 +662,7 @@ function TodoList() {
         : items;
 
   return (
-    <div>
-      <h2>Todo List</h2>
+    <>
       <input
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
@@ -694,7 +689,7 @@ function TodoList() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
