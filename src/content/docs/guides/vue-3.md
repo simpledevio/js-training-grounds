@@ -335,9 +335,14 @@ Let's add a message that will display when you reach a certain count.
 
 Task: Add an `<h1>` element with the `v-if` directive. The `<h1>` will show when the count is greater than 10.
 
-```vue title="Counter.vue" {6}
+```vue title="Counter.vue" {11} collapse={1-9}
 <script setup>
-// ...
+import { ref } from 'vue';
+const count = ref(0);
+
+function increment() {
+  count.value++;
+}
 </script>
 
 <template>
@@ -348,9 +353,14 @@ Task: Add an `<h1>` element with the `v-if` directive. The `<h1>` will show when
 
 Now add an `<h1>` element with the `v-else` directive. This `<h1>` will show when the count is 10 or less.
 
-```vue title="Counter.vue" {7}
+```vue title="Counter.vue" {12} collapse={1-9}
 <script setup>
-// ...
+import { ref } from 'vue';
+const count = ref(0);
+
+function increment() {
+  count.value++;
+}
 </script>
 
 <template>
@@ -362,9 +372,14 @@ Now add an `<h1>` element with the `v-else` directive. This `<h1>` will show whe
 
 Now add an `<h1>` with a `v-else-if` directive in the middle. This message will be displayed when count is greater than 5 but less than 11.
 
-```vue title="Counter.vue" {7}
+```vue title="Counter.vue" {12} collapse={1-9}
 <script setup>
-// ...
+import { ref } from 'vue';
+const count = ref(0);
+
+function increment() {
+  count.value++;
+}
 </script>
 
 <template>
@@ -403,9 +418,15 @@ import TodoList from './components/TodoList';
 
 Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the todos constant.
 
-```vue title="TodoList.vue" {5-11}
+```vue title="TodoList.vue" {11-17} collapse={1-10}
 <script setup>
-// ...
+let id = 0;
+
+const todos = [
+  { id: id++, text: 'Learn HTML' },
+  { id: id++, text: 'Learn JavaScript' },
+  { id: id++, text: 'Learn Vue' }
+]
 </script>
 
 <template>
@@ -423,9 +444,15 @@ You should now see a list in your browser.
 
 Next, add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
-```vue title="TodoList.vue" {4-7, 11-12}
+```vue title="TodoList.vue" {10-13, 17-18} collapse={1-9}
 <script setup>
-// ...
+let id = 0;
+
+const todos = [
+  { id: id++, text: 'Learn HTML' },
+  { id: id++, text: 'Learn JavaScript' },
+  { id: id++, text: 'Learn Vue' }
+]
 
 function addTodo() {
   todos.value.push({ id: id++, text: newTodo.value });
@@ -451,9 +478,20 @@ After saving, you should have a working todo list in your browser.
 - Add the `removeTodos()` function
 - Add a `<button>` element inside the `v-for` loop
 
-```vue title="TodoList.vue" {4-6, 15}
+```vue title="TodoList.vue" {15-17, 22} collapse={1-14}
 <script setup>
-// ...
+let id = 0;
+
+const todos = [
+  { id: id++, text: 'Learn HTML' },
+  { id: id++, text: 'Learn JavaScript' },
+  { id: id++, text: 'Learn Vue' }
+]
+
+function addTodo() {
+  todos.value.push({ id: id++, text: newTodo.value });
+  newTodo.value = '';
+}
 
 function removeTodo(todo) {
   todos.value = todos.value.filter((t) => t !== todo)
@@ -486,7 +524,7 @@ Let's learn how to toggle the completed items in the todo list. To do this, we n
 - Add a checkbox `<input>`
 - Add a `<button>` to toggle the completed items
 
-```vue title="TodoList.vue" {5, 7-9, 12-16, 26, 31-33} ", computed" /todo in (filteredTodos)/
+```vue title="TodoList.vue" {5, 7-9, 12-16, 33, 38-40} ", computed" /todo in (filteredTodos)/ collapse={17-25}
 <script setup>
 import { ref, computed } from 'vue';
 let id = 0;
@@ -504,7 +542,14 @@ const filteredTodos = computed(() => {
     : todos.value
 })
 
-// addTodo() and removeTodo(todo)...
+function addTodo() {
+  todos.value.push({ id: id++, text: newTodo.value });
+  newTodo.value = '';
+}
+
+function removeTodo(todo) {
+  todos.value = todos.value.filter((t) => t !== todo)
+}
 </script>
 
 <template>
