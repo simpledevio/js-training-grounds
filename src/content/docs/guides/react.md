@@ -1,6 +1,6 @@
 ---
 title: React Tutorial
-description: A guide in my new Starlight docs site.
+description: An interactive quickstart tutorial for React.
 ---
 
 This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It also assumes you know what a JS framework is for.
