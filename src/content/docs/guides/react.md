@@ -69,7 +69,7 @@ In React, a component must return a single JSX element. However, you can have mu
 
 **Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
 
-```jsx title="HelloWorld.jsx" "<p>Lorem ipsum dolor...</p>"
+```jsx title="HelloWorld.jsx" "<p>Lorem ipsum dolor...</p>" "return (" "<>" "</>" ");"
 function HelloWorld() {
   return (
     <>
