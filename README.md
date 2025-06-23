@@ -1,6 +1,6 @@
 # JS Training Grounds
 
-Quick, text-based coding tutorials on intermediate JS topics like React, TypeScript, Next.js, Tailwind, and more.
+Quickstart tutorials for intermediate JS topics like React, TypeScript, Next.js, Tailwind, and more.
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
