@@ -442,17 +442,20 @@ You should now see a list in your browser.
 
 ### Add items
 
-Next, add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
+Next, import ref at the top of the script element. Create a newTodo variable using ref and wrap the array of todos in ref. Then add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
-```vue title="TodoList.vue" {10-13, 17-18} collapse={1-9}
+```vue title="TodoList.vue" {2, 6-11, 13-16, 20-21}
 <script setup>
+import { ref } from 'vue';
+
 let id = 0;
 
-const todos = [
+const newTodo = ref('');
+const todos = ref([
   { id: id++, text: 'Learn HTML' },
   { id: id++, text: 'Learn JavaScript' },
   { id: id++, text: 'Learn Vue' }
-]
+]);
 
 function addTodo() {
   todos.value.push({ id: id++, text: newTodo.value });
@@ -478,15 +481,18 @@ After saving, you should have a working todo list in your browser.
 - Add the `removeTodos()` function
 - Add a `<button>` element inside the `v-for` loop
 
-```vue title="TodoList.vue" {15-17, 22} collapse={1-14}
+```vue title="TodoList.vue" {18-20, 25} collapse={1-17}
 <script setup>
+import { ref } from 'vue';
+
 let id = 0;
 
-const todos = [
+const newTodo = ref('');
+const todos = ref([
   { id: id++, text: 'Learn HTML' },
   { id: id++, text: 'Learn JavaScript' },
   { id: id++, text: 'Learn Vue' }
-]
+]);
 
 function addTodo() {
   todos.value.push({ id: id++, text: newTodo.value });
