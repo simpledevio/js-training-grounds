@@ -43,7 +43,7 @@ If you prefer to work online, you can also open the <a href="https://stackblitz.
 
 ## Create a page
 
-To create an about page, create a folder called `about` inside the `app` folder. Then create a file called `page.js` inside the about folder. Add the following code to it.
+To create an about page, create a folder called `about` inside the `app` folder. Then create a file called `page.js` inside the `about` folder. Add the following code to it.
 
 ```jsx title="app/about/page.js"
 export default function About() {
@@ -59,7 +59,7 @@ export default function About() {
 
 ## Create a link
 
-To link to the about page from the home page, first import the Link component at the top of the page.js file. Then you can insert a Link component below the h1 element.
+To link to the about page from the home page, first import the `<Link>` component at the top of the `page.js` file. Then you can insert a `<Link>` component below the `<h1>` element.
 
 ```jsx title="app/page.js" {1, 8}
 import Link from "next/link";
@@ -78,7 +78,7 @@ export default function Home() {
 
 ## Layout
 
-Before we look at our next topic, open up `layout.js` so you can see how it affects the other files. The page.js files insert their content where the children prop is.
+Before we look at our next topic, open up `layout.js` so you can see how it affects the other files. The `page.js` files insert their content where the children prop is.
 
 ```jsx title="app/layout.js"
 export const metadata = {
@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
 
 ## Image component
 
-To add an image, you can use the Image component. First, import the Image component at the top of the file. Then you can use it below the h1 element.
+To add an image, you can use the `<Image>` component. First, import the `<Image>` component at the top of the file. Then you can use it below the `<h1>` element.
 
 ```jsx title="app/page.js" {1, 9-14}
 import Image from 'next/image';
@@ -123,7 +123,7 @@ export default function Home() {
 
 ## Fonts
 
-To use a Google Font, you need to import it from next/font/google. Then, call it as a function. Lastly, set the className of the element you want to modify.
+To use a Google Font, you need to import it from `next/font/google`. Then, call it as a function. Lastly, set the `className` of the element you want to modify.
 
 ```jsx title="app/layout.js" {1-5} "className={geist.className}"
 import { Geist } from 'next/font/google'
@@ -148,7 +148,7 @@ export default function RootLayout({ children }) {
 
 ## Metadata
 
-To add metadata to a page, export a Metadata object.
+To add metadata to a page, export a `Metadata` object.
 
 ```jsx title="app/about/page.js" {1-4}
 export const metadata = {
@@ -169,7 +169,7 @@ export default function About() {
 
 ## Global styles
 
-To add a global style, add your rule to the globals.css file. Then import it at the top of the layout.js file.
+To add a global style, add your rule to the `globals.css` file. Then import it at the top of the `layout.js` file.
 
 ```css title="app/globals.css"
 h1 {
@@ -196,7 +196,7 @@ export default function RootLayout({ children }) {
 
 ## CSS modules
 
-To apply a rule just to the home page, add your rule to the page.module.css file. Then import it at the top of the page.js file. In this example, we're importing the CSS file as styles.
+To apply a rule just to the home page, add your rule to the `page.module.css` file. Then import it at the top of the `page.js` file. In this example, we're importing the CSS file as styles.
 
 ```css title="app/page.module.css"
 .title {
