@@ -16,6 +16,7 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'About', slug: 'about' },
+						{ label: 'Support Us', slug: 'support-us' },
 					],
 				},
 				{
