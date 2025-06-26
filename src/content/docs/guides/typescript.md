@@ -3,7 +3,7 @@ title: TypeScript Quickstart (Coming Soon)
 description: An interactive quickstart tutorial for TypeScript.
 ---
 
-This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It also assumes you know what a JS framework is for.
+This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It also assumes you know what TypeScript is for.
 
 ## Setup
 
@@ -27,6 +27,10 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 
 ## Basic types
 
+Basic types in TypeScript include string, number, and boolean, which add type safety to your variables.
+
+To declare the type on a variable, add a colon after the variable name, a space, and then the type.
+
 ```ts title="main.ts"
 // String, number, boolean
 let text: string = "Hello World";
@@ -35,6 +39,10 @@ let isDone: boolean = true;
 ```
 
 ## Arrays
+
+Arrays in TypeScript can be typed to hold only specific data types.
+
+To declare the type on an array, add a colon after the variable name, a space, the type, and then a pair of square brackets.
 
 ```ts title="main.ts"
 // Arrays
@@ -45,6 +53,10 @@ let flags: boolean[] = [true, false, true];
 
 ## Tuples
 
+Tuples are fixed-length arrays where each element has a known, specific type.
+
+To declare a tuple, add a colon after the variable name, a space, and a pair of square brackets. You would then list the types that the tuple would contain inside the square brackets.
+
 ```ts title="main.ts"
 // Tuples
 let coords: [number, number] = [10, 20];
@@ -54,10 +66,16 @@ let person: [string, number] = ["Alice", 30];
 
 ## Enums
 
+Enums are a set of named constants. They make your code more readable and type-safe.
+
+To create one, type the word `enum`, the name of your enum, and then a pair of curly braces. In this example, we're creating an enum called `Direction`.
+
 ```ts title="main.ts"
 // Enums
 enum Direction {}
 ```
+
+Then you can list out the constants inside the curly braces, separated by commas.
 
 ```ts title="main.ts"
 // Enums
@@ -68,6 +86,8 @@ enum Direction {
   Right
 }
 ```
+
+Now you can use the Direction type with a variable. To use the constants, type the enum name, a period, and then the constant name.
 
 ```ts title="main.ts"
 // Enums
@@ -83,10 +103,16 @@ let move: Direction = Direction.Up;
 
 ## Interfaces
 
+Interfaces describe the structure of an object by specifying required properties and their types.
+
+To create one, type the word `interface`, the name of your interface, and then a pair of curly braces. In this example, we're creating an interface called User.
+
 ```ts title="main.ts"
 // Interfaces
 interface User {}
 ```
+
+Next, you can list out the properties inside the curly braces along with their types.
 
 ```ts title="main.ts"
 // Interfaces
@@ -96,6 +122,8 @@ interface User {
   isAdmin: boolean;
 }
 ```
+
+Now you can use the User type with an object. Make sure the object matches the properties listed in the interface.
 
 ```ts title="main.ts"
 // Interfaces
@@ -114,12 +142,20 @@ let user1: User = {
 
 ## Functions
 
+Functions in TypeScript can have typed parameters and return values for better predictability.
+
+To add types to parameters, add colons after the parameters and add the types. To add types to the return values, add a colon after the closing parenthesis and add the type after that.
+
+In this example, we're adding a string type to the name parameter and a string type for the return value.
+
 ```ts title="main.ts"
 // Functions
 function greet(name: string): string {
   return `Hello, ${name}`;
 }
 ```
+
+In the next example, we're adding number types to both parameters and a number type for the return value.
 
 ```ts title="main.ts"
 // Functions
@@ -133,6 +169,10 @@ function add(a: number, b: number): number {
 ```
 
 ## Union
+
+Union types allow a variable to hold more than one type, increasing flexibility while maintaining type safety.
+
+To create a union type, you use the pipe character. In this example, we're creating a variable called `value` that can be a string or a number.
 
 ```ts title="main.ts"
 // Union
