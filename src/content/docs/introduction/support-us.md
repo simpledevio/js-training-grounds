@@ -1,6 +1,7 @@
 ---
 title: Support Us
 description: Learn how to support JS Training Grounds.
+slug: support-us
 ---
 
 Thanks for checking out JS Training Grounds! Here are some of the ways you can help the project succeed.
