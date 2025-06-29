@@ -706,7 +706,7 @@ For this section, create a new file called `HelloWorld.css` in the components fo
 }
 ```
 
-Next, import that file inside HelloWorld.jsx. Then, use a ternary operator with the className prop to toggle the class. Also, add an onClick prop with an inline function that toggles the isActive state variable.
+Next, import that file inside `HelloWorld.jsx`. Then, use a ternary operator with the className prop to toggle the class. Also, add an onClick prop with an inline function that toggles the isActive state variable.
 
 ```jsx title="HelloWorld.jsx" {2} "className={isActive ? 'red' : ''}" "onClick={() => setIsActive(!isActive)}"
 import { useState } from 'react';
