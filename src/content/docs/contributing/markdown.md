@@ -45,13 +45,15 @@ If you prefer to work online, you can also open the <a href="https://stackblitz.
 
 ## Headings
 
+Use `#` to create different headings. You can also create a level 1 heading by underlining the text with equals signs and a level 2 heading by underlining the text with dashes. On JS Training Grounds, we use hashtags.
+
 ```md
-# Heading
-## Heading
-### Heading
-#### Heading
-##### Heading
-###### Heading
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
 ```
 ```md
 Heading 1
@@ -62,7 +64,17 @@ Heading 2
 ---------
 ```
 
+NOTE: The level 1 heading in JS Training Grounds is actually created using the title attribute at the top of the page. This is a Starlight feature and not specific to Markdown. This means you should skip the level 1 heading and start with level 2 headings when adding content to JS Training Grounds.
+
+```
+---
+title: Main Heading
+---
+```
+
 ## Paragraph
+
+You don't need any special symbols to create a paragraph in Markdown. To create multiple paragraphs, separate them with a blank line.
 
 ```md
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -72,18 +84,22 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 ## Unordered lists
 
+Use dashes or asterisks to create unordered lists. On JS Training Grounds, we use dashes.
+
 ```md
-*
-*
-*
+-
+-
+-
 ```
 ```md
--
--
--
+*
+*
+*
 ```
 
 ## Ordered lists
+
+Use numbers with periods or parentheses to create ordered lists. On JS Training Grounds, we use periods.
 
 ```md
 1.
@@ -98,6 +114,8 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 ## Italic text
 
+Use a single set of asterisks or underscores to make text italic. On JS Training Grounds, we use asterisks.
+
 ```md
 *Italic*
 ```
@@ -106,6 +124,8 @@ _Italic_
 ```
 
 ## Bold text
+
+Use 2 pairs of asterisks or underscores to make text bold. On JS Training Grounds, we use asterisks.
 
 ```md
 **Bold**
@@ -116,21 +136,30 @@ __Bold__
 
 ## Links
 
+Use square brackets and parentheses to create links. You can also use the second notation to add links at the bottom of the page. On JS Training Grounds, we use the first method.
+
 ```md
 [Link](http://example.com/)
 ```
 ```md
 [Link][1]
+
+Other stuff goes here...
+
 [1]: http://example.com/
 ```
 
 ## Blockquotes
 
+Use `>` to create a blockquote.
+
 ```md
->
+> This is a blockquote.
 ```
 
 ## Horizontal Rules
+
+Use 3 dashes or asterisks to create a horizontal rule.
 
 ```md
 ---
@@ -141,11 +170,15 @@ __Bold__
 
 ## Inline code
 
+Use backticks to create inline code.
+
 ```md
-`Inline code` with backticks
+`Inline code`
 ```
 
 ## Code blocks
+
+Use 3 backticks to open and close a code block.
 
 ````md
 ```
