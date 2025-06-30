@@ -1,0 +1,75 @@
+---
+title: Contributing Guide
+description: A guide in my new Starlight docs site.
+slug: guides/contributing-guide
+---
+
+## Forking Repo
+
+### Identify Task
+1. <a href="https://github.com/simpledevio/js-training-grounds/issues" target="_blank">Create an issue on the main repo</a>
+2. Wait to be assigned the task
+
+After being assigned the task, you can move on to the next steps.
+
+### Setup
+
+We recommend using GitHub Desktop when contributing to this project. However, we've also included the relevant Git commands below if you prefer working with the command line.
+
+3. Fork the <a href="https://github.com/simpledevio/js-training-grounds" target="_blank">main repo on github.com</a> (you only have to do this once)
+4. Clone your fork to your local machine
+```
+git clone https://github.com/your-username/js-training-grounds.git
+```
+5. Run `npm install` to install the packages
+```
+npm install
+```
+6. Create a new branch on your fork locally (replace `your-branch-name` with your actual branch name)
+```
+git checkout -b your-branch-name
+```
+
+Assuming you don't delete your fork from GitHub or your local machine, you should only have to do steps 3 and 4 once. You *must* do step 6 every time you're assigned a new task (*NEVER* commit to `main`). You may have to run `npm install` again if we install more packages in the project later.
+
+### Local development
+7. Start the dev server using `npm run dev`
+```
+npm run dev
+```
+8. Edit and save the file (you will likely only work on one file at a time)
+9. Check the results at <a href="http://localhost:4321/" target="_blank">localhost:4321</a> in your browser
+10. Stop the dev server using Ctrl + C
+11. Create a production build using `npm run build`
+```
+npm run build
+```
+12. Preview the production build using `npm run preview`
+```
+npm run preview
+```
+13. Check the results at <a href="http://localhost:4321/" target="_blank">localhost:4321</a> in your browser
+14. Stop the server using Ctrl + C
+15. Stage the file using `git add .`
+```
+git add .
+```
+16. Commit the file using `git commit -m` (replace the 3 dots with your actual commit message)
+```
+git commit -m "..."
+```
+17. Push your branch to GitHub (replace `your-branch-name` with your actual branch name)
+```
+git push origin your-branch-name
+```
+18. Open a pull request from your repo on github.com (a button should appear on your repo)
+19. Merge pull request (we'll handle this step)
+20. Sync your fork with the main repo on github.com (a button should appear on your repo)
+
+If everything looks good in your pull request, we'll merge your pull request into our main branch (Step 19). If there are some issues in the pull request, we'll leave a comment on it, and you can try making more commits. After we merge your pull request, you'll need to sync your fork with our repo (Step 20). This means that your main branch will now be up-to-date with our main branch.
+
+If you decide to make more contributions to the project, you will likely have to sync your fork any time you need to create a new branch. This will allow you to get any changes we've made to the project or other contributors have made.
+
+### Getting contributions accepted
+
+If you're making a larger contribution to a tutorial, the most important thing is that the code snippets work. We should be able to copy and paste them into the training ground repos or Stackblitz links and they should work. The second most important thing is that the tutorials make sense and fit in with our structure.

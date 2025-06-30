@@ -30,9 +30,16 @@ export default defineConfig({
 						{ label: 'Vue 3', slug: 'guides/vue-3' },
 						{ label: 'Svelte 5 (Coming Soon)', slug: 'guides/svelte-5' },
 						{ label: 'Sass (Coming Soon)', slug: 'guides/sass' },
-						{ label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
+						// { label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
 					],
 				},
+				{
+					label: 'Contributing',
+					items: [
+						{ label: 'Markdown (Coming Soon)', slug: 'guides/markdown' },
+						{ label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
+					],
+				}
 			],
 			expressiveCode: {
         // Replace the default themes with a custom set of bundled themes
