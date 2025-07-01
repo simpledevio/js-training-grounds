@@ -6,7 +6,7 @@ slug: guides/markdown
 
 This tutorial is for people interested in contributing to **JS Training Grounds**.
 
-JS Training Grounds is built using a documentation generator called **Starlight**. Starlight is built on top of **Astro**, and includes a plugin called **Expressive Code** that enables some really nice syntax highlighting features. This tutorial will show you the different Expressive Code features we use on JS Training Grounds to highlight our code snippets.
+JS Training Grounds is built using a documentation generator called **Starlight**. Starlight is built on top of **Astro**, and allows you to use Markdown to write your content. It also includes a plugin called **Expressive Code** that enables some really nice syntax highlighting features. This tutorial will show you how to write Markdown and the different Expressive Code features we use on JS Training Grounds to highlight our code snippets.
 
 This tutorial assumes you're already familiar with VS Code, GitHub, and npm.
 
