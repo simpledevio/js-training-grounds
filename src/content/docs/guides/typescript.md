@@ -181,3 +181,24 @@ let value: string | number;
 value = "Hello World";
 value = 123;
 ```
+
+## Type aliases
+
+Type aliases let you create a reusable name for any type, including unions.
+
+To define a type alias, you use the keyword `type`. In this example, the type ID can be a string or a number.
+
+```ts title="main.ts"
+type ID = string | number;
+let userId: ID = 101;
+```
+
+## Literal types
+
+Literal types allow a variable to accept only a specific, predefined set of values.
+
+To declare a literal type, you can use the pipe character. In this example, the direction can only be equal to the strings "up" or "down".
+
+```ts title="main.ts"
+let direction: "up" | "down" = "up";
+```
