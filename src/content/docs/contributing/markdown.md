@@ -45,7 +45,7 @@ If you prefer to work online, you can also open the <a href="https://stackblitz.
 
 ## Headings
 
-Use `#` to create different headings. You can also create a level 1 heading by underlining the text with equals signs and a level 2 heading by underlining the text with dashes. On JS Training Grounds, we use hashtags.
+You can use hashtags to create different headings. You can also create a level 1 heading by underlining the text with equals signs and a level 2 heading by underlining the text with dashes. On JS Training Grounds, we use hashtags.
 
 ```md
 # Heading 1
@@ -84,7 +84,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 ## Unordered lists
 
-Use dashes or asterisks to create unordered lists. On JS Training Grounds, we use dashes.
+You can use dashes or asterisks to create unordered lists. On JS Training Grounds, we use dashes.
 
 ```md
 -
@@ -99,7 +99,7 @@ Use dashes or asterisks to create unordered lists. On JS Training Grounds, we us
 
 ## Ordered lists
 
-Use numbers with periods or parentheses to create ordered lists. On JS Training Grounds, we use periods.
+You can use numbers with periods or parentheses to create ordered lists. On JS Training Grounds, we use periods.
 
 ```md
 1.
@@ -114,7 +114,7 @@ Use numbers with periods or parentheses to create ordered lists. On JS Training 
 
 ## Italic text
 
-Use a single set of asterisks or underscores to make text italic. On JS Training Grounds, we use asterisks.
+You can use a single set of asterisks or underscores to make text italic. On JS Training Grounds, we use asterisks.
 
 ```md
 *Italic*
@@ -125,7 +125,7 @@ _Italic_
 
 ## Bold text
 
-Use 2 pairs of asterisks or underscores to make text bold. On JS Training Grounds, we use asterisks.
+You can use 2 pairs of asterisks or underscores to make text bold. On JS Training Grounds, we use asterisks.
 
 ```md
 **Bold**
@@ -136,7 +136,7 @@ __Bold__
 
 ## Links
 
-Use square brackets and parentheses to create links. You can also use the second notation to add links at the bottom of the page. On JS Training Grounds, we use the first method.
+You can use square brackets and parentheses to create links. You can also use the second notation to add links at the bottom of the page. On JS Training Grounds, we use the first method.
 
 ```md
 [Link](http://example.com/)
@@ -151,7 +151,7 @@ Other stuff goes here...
 
 ## Blockquotes
 
-Use `>` to create a blockquote.
+You can use the greater than sign to create a blockquote.
 
 ```md
 > This is a blockquote.
@@ -159,7 +159,7 @@ Use `>` to create a blockquote.
 
 ## Horizontal Rules
 
-Use 3 dashes or asterisks to create a horizontal rule.
+You can use 3 dashes or asterisks to create a horizontal rule.
 
 ```md
 ---
