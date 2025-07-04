@@ -225,8 +225,55 @@ After saving, the number on the button should still go up when you click on it.
 
 
 
-```svelte title=".svelte"
+```svelte title="Counter.svelte"
+<script>
+  let count = $state(0);
 
+  function increment() {
+    count++;
+  }
+</script>
+
+{#if count > 10}
+	<h1>Good job!</h1>
+{/if}
+<button onclick={increment}>Count: { count }</button>
+```
+
+```svelte title="Counter.svelte"
+<script>
+  let count = $state(0);
+
+  function increment() {
+    count++;
+  }
+</script>
+
+{#if count > 10}
+	<h1>Good job!</h1>
+{:else}
+  <h1>Let's get started</h1>
+{/if}
+<button onclick={increment}>Count: { count }</button>
+```
+
+```svelte title="Counter.svelte"
+<script>
+  let count = $state(0);
+
+  function increment() {
+    count++;
+  }
+</script>
+
+{#if count > 10}
+	<h1>Good job!</h1>
+{:else if count > 5}
+  <h1>Not bad</h1>
+{:else}
+  <h1>Let's get started</h1>
+{/if}
+<button onclick={increment}>Count: { count }</button>
 ```
 
 
