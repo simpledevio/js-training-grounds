@@ -157,15 +157,23 @@ You can use the greater than sign to create a blockquote.
 > This is a blockquote.
 ```
 
-## Horizontal Rules
+## Horizontal rules
 
 You can use 3 dashes or asterisks to create a horizontal rule.
 
 ```md
+Lorem ipsum dolor.
+
 ---
+
+Ut enim ad.
 ```
 ```md
+Lorem ipsum dolor.
+
 ***
+
+Ut enim ad.
 ```
 
 ## Inline code
@@ -182,28 +190,21 @@ Use 3 backticks to open and close a code block.
 
 ````md
 ```
+function greeting() {
+  console.log("Hello World");
+}
 ```
 ````
+
+The snippet above will look like this when rendered:
+
+```
+function greeting() {
+  console.log("Hello World");
+}
+```
 
 ## Expressive Code
-
-### Basic code block
-
-To create a basic coding block, wrap the code in 3 backticks on the top and bottom.
-
-````md
-```
-function greeting() {
-  console.log("Hello World");
-}
-```
-````
-
-```
-function greeting() {
-  console.log("Hello World");
-}
-```
 
 ### Syntax highlighting
 
