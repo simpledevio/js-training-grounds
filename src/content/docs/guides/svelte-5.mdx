@@ -225,7 +225,7 @@ After saving, the number on the button should still go up when you click on it.
 
 
 
-```svelte title="Counter.svelte"
+```svelte title="Counter.svelte" {9-11}
 <script>
   let count = $state(0);
 
@@ -240,7 +240,9 @@ After saving, the number on the button should still go up when you click on it.
 <button onclick={increment}>Count: { count }</button>
 ```
 
-```svelte title="Counter.svelte"
+
+
+```svelte title="Counter.svelte" {11-12}
 <script>
   let count = $state(0);
 
@@ -257,7 +259,9 @@ After saving, the number on the button should still go up when you click on it.
 <button onclick={increment}>Count: { count }</button>
 ```
 
-```svelte title="Counter.svelte"
+
+
+```svelte title="Counter.svelte" {11-12}
 <script>
   let count = $state(0);
 
