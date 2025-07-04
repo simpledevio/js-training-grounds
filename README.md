@@ -12,10 +12,14 @@ All commands are run from the root of the project, from a terminal:
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run devo`            | Starts local dev server and opens browser        |
+| `npm run devh`            | Starts local dev server exposed to network       |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm outdated`            | View outdated packages                           |
+| `npx @astrojs/upgrade`    | Update Starlight                                 |
 
 ## Project Structure
 
@@ -41,6 +45,13 @@ Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. 
 Images can be added to `src/assets/` and embedded in Markdown with a relative link.
 
 Static assets, like favicons, can be placed in the `public/` directory.
+
+## VS Code Extensions
+
+For the best experience, you should install these extensions in VS Code.
+
+- [Astro VS Code Extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
+- [MDX VS Code Extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
 
 ## Resources
 
