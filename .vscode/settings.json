@@ -7,6 +7,7 @@
     "public": true,
     "src/assets": true,
     "src/content.config.ts": true,
-    "tsconfig.json": true
+    "tsconfig.json": true,
+    "LICENSE.md": true
   }
 }
