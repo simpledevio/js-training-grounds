@@ -287,7 +287,21 @@ After saving, the number on the button should still go up when you click on it.
 
 
 ```svelte title="TodoList.svelte"
+<script>
+	let id = 0;
 
+	let todos = $state([
+		{ id: id++, text: 'Learn HTML' },
+		{ id: id++, text: 'Learn JavaScript' },
+		{ id: id++, text: 'Learn Svelte' }
+	]);
+</script>
+
+<ul>
+	{#each todos as todo (todo.id)}
+		<li>{todo.text}</li>
+	{/each}
+</ul>
 ```
 
 
@@ -297,7 +311,31 @@ After saving, the number on the button should still go up when you click on it.
 
 
 ```svelte title="TodoList.svelte"
+<script>
+	let id = 0;
 
+	let newTodo = $state('');
+	let todos = $state([
+		{ id: id++, text: 'Learn HTML' },
+		{ id: id++, text: 'Learn JavaScript' },
+		{ id: id++, text: 'Learn Svelte' }
+	]);
+
+	function addTodo() {
+		if (newTodo.trim() !== '') {
+			todos.push({ id: id++, text: newTodo });
+			newTodo = '';
+		}
+	}
+</script>
+
+<input bind:value={newTodo} />
+<button onclick={addTodo}>Add Todo</button>
+<ul>
+	{#each todos as todo (todo.id)}
+		<li>{todo.text}</li>
+	{/each}
+</ul>
 ```
 
 
@@ -307,6 +345,42 @@ After saving, the number on the button should still go up when you click on it.
 
 
 ```svelte title="TodoList.svelte"
+<script>
+	let id = 0;
+
+	let newTodo = $state('');
+	let todos = $state([
+		{ id: id++, text: 'Learn HTML' },
+		{ id: id++, text: 'Learn JavaScript' },
+		{ id: id++, text: 'Learn Svelte' }
+	]);
+
+	function addTodo() {
+		if (newTodo.trim() !== '') {
+			todos.push({ id: id++, text: newTodo });
+			newTodo = '';
+		}
+	}
+
+	function removeTodo(todoId) {
+		// Find the index and remove it from the array
+		const idx = todos.findIndex(todo => todo.id === todoId);
+		if (idx !== -1) {
+			todos.splice(idx, 1);
+		}
+	}
+</script>
+
+<input bind:value={newTodo} />
+<button onclick={addTodo}>Add Todo</button>
+<ul>
+	{#each todos as todo (todo.id)}
+		<li>
+			{todo.text}
+			<button onclick={() => removeTodo(todo.id)}>X</button>
+		</li>
+	{/each}
+</ul>
 
 ```
 
@@ -317,7 +391,55 @@ After saving, the number on the button should still go up when you click on it.
 
 
 ```svelte title="TodoList.svelte"
+<script>
+	let id = 0;
 
+	let newTodo = $state('');
+	let todos = $state([
+		{ id: id++, text: 'Learn HTML', done: false },
+		{ id: id++, text: 'Learn JavaScript', done: false },
+		{ id: id++, text: 'Learn Svelte', done: false }
+	]);
+
+	let hideCompleted = $state(false);
+
+	function addTodo() {
+		if (newTodo.trim() !== '') {
+			todos.push({ id: id++, text: newTodo, done: false });
+			newTodo = '';
+		}
+	}
+
+	function removeTodo(todoId) {
+		const idx = todos.findIndex(todo => todo.id === todoId);
+		if (idx !== -1) {
+			todos.splice(idx, 1);
+		}
+	}
+
+	let visibleTodos = $derived(
+		hideCompleted
+			? todos.filter(todo => !todo.done)
+			: todos
+	);
+</script>
+
+<input bind:value={newTodo} />
+<button onclick={addTodo}>Add Todo</button>
+<label>
+	<input type="checkbox" bind:checked={hideCompleted} />
+	Hide completed
+</label>
+
+<ul>
+	{#each visibleTodos as todo (todo.id)}
+		<li>
+			<input type="checkbox" bind:checked={todo.done} />
+			<span>{todo.text}</span>
+			<button onclick={() => removeTodo(todo.id)}>X</button>
+		</li>
+	{/each}
+</ul>
 ```
 
 
