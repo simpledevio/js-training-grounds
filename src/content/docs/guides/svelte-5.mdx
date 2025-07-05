@@ -326,8 +326,22 @@ After saving, the number on the button should still go up when you click on it.
 
 
 
-```svelte title="HelloWorld.svelte"
+```svelte title="HelloWorld.svelte" {1-3}
+<script>
+  let { name } = $props();
+</script>
 
+<h1>Hello { name }</h1>
+```
+
+
+
+```svelte title="App.svelte" 'name="John"'
+<script>
+  import HelloWorld from './lib/HelloWorld.svelte'
+</script>
+
+<HelloWorld name="John" />
 ```
 
 
@@ -337,7 +351,22 @@ After saving, the number on the button should still go up when you click on it.
 
 
 ```svelte title="HelloWorld.svelte"
+<script>
+  let isActive = $state(false);
+</script>
 
+<h1 class="{isActive ? 'red' : ''}">Hello World</h1>
+<button
+  onclick={() => isActive = !isActive}
+>
+Toggle
+</button>
+
+<style>
+  .red {
+    color: red;
+  }
+</style>
 ```
 
 
