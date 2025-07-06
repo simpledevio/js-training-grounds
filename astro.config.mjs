@@ -29,6 +29,7 @@ export default defineConfig({
 						{ label: 'Tailwind (Coming Soon)', slug: 'guides/tailwind' },
 						{ label: 'Vue 3 (Coming Soon)', slug: 'guides/vue-3' },
 						{ label: 'Svelte 5 (Coming Soon)', slug: 'guides/svelte-5' },
+						{ label: 'Angular (Coming Soon)', slug: 'guides/angular' },
 						{ label: 'Sass (Coming Soon)', slug: 'guides/sass' },
 						// { label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
 					],
