@@ -167,7 +167,7 @@ export class App {
 </div>
 ```
 
-```ts title="todo-list.ts"
+```ts title="todo-list.ts" {3-6, 14-18}
 import { Component, signal } from '@angular/core';
 
 interface TodoItem {
@@ -213,7 +213,7 @@ export class App {
 
 ### Add items
 
-```html title="todo-list.html"
+```html title="todo-list.html" {2-9}
 <div>
 <form (ngSubmit)="addTask()" #taskForm="ngForm">
   <input
@@ -233,7 +233,7 @@ export class App {
 </div>
 ```
 
-```ts title="todo-list.ts"
+```ts title="todo-list.ts" {2, 11, 20-26}
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -265,7 +265,7 @@ export class TodoList {
 
 ### Remove items
 
-```html title="todo-list.html"
+```html title="todo-list.html" {14}
 <div>
 <form (ngSubmit)="addTask()" #taskForm="ngForm">
   <input
@@ -286,7 +286,7 @@ export class TodoList {
 </div>
 ```
 
-```ts title="todo-list.ts"
+```ts title="todo-list.ts" {28-31}
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -323,7 +323,7 @@ export class TodoList {
 
 ### Filter items
 
-```html title="todo-list.html"
+```html title="todo-list.html" {10-20, 24-28}
 <div>
 <form (ngSubmit)="addTask()" #taskForm="ngForm">
   <input
@@ -360,7 +360,7 @@ export class TodoList {
 </div>
 ```
 
-```ts title="todo-list.ts"
+```ts title="todo-list.ts" {23-30, 45-54}
 import { Component, signal, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
