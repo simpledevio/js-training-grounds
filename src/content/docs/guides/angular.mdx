@@ -39,3 +39,367 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 ### Stackblitz
 
 If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/angular-training-ground?file=src/app/app.html" target="_blank">Angular training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
+
+## HTML
+
+### Hello World
+
+```html title="hello-world.html"
+<h1>Hello World</h1>
+```
+
+### app.ts
+
+```ts title="app.ts"
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HelloWorld } from './hello-world/hello-world';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, HelloWorld],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected title = 'angular-training-ground';
+}
+```
+
+## CSS
+
+### External CSS File
+
+```css title="hello-world.css"
+h1 {
+  color: red;
+}
+```
+
+## JS
+
+```ts title="counter.ts"
+import { Component, signal, computed } from '@angular/core';
+
+@Component({
+  selector: 'app-counter',
+  imports: [],
+  templateUrl: './counter.html',
+  styleUrl: './counter.css'
+})
+export class Counter {
+  count = signal(0);
+
+  increment(): void {
+    this.count.update(current => current + 1);
+  }
+}
+```
+
+```html title="counter.html"
+<button (click)="increment()">Count: {{ count() }}</button>
+```
+
+### Conditional
+
+```html title="counter.html"
+@if (count() > 10) {
+  <h1>Good job!</h1>
+}
+
+<button (click)="increment()">Count: {{ count() }}</button>
+```
+
+```html title="counter.html"
+@if (count() > 10) {
+  <h1>Good job!</h1>
+  } @else {
+  <h1>Let's get started</h1>
+  }
+
+<button (click)="increment()">Count: {{ count() }}</button>
+```
+
+```html title="counter.html"
+@if (count() > 10) {
+  <h1>Good job!</h1>
+} @else if (count() > 5) {
+  <h1>Not bad</h1>
+} @else {
+  <h1>Let's get started</h1>
+}
+
+<button (click)="increment()">Count: {{ count() }}</button>
+```
+
+### List
+
+```html title="todo-list.html"
+<div>
+<ul>
+  @for (task of tasks(); track $index) {
+    <li>
+      {{ task.text }}
+    </li>
+  }
+</ul>
+</div>
+```
+
+```ts title="todo-list.ts"
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+interface TodoItem {
+  text: string;
+  completed: boolean;
+}
+
+@Component({
+  selector: 'app-todo-list',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './todo-list.html',
+})
+export class TodoList {
+  tasks = signal<TodoItem[]>([
+    { text: 'Learn Angular basics', completed: false },
+    { text: 'Build a todo app', completed: false },
+    { text: 'Practice TypeScript', completed: false }
+  ]);
+}
+```
+
+### Add items
+
+```html title="todo-list.html"
+<div>
+<form (ngSubmit)="addTask()" #taskForm="ngForm">
+  <input
+    [(ngModel)]="newTask"
+    name="newTask"
+    required
+  >
+  <button type="submit">Add Task</button>
+</form>
+
+<ul>
+  @for (task of tasks(); track $index) {
+    <li>
+      {{ task.text }}
+    </li>
+  }
+</ul>
+</div>
+```
+
+```ts title="todo-list.ts"
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+interface TodoItem {
+  text: string;
+  completed: boolean;
+}
+
+@Component({
+  selector: 'app-todo-list',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './todo-list.html',
+})
+export class TodoList {
+  tasks = signal<TodoItem[]>([
+    { text: 'Learn Angular basics', completed: false },
+    { text: 'Build a todo app', completed: false },
+    { text: 'Practice TypeScript', completed: false }
+  ]);
+
+  newTask = signal('');
+
+  addTask() {
+    const taskText = this.newTask().trim();
+    if (taskText) {
+      this.tasks.update(tasks => [...tasks, { text: taskText, completed: false }]);
+      this.newTask.set('');
+    }
+  }
+}
+```
+
+### Remove items
+
+```html title="todo-list.html"
+<div>
+<form (ngSubmit)="addTask()" #taskForm="ngForm">
+  <input
+    [(ngModel)]="newTask"
+    name="newTask"
+    required
+  >
+  <button type="submit">Add Task</button>
+</form>
+
+<ul>
+  @for (task of tasks(); track $index) {
+    <li>
+      {{ task.text }}
+      <button (click)="deleteTask($index)">Delete</button>
+    </li>
+  }
+</ul>
+</div>
+```
+
+```ts title="todo-list.ts"
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+interface TodoItem {
+  text: string;
+  completed: boolean;
+}
+
+@Component({
+  selector: 'app-todo-list',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './todo-list.html',
+})
+export class TodoList {
+  tasks = signal<TodoItem[]>([
+    { text: 'Learn Angular basics', completed: false },
+    { text: 'Build a todo app', completed: false },
+    { text: 'Practice TypeScript', completed: false }
+  ]);
+
+  newTask = signal('');
+
+  addTask() {
+    const taskText = this.newTask().trim();
+    if (taskText) {
+      this.tasks.update(tasks => [...tasks, { text: taskText, completed: false }]);
+      this.newTask.set('');
+    }
+  }
+
+  deleteTask(index: number) {
+    const taskToDelete = this.tasks()[index];
+    this.tasks.update(tasks => tasks.filter(task => task !== taskToDelete));
+  }
+}
+```
+
+### Filter items
+
+```html title="todo-list.html"
+<div>
+<form (ngSubmit)="addTask()" #taskForm="ngForm">
+  <input
+    [(ngModel)]="newTask"
+    name="newTask"
+    required
+  >
+  <button type="submit">Add Task</button>
+</form>
+
+<div>
+  <label>
+    <input
+      type="checkbox"
+      [checked]="hideCompleted()"
+      (change)="onHideCompletedChange($any($event.target).checked)"
+      name="hideCompleted"
+    >
+    Hide completed items
+  </label>
+</div>
+
+<ul>
+  @for (task of visibleTasks(); track $index) {
+    <li>
+        <input
+          type="checkbox"
+          [checked]="task.completed"
+          (change)="toggleTask($index)"
+        >
+      {{ task.text }}
+      <button (click)="deleteTask($index)">Delete</button>
+    </li>
+  }
+</ul>
+</div>
+
+```
+
+```ts title="todo-list.ts"
+import { Component, signal, computed } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+interface TodoItem {
+  text: string;
+  completed: boolean;
+}
+
+@Component({
+  selector: 'app-todo-list',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './todo-list.html',
+})
+export class TodoList {
+  tasks = signal<TodoItem[]>([
+    { text: 'Learn Angular basics', completed: false },
+    { text: 'Build a todo app', completed: false },
+    { text: 'Practice TypeScript', completed: false }
+  ]);
+
+  newTask = signal('');
+  hideCompleted = signal(false);
+
+  visibleTasks = computed(() => {
+    const allTasks = this.tasks();
+    return this.hideCompleted()
+      ? allTasks.filter(task => !task.completed)
+      : allTasks;
+  });
+
+  addTask() {
+    const taskText = this.newTask().trim();
+    if (taskText) {
+      this.tasks.update(tasks => [...tasks, { text: taskText, completed: false }]);
+      this.newTask.set('');
+    }
+  }
+
+    deleteTask(index: number) {
+    const taskToDelete = this.visibleTasks()[index];
+    this.tasks.update(tasks => tasks.filter(task => task !== taskToDelete));
+  }
+
+    toggleTask(index: number) {
+    const taskToToggle = this.visibleTasks()[index];
+    this.tasks.update(tasks =>
+      tasks.map(task =>
+        task === taskToToggle
+          ? { ...task, completed: !task.completed }
+          : task
+      )
+    );
+  }
+
+  onNewTaskChange(value: string) {
+    this.newTask.set(value);
+  }
+
+  onHideCompletedChange(checked: boolean) {
+    this.hideCompleted.set(checked);
+  }
+}
+```
+
+#### Input properties
+
+```html title="hello-world.html"
+
+```
