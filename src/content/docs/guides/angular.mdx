@@ -100,9 +100,30 @@ export class Counter {
 <button (click)="increment()">Count: {{ count() }}</button>
 ```
 
+```ts title="app.ts"
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HelloWorld } from './hello-world/hello-world';
+import { Counter } from './counter/counter';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, HelloWorld, Counter],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected title = 'angular-training-ground';
+}
+```
+
+```html title="app.html"
+<app-counter />
+```
+
 ### Conditional
 
-```html title="counter.html"
+```html title="counter.html" {1-3}
 @if (count() > 10) {
   <h1>Good job!</h1>
 }
@@ -110,7 +131,7 @@ export class Counter {
 <button (click)="increment()">Count: {{ count() }}</button>
 ```
 
-```html title="counter.html"
+```html title="counter.html" {3-5}
 @if (count() > 10) {
   <h1>Good job!</h1>
   } @else {
@@ -120,7 +141,7 @@ export class Counter {
 <button (click)="increment()">Count: {{ count() }}</button>
 ```
 
-```html title="counter.html"
+```html title="counter.html" {3-4}
 @if (count() > 10) {
   <h1>Good job!</h1>
 } @else if (count() > 5) {
@@ -148,7 +169,6 @@ export class Counter {
 
 ```ts title="todo-list.ts"
 import { Component, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 interface TodoItem {
   text: string;
@@ -157,8 +177,7 @@ interface TodoItem {
 
 @Component({
   selector: 'app-todo-list',
-  standalone: true,
-  imports: [FormsModule],
+  imports: [],
   templateUrl: './todo-list.html',
 })
 export class TodoList {
@@ -170,6 +189,28 @@ export class TodoList {
 }
 ```
 
+```ts title="app.ts"
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HelloWorld } from './hello-world/hello-world';
+import { Counter } from './counter/counter';
+import { TodoList } from './todo-list/todo-list';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, HelloWorld, Counter, TodoList],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected title = 'angular-training-ground';
+}
+```
+
+```html title="app.html"
+<app-todo-list />
+```
+
 ### Add items
 
 ```html title="todo-list.html"
@@ -178,7 +219,6 @@ export class TodoList {
   <input
     [(ngModel)]="newTask"
     name="newTask"
-    required
   >
   <button type="submit">Add Task</button>
 </form>
@@ -204,7 +244,6 @@ interface TodoItem {
 
 @Component({
   selector: 'app-todo-list',
-  standalone: true,
   imports: [FormsModule],
   templateUrl: './todo-list.html',
 })
@@ -218,11 +257,8 @@ export class TodoList {
   newTask = signal('');
 
   addTask() {
-    const taskText = this.newTask().trim();
-    if (taskText) {
-      this.tasks.update(tasks => [...tasks, { text: taskText, completed: false }]);
-      this.newTask.set('');
-    }
+    this.tasks.update(tasks => [...tasks, { text: this.newTask(), completed: false }]);
+    this.newTask.set('');
   }
 }
 ```
@@ -235,7 +271,6 @@ export class TodoList {
   <input
     [(ngModel)]="newTask"
     name="newTask"
-    required
   >
   <button type="submit">Add Task</button>
 </form>
@@ -262,7 +297,6 @@ interface TodoItem {
 
 @Component({
   selector: 'app-todo-list',
-  standalone: true,
   imports: [FormsModule],
   templateUrl: './todo-list.html',
 })
@@ -276,11 +310,8 @@ export class TodoList {
   newTask = signal('');
 
   addTask() {
-    const taskText = this.newTask().trim();
-    if (taskText) {
-      this.tasks.update(tasks => [...tasks, { text: taskText, completed: false }]);
-      this.newTask.set('');
-    }
+    this.tasks.update(tasks => [...tasks, { text: this.newTask(), completed: false }]);
+    this.newTask.set('');
   }
 
   deleteTask(index: number) {
@@ -298,7 +329,6 @@ export class TodoList {
   <input
     [(ngModel)]="newTask"
     name="newTask"
-    required
   >
   <button type="submit">Add Task</button>
 </form>
@@ -307,8 +337,7 @@ export class TodoList {
   <label>
     <input
       type="checkbox"
-      [checked]="hideCompleted()"
-      (change)="onHideCompletedChange($any($event.target).checked)"
+      [(ngModel)]="hideCompleted"
       name="hideCompleted"
     >
     Hide completed items
@@ -329,7 +358,6 @@ export class TodoList {
   }
 </ul>
 </div>
-
 ```
 
 ```ts title="todo-list.ts"
@@ -387,19 +415,10 @@ export class TodoList {
       )
     );
   }
-
-  onNewTaskChange(value: string) {
-    this.newTask.set(value);
-  }
-
-  onHideCompletedChange(checked: boolean) {
-    this.hideCompleted.set(checked);
-  }
 }
 ```
 
-#### Input properties
-
+### Input properties
 ```html title="hello-world.html"
 
 ```
