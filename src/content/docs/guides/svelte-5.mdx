@@ -223,7 +223,9 @@ After saving, the number on the button should still go up when you click on it.
 
 ### Conditional
 
+Let's add a message that will display when you reach a certain count.
 
+Task: Add an `<h1>` element using an if block. The `<h1>` will show when the count is greater than 10.
 
 ```svelte title="Counter.svelte" {9-11}
 <script>
@@ -240,7 +242,7 @@ After saving, the number on the button should still go up when you click on it.
 <button onclick={increment}>Count: { count }</button>
 ```
 
-
+Now add an `<h1>` element with an `else` block. This `<h1>` will show when the count is 10 or less.
 
 ```svelte title="Counter.svelte" {11-12}
 <script>
@@ -259,7 +261,7 @@ After saving, the number on the button should still go up when you click on it.
 <button onclick={increment}>Count: { count }</button>
 ```
 
-
+Now add an `<h1>` with an `else if` block in the middle. This message will be displayed when count is greater than 5 but less than 11.
 
 ```svelte title="Counter.svelte" {11-12}
 <script>
@@ -284,6 +286,7 @@ After saving, the number on the button should still go up when you click on it.
 
 ### List
 
+Let's create a new file called `TodoList.svelte`. Add the following code to it. This is the data we're going to display.
 
 
 ```svelte title="TodoList.svelte"
@@ -304,13 +307,13 @@ After saving, the number on the button should still go up when you click on it.
 </ul>
 ```
 
-
+You should now see a list in your browser.
 
 ### Add items
 
+To add items to the list, first create the newTodo variable in the script element. Then create the addTodo() function. Lastly, add the input and button elements to the HTML.
 
-
-```svelte title="TodoList.svelte"
+```svelte title="TodoList.svelte" {4, 11-16, 19-20}
 <script>
 	let id = 0;
 
@@ -338,13 +341,13 @@ After saving, the number on the button should still go up when you click on it.
 </ul>
 ```
 
-
+You should now be able to add items to the list by typing in the input and clicking the button. The new item will appear at the end of the list.
 
 ### Remove items
 
+To remove elements from the list, first add the `removeTodo()` function. Then add a button to each list item that calls the function with the todo's id.
 
-
-```svelte title="TodoList.svelte"
+```svelte title="TodoList.svelte" {18-24, 33}
 <script>
 	let id = 0;
 
@@ -384,13 +387,13 @@ After saving, the number on the button should still go up when you click on it.
 
 ```
 
-
+You should be able to delete items from the list now by clicking the "X" button next to each item.
 
 ### Derived state
 
+Let's learn how to hide completed items. First, add a done property to each todo item. Then add a visibleTodos variable that filters the todos based on the hideCompleted state. Then, add a checkbox input to toggle the hideCompleted state. Lastly, add a checkbox input to each todo item to mark it as done. Also, don't forget to change todos to visibleTodos inside the each block.
 
-
-```svelte title="TodoList.svelte"
+```svelte title="TodoList.svelte" {"1":6-8} {"4":27-31} {"3":36-39} {"2": 44} {"5": 42} /#each (visibleTodos)/
 <script>
 	let id = 0;
 
@@ -446,9 +449,9 @@ After saving, the number on the button should still go up when you click on it.
 
 ### Props
 
+Let's learn how to make components more flexible. Let's revisit the `HelloWorld.svelte` component and make it accept a `name` prop. This way, we can pass different names to it.
 
-
-```svelte title="HelloWorld.svelte" {1-3}
+```svelte title="HelloWorld.svelte" {1-3} /Hello ({ name })/
 <script>
   let { name } = $props();
 </script>
@@ -456,7 +459,7 @@ After saving, the number on the button should still go up when you click on it.
 <h1>Hello { name }</h1>
 ```
 
-
+Inside `App.svelte`, you can now pass a `name` prop to the `HelloWorld` component.
 
 ```svelte title="App.svelte" 'name="John"'
 <script>
@@ -466,13 +469,15 @@ After saving, the number on the button should still go up when you click on it.
 <HelloWorld name="John" />
 ```
 
-
+The browser should now display the name you passed in.
 
 ### CSS + JS
 
+Let's learn how to toggle a class in Svelte.
 
+Create a script element and an isActive variable inside it. Then, use the `$state()` rune to initialize it to `false`. Add a ternary statement to the class attribute. Then add a button element with an onclick attribute.
 
-```svelte title="HelloWorld.svelte"
+```svelte title="HelloWorld.svelte" {1-3, 6-10} "{isActive ? 'red' : ''}"
 <script>
   let isActive = $state(false);
 </script>
