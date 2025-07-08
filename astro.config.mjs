@@ -24,12 +24,12 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'React (Coming Soon)', slug: 'guides/react' },
-						{ label: 'TypeScript (Coming Soon)', slug: 'guides/typescript' },
-						{ label: 'Next.js (Coming Soon)', slug: 'guides/next-js' },
-						{ label: 'Tailwind (Coming Soon)', slug: 'guides/tailwind' },
 						{ label: 'Vue 3 (Coming Soon)', slug: 'guides/vue-3' },
 						{ label: 'Svelte 5 (Coming Soon)', slug: 'guides/svelte-5' },
 						{ label: 'Angular (Coming Soon)', slug: 'guides/angular' },
+						{ label: 'Tailwind (Coming Soon)', slug: 'guides/tailwind' },
+						{ label: 'TypeScript (Coming Soon)', slug: 'guides/typescript' },
+						{ label: 'Next.js (Coming Soon)', slug: 'guides/next-js' },
 						{ label: 'Sass (Coming Soon)', slug: 'guides/sass' },
 						// { label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
 					],
