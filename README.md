@@ -1,6 +1,6 @@
 # JS Training Grounds
 
-Quickstart tutorials for intermediate JS topics like React, TypeScript, Next.js, Tailwind, and more.
+Quickstart tutorials for intermediate JS topics like React, Vue 3, Svelte 5, Angular, and more.
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
