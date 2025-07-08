@@ -34,23 +34,33 @@ NOTE: Raw file sizes do not reflect development server per-request transformatio
 
 Visit <a href="http://localhost:4200/" target="_blank">localhost:4200</a> in your browser. The web page should say **Hello World**.
 
-In your editor, you'll see several files. However, for now you'll mainly be working in `app.html`.
+In your editor, you'll see several files. However, for now you'll mainly be working in `hello-world.html`.
 
 ### Stackblitz
 
-If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/angular-training-ground?file=src/app/app.html" target="_blank">Angular training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
+If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/angular-training-ground?file=src/app/app.html" target="_blank">Angular training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz. (NOTE: This link works best in Chrome.)
 
 ## HTML
 
 ### Hello World
 
+In our `hello-world.html` file, we have an `<h1>` element already added.
+
 ```html title="src/app/hello-world/hello-world.html"
 <h1>Hello World</h1>
 ```
 
+**Task:** To make it more personal, change `World` to your name.
+
+```html title="src/app/hello-world/hello-world.html"
+<h1>Hello John</h1>
+```
+
 ### app.ts
 
-```ts title="src/app/app.ts"
+Before we look at our next topic, open up `app.ts` so you can see how it's importing the Hello World component.
+
+```ts title="src/app/app.ts" {3, 7}
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HelloWorld } from './hello-world/hello-world';
@@ -66,9 +76,17 @@ export class App {
 }
 ```
 
+You'll also want to look at `app.html` to see how the component is used.
+
+```html title="src/app/app.html"
+<app-hello-world />
+```
+
 ## CSS
 
 ### External CSS File
+
+You typically add styles using external CSS files. Add the following code to `hello-world.css`.
 
 ```css title="src/app/hello-world/hello-world.css"
 h1 {
@@ -76,9 +94,52 @@ h1 {
 }
 ```
 
+After saving, you should see the text in the `<h1>` element change to red.
+
 ## JS
 
-```ts title="src/app/counter/counter.ts"
+For this section, we're going to create a new Counter component. Run the following command in your shell.
+
+```
+ng g c counter
+```
+
+This will generate a new folder called `counter` inside the `app` folder. It will create the following files: `counter.css`, `counter.html`, `counter.spec.ts`, and `counter.ts`.
+
+Update `app.ts` to import the new component.
+
+```ts title="src/app/app.ts" {4, 8}
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HelloWorld } from './hello-world/hello-world';
+import { Counter } from './counter/counter';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, HelloWorld, Counter],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected title = 'angular-training-ground';
+}
+```
+
+Update `app.html` to use the new component.
+
+```html title="src/app/app.html" "-counter"
+<app-counter />
+```
+
+Replace the contents of `counter.html` with a `<button>` that increments a count.
+
+```html title="src/app/counter/counter.html"
+<button (click)="increment()">Count: {{ count() }}</button>
+```
+
+Lastly, you'll want to add the `count` property and the `increment()` method to the Counter class.
+
+```ts title="src/app/counter/counter.ts" {10-14}
 import { Component, signal, computed } from '@angular/core';
 
 @Component({
@@ -96,32 +157,11 @@ export class Counter {
 }
 ```
 
-```html title="src/app/counter/counter.html"
-<button (click)="increment()">Count: {{ count() }}</button>
-```
-
-```ts title="src/app/app.ts"
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HelloWorld } from './hello-world/hello-world';
-import { Counter } from './counter/counter';
-
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, HelloWorld, Counter],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
-})
-export class App {
-  protected title = 'angular-training-ground';
-}
-```
-
-```html title="src/app/app.html"
-<app-counter />
-```
-
 ### Conditional
+
+Let's add a message that will display when you reach a certain count.
+
+Task: Add an `<h1>` element using the `@if` template syntax. The `<h1>` will show when the count is greater than 10.
 
 ```html title="src/app/counter/counter.html" {1-3}
 @if (count() > 10) {
@@ -130,6 +170,8 @@ export class App {
 
 <button (click)="increment()">Count: {{ count() }}</button>
 ```
+
+Now add an `<h1>` element with the `@else` template syntax. This `<h1>` will show when the count is 10 or less.
 
 ```html title="src/app/counter/counter.html" {3-5}
 @if (count() > 10) {
@@ -140,6 +182,8 @@ export class App {
 
 <button (click)="increment()">Count: {{ count() }}</button>
 ```
+
+Now add an `<h1>` with a `@else if` template syntax in the middle. This message will be displayed when the count is greater than 5 but less than 11.
 
 ```html title="src/app/counter/counter.html" {3-4}
 @if (count() > 10) {
@@ -155,17 +199,39 @@ export class App {
 
 ### List
 
-```html title="src/app/todo-list/todo-list.html"
-<div>
-<ul>
-  @for (task of tasks(); track $index) {
-    <li>
-      {{ task.text }}
-    </li>
-  }
-</ul>
-</div>
+For this section, we're going to create a new TodoList component. Run the following command in your shell.
+
 ```
+ng g c todo-list
+```
+
+This will generate a new folder called `todo-list` inside the `app` folder. It will create the following files: `todo-list.css`, `todo-list.html`, `todo-list.spec.ts`, and `todo-list.ts`.
+
+```ts title="src/app/app.ts" {5, 9}
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HelloWorld } from './hello-world/hello-world';
+import { Counter } from './counter/counter';
+import { TodoList } from './todo-list/todo-list';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, HelloWorld, Counter, TodoList],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected title = 'angular-training-ground';
+}
+```
+
+Then, update `app.html` to use the new component.
+
+```html title="src/app/app.html" "-todo-list"
+<app-todo-list />
+```
+
+Create the TypeScript interface for `TodoItem` and add the `tasks` data.
 
 ```ts title="src/app/todo-list/todo-list.ts" {3-6, 14-18}
 import { Component, signal } from '@angular/core';
@@ -189,29 +255,23 @@ export class TodoList {
 }
 ```
 
-```ts title="src/app/app.ts"
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HelloWorld } from './hello-world/hello-world';
-import { Counter } from './counter/counter';
-import { TodoList } from './todo-list/todo-list';
+Next, replace the contents of `todo-list.html` with the following code. Use the `@for` template syntax to loop through the list of tasks.
 
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, HelloWorld, Counter, TodoList],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
-})
-export class App {
-  protected title = 'angular-training-ground';
-}
-```
-
-```html title="src/app/app.html"
-<app-todo-list />
+```html title="src/app/todo-list/todo-list.html"
+<div>
+<ul>
+  @for (task of tasks(); track $index) {
+    <li>
+      {{ task.text }}
+    </li>
+  }
+</ul>
+</div>
 ```
 
 ### Add items
+
+To add items to the list, add the `<form>`, `<input>`, and `<button>` elements to todo-list.html.
 
 ```html title="src/app/todo-list/todo-list.html" {2-9}
 <div>
@@ -232,6 +292,8 @@ export class App {
 </ul>
 </div>
 ```
+
+Import the `FormsModule` at the top. This is necessary for using `ngModel` in Angular. Then create the `newTask` signal and the `addTask` method in todo-list.ts.
 
 ```ts title="src/app/todo-list/todo-list.ts" {2, 11, 20-26}
 import { Component, signal } from '@angular/core';
@@ -265,6 +327,8 @@ export class TodoList {
 
 ### Remove items
 
+To delete a task, first add a `<button>` element to each task in the list.
+
 ```html title="src/app/todo-list/todo-list.html" {14}
 <div>
 <form (ngSubmit)="addTask()" #taskForm="ngForm">
@@ -285,6 +349,8 @@ export class TodoList {
 </ul>
 </div>
 ```
+
+Then create the `deleteTask()` method in `todo-list.ts`.
 
 ```ts title="src/app/todo-list/todo-list.ts" {28-31}
 import { Component, signal } from '@angular/core';
@@ -323,6 +389,8 @@ export class TodoList {
 
 ### Filter items
 
+To filter the tasks, first add a checkbox `<input>` element at the top that can hide completed items. Then add a checkbox `<input>` to each task that can toggle its completion status.
+
 ```html title="src/app/todo-list/todo-list.html" {10-20, 24-28}
 <div>
 <form (ngSubmit)="addTask()" #taskForm="ngForm">
@@ -359,6 +427,8 @@ export class TodoList {
 </ul>
 </div>
 ```
+
+Add the `hideCompleted` signal and the `visibleTasks` computed property in `todo-list.ts`. Then add the `toggleTask` method to handle toggling the completion status of a task.
 
 ```ts title="src/app/todo-list/todo-list.ts" {23-30, 45-54}
 import { Component, signal, computed } from '@angular/core';
@@ -419,6 +489,33 @@ export class TodoList {
 ```
 
 ### Input properties
-```html title="src/app/hello-world/hello-world.html"
 
+To make the HelloWorld component more flexible, let's add an input property for the name. This way, you can pass a name to the component from the parent.
+
+First, replace the name you added before with the following code.
+
+```html title="src/app/hello-world/hello-world.html" "{{ name() }}"
+<h1>Hello {{ name() }}</h1>
+```
+
+Then add the `name` input property to the Hello World component. This will allow you to pass a name to the component from the parent.
+
+```html title="src/app/app.html" ' name="John"'
+<app-hello-world name="John" />
+```
+
+Finally, import the `input` function from `@angular/core` and use it to create the `name` input property in the HelloWorld class.
+
+```ts title="src/app/hello-world/hello-world.ts" ", input" {10}
+import { Component, input } from "@angular/core";
+
+@Component({
+  selector: "app-hello-world",
+  imports: [],
+  templateUrl: "./hello-world.html",
+  styleUrl: "./hello-world.css",
+})
+export class HelloWorld {
+  name = input<string>();
+}
 ```
