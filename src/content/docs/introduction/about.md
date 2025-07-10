@@ -22,7 +22,7 @@ In order to make sure this project is a success, we want to make sure the scope 
 
 For this first phase, the focus is going to be building a better quickstart for React, Vue 3, Svelte 5, and Angular. This means focusing on teaching the basic syntax and concepts in an organized manner. It also means sticking to simple examples, like Hello World, a counter, a todo list, etc. (more complex projects will likely be part of Phase 2). After finishing the quickstarts for these topics, we'll move on to creating quickstarts for TypeScript, Next.js, and Tailwind (other topics may be added later).
 
-When you're looking at the documentation for these projects, it can be hard to know where to start. Usually they provide multiple ways to get started, which can be confusing. Ultimately, we want JS Training Grounds to be the fastest and easiest way to get started with these technologies. We also want it to be easy to contribute to, so we've created quickstarts on how to write Markdown and how to fork the project. You can find them in the Contributing section.
+When you're looking at the documentation for these projects, it can be hard to know where to start. Usually they provide multiple ways to get started, which can be confusing. Ultimately, we want JS Training Grounds to be **the fastest and easiest way to get started** with these technologies. We also want it to be easy to contribute to, so we've created quickstarts on how to write Markdown and how to fork the project. You can find them in the Contributing section.
 
 ## Future Phases
 
