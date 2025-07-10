@@ -5,7 +5,7 @@ import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-s
 export default {
   plugins: [pluginLineNumbers(), pluginCollapsibleSections()],
   defaultProps: {
-    showLineNumbers: false,
+    showLineNumbers: true,
     collapseStyle: 'collapsible-start',
   }
 }
