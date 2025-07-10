@@ -20,4 +20,4 @@ The next thing you can do is become a contributor to the site! At a minimum, thi
 
 If you do want to take on Issues and contribute content to the site, you should read through our [About](/about/) page and also go through our [Contributing Guide Quickstart](/contributing-guide/). The Contributing Guide Quickstart will teach you how to use the Expressive Code syntax, which is the plugin we use to add advanced syntax highlighting features to our code snippets. It also goes over how to fork the project repo and clone it for local development.
 
-If you want to contribute content, you should be also be familiar with VS Code and Markdown already. Also, you should be familiar with the topic that you're contributing to (React, TypeScript, Next.js, Tailwind, etc.).
+If you want to contribute content, you should be also be familiar with VS Code and Markdown already. If you're not familiar with Markdown, you can take our [Markdown Quickstart](/guides/markdown/). Also, you should be familiar with the topic that you're contributing to (React, Vue 3, Svelte 5, Angular, etc.).
