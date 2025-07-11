@@ -49,7 +49,6 @@ Arrays in TypeScript can be typed to hold only specific data types.
 To declare the type on an array, add a colon after the variable name, a space, the type, and then a pair of square brackets.
 
 ```ts title="main.ts"
-// Arrays
 let fruits: string[] = ["apple", "banana", "cherry"];
 let scores: number[] = [95, 82, 76];
 let flags: boolean[] = [true, false, true];
@@ -62,7 +61,6 @@ Tuples are fixed-length arrays where each element has a known, specific type.
 To declare a tuple, add a colon after the variable name, a space, and a pair of square brackets. You would then list the types that the tuple would contain inside the square brackets.
 
 ```ts title="main.ts"
-// Tuples
 let coords: [number, number] = [10, 20];
 let person: [string, number] = ["Alice", 30];
 ```
@@ -75,14 +73,12 @@ Enums are a set of named constants. They make your code more readable and type-s
 To create one, type the word `enum`, the name of your enum, and then a pair of curly braces. In this example, we're creating an enum called `Direction`.
 
 ```ts title="main.ts"
-// Enums
 enum Direction {}
 ```
 
 Then you can list out the constants inside the curly braces, separated by commas.
 
 ```ts title="main.ts"
-// Enums
 enum Direction {
   Up,
   Down,
@@ -94,7 +90,6 @@ enum Direction {
 Now you can use the Direction type with a variable. To use the constants, type the enum name, a period, and then the constant name.
 
 ```ts title="main.ts"
-// Enums
 enum Direction {
   Up,
   Down,
@@ -112,14 +107,12 @@ Interfaces describe the structure of an object by specifying required properties
 To create one, type the word `interface`, the name of your interface, and then a pair of curly braces. In this example, we're creating an interface called User.
 
 ```ts title="main.ts"
-// Interfaces
 interface User {}
 ```
 
 Next, you can list out the properties inside the curly braces along with their types.
 
 ```ts title="main.ts"
-// Interfaces
 interface User {
   name: string;
   age: number;
@@ -130,7 +123,6 @@ interface User {
 Now you can use the User type with an object. Make sure the object matches the properties listed in the interface.
 
 ```ts title="main.ts"
-// Interfaces
 interface User {
   name: string;
   age: number;
@@ -153,7 +145,6 @@ To add types to parameters, add colons after the parameters and add the types. T
 In this example, we're adding a string type to the name parameter and a string type for the return value.
 
 ```ts title="main.ts"
-// Functions
 function greet(name: string): string {
   return `Hello, ${name}`;
 }
@@ -162,7 +153,6 @@ function greet(name: string): string {
 In the next example, we're adding number types to both parameters and a number type for the return value.
 
 ```ts title="main.ts"
-// Functions
 function greet(name: string): string {
   return `Hello, ${name}`;
 }
@@ -179,7 +169,6 @@ Union types allow a variable to hold more than one type, increasing flexibility 
 To create a union type, you use the pipe character. In this example, we're creating a variable called `value` that can be a string or a number.
 
 ```ts title="main.ts"
-// Union
 let value: string | number;
 
 value = "Hello World";
