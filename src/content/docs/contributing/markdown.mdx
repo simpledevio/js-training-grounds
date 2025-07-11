@@ -49,7 +49,7 @@ If you prefer to work online, you can also open the <a href="https://stackblitz.
 
 ## Headings
 
-You can use hashtags to create different headings. You can also create a level 1 heading by underlining the text with equals signs and a level 2 heading by underlining the text with dashes. On JS Training Grounds, we use hashtags.
+You can use hashtags to create different headings. You can also create a level 1 heading by underlining the text with equals signs and a level 2 heading by underlining the text with dashes. On JS Training Grounds, we use hashtags for headings.
 
 ```md showLineNumbers=false
 # Heading 1
@@ -69,6 +69,8 @@ Heading 1
 Heading 2
 ---------
 ```
+
+Make sure you follow the same rules for headings that you use for HTML.
 
 NOTE: The level 1 heading in JS Training Grounds is actually created using the title attribute at the top of the page. This is a Starlight feature and not specific to Markdown. This means you should skip the level 1 heading and start with level 2 headings when adding content to JS Training Grounds.
 
@@ -93,15 +95,15 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
 You can use dashes or asterisks to create unordered lists. On JS Training Grounds, we use dashes.
 
 ```md showLineNumbers=false
--
--
--
+- Item
+- Item
+- Item
 ```
 
 ```md showLineNumbers=false
-*
-*
-*
+* Item
+* Item
+* Item
 ```
 
 ## Ordered lists
@@ -109,15 +111,15 @@ You can use dashes or asterisks to create unordered lists. On JS Training Ground
 You can use numbers with periods or parentheses to create ordered lists. On JS Training Grounds, we use periods.
 
 ```md showLineNumbers=false
-1.
-2.
-3.
+1. Item
+2. Item
+3. Item
 ```
 
 ```md showLineNumbers=false
-1)
-2)
-3)
+1) Item
+2) Item
+3) Item
 ```
 
 ## Italic text
@@ -132,6 +134,12 @@ You can use a single set of asterisks or underscores to make text italic. On JS 
 _Italic_
 ```
 
+This is what it would look like in a sentence:
+
+```md showLineNumbers=false
+This is some *italic* text.
+```
+
 ## Bold text
 
 You can use 2 pairs of asterisks or underscores to make text bold. On JS Training Grounds, we use asterisks.
@@ -142,6 +150,12 @@ You can use 2 pairs of asterisks or underscores to make text bold. On JS Trainin
 
 ```md showLineNumbers=false
 __Bold__
+```
+
+This is what it would look like in a sentence:
+
+```md showLineNumbers=false
+This is some **bold** text.
 ```
 
 ## Links
@@ -160,6 +174,12 @@ Other stuff goes here...
 [1]: http://example.com/
 ```
 
+This is what it would look like in a sentence:
+
+```md showLineNumbers=false
+This is some [link](http://example.com/) text.
+```
+
 ## Blockquotes
 
 You can use the greater than sign to create a blockquote.
@@ -170,7 +190,7 @@ You can use the greater than sign to create a blockquote.
 
 ## Horizontal rules
 
-You can use 3 dashes or asterisks to create a horizontal rule.
+You can use 3 dashes or asterisks to create a horizontal rule. On JS Training Grounds, we use dashes.
 
 ```md showLineNumbers=false
 Lorem ipsum dolor.
@@ -194,6 +214,12 @@ Use backticks to create inline code.
 
 ```md showLineNumbers=false
 `Inline code`
+```
+
+This is what it would look like in a sentence:
+
+```md showLineNumbers=false
+This is some `inline code` text.
 ```
 
 ## Code blocks
