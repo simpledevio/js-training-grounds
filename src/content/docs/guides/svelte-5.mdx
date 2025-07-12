@@ -1,5 +1,5 @@
 ---
-title: Svelte 5 Quickstart (Coming Soon)
+title: Svelte 5 Quickstart
 description: An interactive quickstart tutorial for Svelte 5.
 ---
 
@@ -67,7 +67,7 @@ After saving, you should see the browser show your name.
 
 ### Multiple roots
 
-You can have more than one element.
+Unlike some other JS frameworks, you can have more than one root element.
 
 **Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
 
@@ -76,9 +76,11 @@ You can have more than one element.
 <p>Lorem ipsum dolor...</p>
 ```
 
+After saving, you should now see both elements in the browser.
+
 ### App.svelte
 
-Before we look at our next topic, open up `App.svelte` so you can see how it's importing `HelloWorld.svelte`.
+Before we look at our next topic, open up `App.svelte` so you can see how it's importing `HelloWorld.svelte`. All you have to do is add an import statement inside the `<script>` element and then use the component as a tag in the HTML.
 
 ```svelte title="App.svelte" {2, 5}
 <script>
@@ -177,6 +179,10 @@ Add a `<script>` element above the `<button>` element.
 <button>Count: 0</button>
 ```
 
+### Make it reactive
+
+Svelte 5 uses **runes** to make things reactive.
+
 Create a `count` variable and use the `$state()` rune to initialize it. Also, replace `0` with `{ count }` in the `<button>` element.
 
 ```svelte title="Counter.svelte" {2} "{ count }"
@@ -189,8 +195,6 @@ Create a `count` variable and use the `$state()` rune to initialize it. Also, re
 
 After saving, the button should still look the same. It still doesn't do anything yet.
 
-### Make it reactive
-
 Next, add `onclick={ count++ }` to the `<button>` tag.
 
 ```svelte title="Counter.svelte" "onclick={ count++ }"
@@ -202,6 +206,8 @@ Next, add `onclick={ count++ }` to the `<button>` tag.
 ```
 
 After saving, the number on the button will go up when you click on it.
+
+The `$state()` rune makes `count` reactive, which means it will automatically update the UI when its value changes.
 
 ### Use a function
 
@@ -225,7 +231,7 @@ After saving, the number on the button should still go up when you click on it.
 
 Let's add a message that will display when you reach a certain count.
 
-Task: Add an `<h1>` element using an if block. The `<h1>` will show when the count is greater than 10.
+Task: Add an `<h1>` element using an `if` block. The `<h1>` will show when the count is greater than 10.
 
 ```svelte title="Counter.svelte" {9-11}
 <script>
@@ -311,7 +317,7 @@ You should now see a list in your browser.
 
 ### Add items
 
-To add items to the list, first create the newTodo variable in the script element. Then create the addTodo() function. Lastly, add the input and button elements to the HTML.
+To add items to the list, first create the `newTodo` variable in the `<script>` element. Then create the `addTodo()` function. Lastly, add the `<input>` and `<button>` elements to the HTML.
 
 ```svelte title="TodoList.svelte" {4, 11-16, 19-20}
 <script>
@@ -345,7 +351,7 @@ You should now be able to add items to the list by typing in the input and click
 
 ### Remove items
 
-To remove elements from the list, first add the `removeTodo()` function. Then add a button to each list item that calls the function with the todo's id.
+To remove elements from the list, first add the `removeTodo()` function. Then add a `<button>` to each list item that calls the function with the todo's id.
 
 ```svelte title="TodoList.svelte" {18-24, 33}
 <script>
@@ -387,11 +393,11 @@ To remove elements from the list, first add the `removeTodo()` function. Then ad
 
 ```
 
-You should be able to delete items from the list now by clicking the "X" button next to each item.
+You should now be able to delete items from the list now by clicking the "X" button next to each item.
 
 ### Derived state
 
-Let's learn how to hide completed items. First, add a done property to each todo item. Then add a visibleTodos variable that filters the todos based on the hideCompleted state. Then, add a checkbox input to toggle the hideCompleted state. Lastly, add a checkbox input to each todo item to mark it as done. Also, don't forget to change todos to visibleTodos inside the each block.
+Let's learn how to hide completed items. First, add a `done` property to each todo item. Then add a `visibleTodos` variable that filters the todos based on the `hideCompleted` state. Then, add a checkbox input to toggle the `hideCompleted` state. Lastly, add a checkbox input to each todo item to mark it as done. Also, don't forget to change `todos` to `visibleTodos` inside the `each` block.
 
 ```svelte title="TodoList.svelte" {"1":6-8} {"4":27-31} {"3":36-39} {"2": 44} {"5": 42} /#each (visibleTodos)/
 <script>
@@ -449,7 +455,7 @@ Let's learn how to hide completed items. First, add a done property to each todo
 
 ### Props
 
-Let's learn how to make components more flexible. Let's revisit the `HelloWorld.svelte` component and make it accept a `name` prop. This way, we can pass different names to it.
+Let's learn how to make components more flexible. Let's revisit the `HelloWorld.svelte` component and make it accept a `name` prop. This way, we can pass different names to it. To do this, we need to use the `$props()` rune.
 
 ```svelte title="HelloWorld.svelte" {1-3} /Hello ({ name })/
 <script>
@@ -475,7 +481,7 @@ The browser should now display the name you passed in.
 
 Let's learn how to toggle a class in Svelte.
 
-Create a script element and an isActive variable inside it. Then, use the `$state()` rune to initialize it to `false`. Add a ternary statement to the class attribute. Then add a button element with an onclick attribute.
+Create a `<script>` element and an `isActive` variable inside it. Then, use the `$state()` rune to initialize it to `false`. Add a ternary statement to the `class` attribute. Then add a `<button>` element with an `onclick` attribute.
 
 ```svelte title="HelloWorld.svelte" {1-3, 6-10} "{isActive ? 'red' : ''}"
 <script>
