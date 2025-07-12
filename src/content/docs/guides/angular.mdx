@@ -1,5 +1,5 @@
 ---
-title: Angular Quickstart (Coming Soon)
+title: Angular Quickstart
 description: An interactive quickstart tutorial for Angular.
 ---
 
@@ -137,6 +137,8 @@ Update `app.html` to use the new component.
 <app-counter />
 ```
 
+### Make it reactive
+
 Replace the contents of `counter.html` with a `<button>` that increments a count.
 
 ```html title="src/app/counter/counter.html"
@@ -162,6 +164,8 @@ export class Counter {
   }
 }
 ```
+
+Angular uses **signals** to make things reactive. The `signal()` function makes `count` reactive, which means it will automatically update the UI when its value changes.
 
 ### Conditional
 
