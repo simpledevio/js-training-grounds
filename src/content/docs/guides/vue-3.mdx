@@ -1,5 +1,5 @@
 ---
-title: Vue 3 Quickstart (Coming Soon)
+title: Vue 3 Quickstart
 description: An interactive quickstart tutorial for Vue 3.
 ---
 
@@ -189,7 +189,7 @@ After saving, you should see the `<h1>` element turn red in the browser.
 
 You can also add a `<style>` element to style a component. Use the `scoped` attribute to limit the styles to just a component. If you leave it off, the styles could affect other components.
 
-**Task:** Delete the `style` attribute. Then add the `<style>` element with the `scoped` attribute after the template element with the following rule.
+**Task:** Delete the `style` attribute. Then add the `<style>` element with the `scoped` attribute after the `<template>` element with the following rule.
 
 ```vue title="HelloWorld.vue" {6-10}
 
@@ -211,7 +211,7 @@ After saving, you should see that the `<h1>` element is still red.
 
 You can use a `class` attribute just like in normal HTML.
 
-**Task:** Add a class attribute with the value of heading. Change the `h1` selector to `.heading`.
+**Task:** Add a `class` attribute with the value of `heading`. Change the `h1` selector to `.heading`.
 
 ```vue title="HelloWorld.vue" "class="heading"" ".heading"
 <template>
@@ -297,7 +297,7 @@ After saving, the number on the button will go up when you click on it.
 
 ### Shorthand
 
-Replace `v-on:` with the `@` symbol.
+Replace `v-on:` with the `@` symbol. This the shorthand syntax for `v-on:`.
 
 ```vue title="Counter.vue" "@"
 <script setup>
@@ -314,7 +314,7 @@ After saving, the number on the button should still go up when you click on it.
 
 ### Use a function
 
-Create a function called `increment()`. Then replace `count++` with `increment`. Notice that you have to use `count.value++` inside the script element instead of `count++` directly.
+Create a function called `increment()`. Then replace `count++` with `increment`. Notice that you have to use `count.value++` inside the `<script>` element instead of `count++` directly.
 
 ```vue title="Counter.vue" {5-7, 11}
 <script setup>
@@ -396,7 +396,7 @@ function increment() {
 
 ### List
 
-Let's create a new file called `TodoList.vue`. Add the following script element to it. This is the data we're going to display.
+Let's create a new file called `TodoList.vue`. Add the following `<script>` element to it. This is the data we're going to display.
 
 ```vue title="TodoList.vue"
 <script setup>
@@ -420,7 +420,7 @@ import TodoList from './components/TodoList';
 </template>
 ```
 
-Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the todos constant.
+Next, add the template code after the script code. The template code uses a `v-for` directive to loop through the `todos` constant.
 
 ```vue title="TodoList.vue" {11-17} collapse={1-10}
 <script setup>
@@ -446,7 +446,7 @@ You should now see a list in your browser.
 
 ### Add items
 
-Next, import ref at the top of the script element. Create a newTodo variable using ref and wrap the array of todos in ref. Then add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
+Next, import `ref` at the top of the `<script>` element. Create a `newTodo` variable using `ref` and wrap the array of todos in `ref`. Then add the `addTodo()` function to the script code and add the `<input>` and `<button>` elements.
 
 ```vue title="TodoList.vue" {2, 6-11, 13-16, 20-21}
 <script setup>
@@ -485,7 +485,7 @@ After saving, you should have a working todo list in your browser.
 - Add the `removeTodos()` function
 - Add a `<button>` element inside the `v-for` loop
 
-```vue title="TodoList.vue" {18-20, 25} collapse={1-17}
+```vue title="TodoList.vue" {18-20, 29} collapse={1-17}
 <script setup>
 import { ref } from 'vue';
 
@@ -659,7 +659,11 @@ const isActive = ref(true);
   <button @click="isActive = !isActive">Toggle</button>
 </template>
 
-<style>/* ... */</style>
+<style>
+.red {
+  color: red;
+}
+</style>
 ```
 
 You can move the object into the `<script>` element. Make sure to use the `reactive()` function.
@@ -679,7 +683,11 @@ const classObject = reactive({
   <button @click="isActive = !isActive">Toggle</button>
 </template>
 
-<style>/* ... */</style>
+<style>
+.red {
+  color: red;
+}
+</style>
 ```
 
 You can also use a computed property.
@@ -699,5 +707,9 @@ const classObject = computed(() => ({
   <button @click="isActive = !isActive">Toggle</button>
 </template>
 
-<style>/* ... */</style>
+<style>
+.red {
+  color: red;
+}
+</style>
 ```
