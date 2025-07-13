@@ -159,8 +159,9 @@ For this section, we're going to create a new file called `Counter.svelte`. Add 
 
 Next, make sure to import it into `App.svelte`.
 
-```svelte title="App.svelte" {2, 5}
+```svelte title="App.svelte" {3, 6}
 <script>
+  import HelloWorld from './lib/HelloWorld.svelte';
   import Counter from './lib/Counter.svelte';
 </script>
 
@@ -294,6 +295,7 @@ Now add an `<h1>` with an `else if` block in the middle. This message will be di
 
 Let's create a new file called `TodoList.svelte`. Add the following code to it. This is the data we're going to display.
 
+Use an `each` block to loop through the `todos` array and display each todo item in a list. The part that says `(todo.id)` is a key that helps Svelte keep track of each item in the list.
 
 ```svelte title="TodoList.svelte"
 <script>
@@ -311,6 +313,18 @@ Let's create a new file called `TodoList.svelte`. Add the following code to it. 
 		<li>{todo.text}</li>
 	{/each}
 </ul>
+```
+
+Next, make sure to import it into `App.svelte`.
+
+```svelte title="App.svelte" {4, 7}
+<script>
+  import HelloWorld from './lib/HelloWorld.svelte';
+  import Counter from './lib/Counter.svelte';
+  import TodoList from './lib/TodoList.svelte';
+</script>
+
+<TodoList />
 ```
 
 You should now see a list in your browser.
@@ -397,9 +411,15 @@ You should now be able to delete items from the list now by clicking the "X" but
 
 ### Derived state
 
-Let's learn how to hide completed items. First, add a `done` property to each todo item. Then add a `visibleTodos` variable that filters the todos based on the `hideCompleted` state. Then, add a checkbox input to toggle the `hideCompleted` state. Lastly, add a checkbox input to each todo item to mark it as done. Also, don't forget to change `todos` to `visibleTodos` inside the `each` block.
+Let's learn how to hide completed items.
+1. Add a `done` property to each todo item.
+2. Add a `hideCompleted` variable that will be used to toggle the visibility of completed todos.
+3. Add a checkbox input to each todo item to mark it as done.
+4. Add a checkbox input to toggle the `hideCompleted` state.
+5. Add a `visibleTodos` variable that filters the todos based on the `hideCompleted` state.
+6. Don't forget to change `todos` to `visibleTodos` inside the `each` block.
 
-```svelte title="TodoList.svelte" {"1":6-8} {"4":27-31} {"3":36-39} {"2": 44} {"5": 42} /#each (visibleTodos)/
+```svelte title="TodoList.svelte" {"1":6-8} {"2": 11} {"5":27-31} {"4":36-39} {"3": 44} {"6": 42} /#each (visibleTodos)/
 <script>
 	let id = 0;
 
@@ -451,7 +471,7 @@ Let's learn how to hide completed items. First, add a `done` property to each to
 </ul>
 ```
 
-
+Notice that `visibleTodos` uses the `$derived()` rune. This means that it will automatically update whenever `todos` or `hideCompleted` changes.
 
 ### Props
 
@@ -469,7 +489,9 @@ Inside `App.svelte`, you can now pass a `name` prop to the `HelloWorld` componen
 
 ```svelte title="App.svelte" 'name="John"'
 <script>
-  import HelloWorld from './lib/HelloWorld.svelte'
+  import HelloWorld from './lib/HelloWorld.svelte';
+  import Counter from './lib/Counter.svelte';
+  import TodoList from './lib/TodoList.svelte';
 </script>
 
 <HelloWorld name="John" />
@@ -502,4 +524,4 @@ Toggle
 </style>
 ```
 
-
+The text should now change colors when you click the button.
