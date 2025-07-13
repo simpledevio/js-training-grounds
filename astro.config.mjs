@@ -37,8 +37,8 @@ export default defineConfig({
 				{
 					label: 'Contributing',
 					items: [
-						{ label: 'Markdown (Coming Soon)', slug: 'guides/markdown' },
-						{ label: 'Contributing Guide (Coming Soon)', slug: 'guides/contributing-guide' },
+						{ label: 'Markdown', slug: 'guides/markdown' },
+						{ label: 'Contributing Guide', slug: 'guides/contributing-guide' },
 					],
 				}
 			],
