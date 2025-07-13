@@ -1,10 +1,11 @@
 ---
-title: Markdown
+title: Markdown Quickstart
 description: A guide in my new Starlight docs site.
 slug: guides/markdown
 ---
 
 import Wip from '../../../reuse/wip-aside.md';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 <Wip />
 
@@ -13,6 +14,10 @@ This tutorial is for people interested in contributing to **JS Training Grounds*
 JS Training Grounds is built using a documentation generator called **Starlight**. Starlight is built on top of **Astro**, and allows you to use **Markdown** to write your content. It also includes a plugin called **Expressive Code** that enables some really nice syntax highlighting features. This tutorial will show you how to write Markdown and the different Expressive Code features we use on JS Training Grounds to highlight our code snippets.
 
 This tutorial assumes you're already familiar with VS Code, GitHub, and npm.
+
+## Intro
+
+**Markdown** is a lightweight markup language. It lets you write your content in a simple format that can be converted into HTML. The file extension for Markdown files is `.md` or `.markdown`. On JS Training Grounds, we also use `.mdx` files. MDX is a superset of Markdown that allows you to use React components inside your Markdown files.
 
 ## Setup
 
@@ -47,10 +52,21 @@ In your editor, you'll see several files. However, for now you'll mainly be work
 
 If you prefer to work online, you can also open the <a href="https://stackblitz.com/github/simpledevio/starlight-training-ground?file=src/content/docs/guides/example.md" target="_blank">Starlight training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz. (NOTE: This Stackblitz link works best in Chrome.)
 
+{/* <Tabs>
+<TabItem label="Markdown">
+
+</TabItem>
+<TabItem label="HTML">
+
+</TabItem>
+</Tabs> */}
+
 ## Headings
 
 You can use hashtags to create different headings. You can also create a level 1 heading by underlining the text with equals signs and a level 2 heading by underlining the text with dashes. On JS Training Grounds, we use hashtags for headings.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 # Heading 1
 ## Heading 2
@@ -69,6 +85,24 @@ Heading 1
 Heading 2
 ---------
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
+```html showLineNumbers=false
+<h1>Heading 1</h1>
+```
+```html showLineNumbers=false
+<h2>Heading 2</h2>
+```
+</TabItem>
+</Tabs>
 
 Make sure you follow the same rules for headings that you use for HTML.
 
@@ -84,16 +118,31 @@ title: Main Heading
 
 You don't need any special symbols to create a paragraph in Markdown. To create multiple paragraphs, separate them with a blank line.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+
+<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+```
+</TabItem>
+</Tabs>
+
+
 
 ## Unordered lists
 
 You can use dashes or asterisks to create unordered lists. On JS Training Grounds, we use dashes.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 - Item
 - Item
@@ -105,11 +154,34 @@ You can use dashes or asterisks to create unordered lists. On JS Training Ground
 * Item
 * Item
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<ul>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+</ul>
+```
+
+```html showLineNumbers=false
+<ul>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+</ul>
+```
+</TabItem>
+</Tabs>
+
+
 
 ## Ordered lists
 
 You can use numbers with periods or parentheses to create ordered lists. On JS Training Grounds, we use periods.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 1. Item
 2. Item
@@ -121,11 +193,34 @@ You can use numbers with periods or parentheses to create ordered lists. On JS T
 2) Item
 3) Item
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<ol>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+</ol>
+```
+
+```html showLineNumbers=false
+<ol>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+</ol>
+```
+</TabItem>
+</Tabs>
+
+
 
 ## Italic text
 
 You can use a single set of asterisks or underscores to make text italic. On JS Training Grounds, we use asterisks.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 *Italic*
 ```
@@ -139,11 +234,30 @@ This is what it would look like in a sentence:
 ```md showLineNumbers=false
 This is some *italic* text.
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<em>Italic<em>
+```
+
+```html showLineNumbers=false
+<em>Italic<em>
+```
+
+This is what it would look like in a sentence:
+
+```html showLineNumbers=false
+<p>This is some <em>italic<em> text.</p>
+```
+</TabItem>
+</Tabs>
 
 ## Bold text
 
 You can use 2 pairs of asterisks or underscores to make text bold. On JS Training Grounds, we use asterisks.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 **Bold**
 ```
@@ -157,11 +271,30 @@ This is what it would look like in a sentence:
 ```md showLineNumbers=false
 This is some **bold** text.
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<strong>Bold<strong>
+```
+
+```html showLineNumbers=false
+<strong>Bold<strong>
+```
+
+This is what it would look like in a sentence:
+
+```html showLineNumbers=false
+This is some <strong>bold<strong> text.
+```
+</TabItem>
+</Tabs>
 
 ## Links
 
-You can use square brackets and parentheses to create links. You can also use the second notation to add links at the bottom of the page. On JS Training Grounds, we use the first method.
+You can use square brackets and parentheses to create links. You can also use the second notation if you don't want the URLs to clutter up your content. On JS Training Grounds, we use the first method.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 [Link](http://example.com/)
 ```
@@ -179,19 +312,51 @@ This is what it would look like in a sentence:
 ```md showLineNumbers=false
 This is some [link](http://example.com/) text.
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<a href="http://example.com/">Link</a>
+```
+
+```html showLineNumbers=false
+<a href="http://example.com/">Link</a>
+
+<p>Other stuff goes here...</p>
+```
+
+This is what it would look like in a sentence:
+
+```html showLineNumbers=false
+<p>This is some <a href="http://example.com/">link</a> text.</p>
+```
+</TabItem>
+</Tabs>
 
 ## Blockquotes
 
 You can use the greater than sign to create a blockquote.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 > This is a blockquote.
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<blockquote>
+<p>This is a blockquote.</p>
+</blockquote>
+```
+</TabItem>
+</Tabs>
 
 ## Horizontal rules
 
 You can use 3 dashes or asterisks to create a horizontal rule. On JS Training Grounds, we use dashes.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 Lorem ipsum dolor.
 
@@ -207,11 +372,34 @@ Lorem ipsum dolor.
 
 Ut enim ad.
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<p>Lorem ipsum dolor.</p>
+
+<hr>
+
+<p>Ut enim ad.</p>
+```
+
+```html showLineNumbers=false
+<p>Lorem ipsum dolor.</p>
+
+<hr>
+
+<p>Ut enim ad.</p>
+```
+</TabItem>
+</Tabs>
+
+
 
 ## Inline code
 
 Use backticks to create inline code.
 
+<Tabs>
+<TabItem label="Markdown">
 ```md showLineNumbers=false
 `Inline code`
 ```
@@ -221,11 +409,28 @@ This is what it would look like in a sentence:
 ```md showLineNumbers=false
 This is some `inline code` text.
 ```
+</TabItem>
+<TabItem label="HTML">
+```html showLineNumbers=false
+<code>Inline code</code>
+```
+
+This is what it would look like in a sentence:
+
+```html showLineNumbers=false
+<p>This is some <code>inline code</code> text.</p>
+```
+</TabItem>
+</Tabs>
+
+
 
 ## Code blocks
 
 Use 3 backticks to open and close a code block.
 
+<Tabs>
+<TabItem label="Markdown">
 ````md showLineNumbers=false
 ```
 function greeting() {
@@ -233,8 +438,17 @@ function greeting() {
 }
 ```
 ````
+</TabItem>
+<TabItem label="HTML">
+````html showLineNumbers=false
+<pre><code>function greeting() {
+  console.log("Hello World");
+}</code></pre>
+````
+</TabItem>
+</Tabs>
 
-The snippet above will look like this when rendered:
+The snippet above will look like this when rendered in the browser:
 
 ```
 function greeting() {
