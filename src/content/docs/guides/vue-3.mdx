@@ -241,8 +241,9 @@ For this section, we're going to create a new file called `Counter.vue`. Add the
 
 Next, make sure to import it into `App.vue`.
 
-```vue title="App.vue" {2, 6}
+```vue title="App.vue" {3, 7}
 <script setup>
+import HelloWorld from './components/HelloWorld';
 import Counter from './components/Counter';
 </script>
 
@@ -410,8 +411,10 @@ const todos = [
 </script>
 ```
 
-```vue title="App.vue" {2, 6}
+```vue title="App.vue" {4, 8}
 <script setup>
+import HelloWorld from './components/HelloWorld';
+import Counter from './components/Counter';
 import TodoList from './components/TodoList';
 </script>
 
@@ -599,6 +602,8 @@ In `App.vue`, you would add an attribute to `<HelloWorld>` called `name` with th
 ```vue title="App.vue" 'name="John"'
 <script setup>
 import HelloWorld from './components/HelloWorld';
+import Counter from './components/Counter';
+import TodoList from './components/TodoList';
 </script>
 
 <template>
