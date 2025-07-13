@@ -3,11 +3,9 @@ title: React Quickstart
 description: An interactive quickstart tutorial for React.
 ---
 
-:::caution
-This tutorial is a work-in-progress. You can try it, but it might not be done yet.
+import Wip from '../../../reuse/wip-aside.md';
 
-Want to contribute to it? Visit <a href="https://github.com/simpledevio/js-training-grounds" target="_blank">our GitHub repo</a>.
-:::
+<Wip />
 
 This tutorial assumes you're already familiar with HTML, CSS, JS, and npm. It also assumes you know what a JS framework is for.
 
@@ -215,7 +213,7 @@ After saving, the `<h1>` element should still be red.
 
 ### Props
 
-Add a name prop to the `HelloWorld` component.
+Add a `name` prop to the `HelloWorld` component.
 
 ```jsx title="HelloWorld.jsx" "{name}"
 function HelloWorld({name}) {
@@ -258,7 +256,8 @@ export default Counter;
 
 Next, make sure to import it into `App.jsx`.
 
-```jsx title="App.jsx" {1, 5}
+```jsx title="App.jsx" {2, 6}
+import HelloWorld from './components/HelloWorld';
 import Counter from './components/Counter';
 
 function App() {
@@ -338,7 +337,7 @@ After saving, the number on the button should still go up by 1 when you click on
 
 Let's learn how to display elements conditionally.
 
-If you only need an if condition, you can use the `&&` syntax in the return statement.
+If you only need an if condition, you can use the `&&` syntax in the `return` statement.
 
 ```jsx title="Counter.jsx" {12}
 import { useState } from 'react';
@@ -363,7 +362,7 @@ export default Counter;
 
 This will display a heading with the phrase "Good job!" in the browser if the count is larger than 10. Try clicking on the button more than 10 times to test it out.
 
-If you need an if and an else statement you can use a ternary operator in the return statement.
+If you need an if and an else statement you can use a ternary operator in the `return` statement.
 
 ```jsx title="Counter.jsx" {12}
 import { useState } from 'react';
@@ -424,7 +423,7 @@ This will display a heading with the phrase "Good job!" in the browser if the co
 
 ### List
 
-For this section, we’re going to create a new file called `TodoList.jsx`. Add the following code to it.
+For this section, we're going to create a new file called `TodoList.jsx`. Add the following code to it.
 
 ```jsx title="TodoList.jsx"
 import { useState } from 'react';
@@ -452,7 +451,9 @@ export default TodoList;
 
 Next, make sure to import it into `App.jsx`.
 
-```jsx title="App.jsx" {1, 5}
+```jsx title="App.jsx" {3, 7}
+import HelloWorld from './components/HelloWorld';
+import Counter from './components/Counter';
 import TodoList from './components/TodoList';
 
 function App() {
@@ -468,7 +469,7 @@ export default App;
 
 ### Add items
 
-Next, add a newItem state variable, the `handleAdd()` function and the `<input>` element.
+Next, add a `newItem` state variable, the `handleAdd()` function and the `<input>` element.
 
 ```jsx title="TodoList.jsx" {9-17, 21-25} collapse={1-8}
 import { useState } from 'react';
@@ -565,7 +566,7 @@ export default TodoList;
 
 ### Filter items
 
-Next, add the `toggleItem()` function and the `<input>` element. Also, add a completed property to each item in the list of items.
+Next, add the `toggleItem()` function and the `<input>` element. Also, add a `completed` property to each item in the list of items.
 
 ```jsx title="TodoList.jsx" {23-29, 41-45} ", completed: false" collapse={9-22}
 import { useState } from "react";
@@ -627,7 +628,7 @@ function TodoList() {
 export default TodoList;
 ```
 
-Next, add a hideCompleted state variable and a filteredItems variable.
+Next, add a `hideCompleted` state variable and a `filteredItems` variable.
 
 ```jsx title="TodoList.jsx" {10, 32-34, 43-48} "filteredItems.map" collapse={12-30}
 import { useState } from "react";
@@ -704,7 +705,7 @@ export default TodoList;
 
 ### CSS + JS
 
-For this section, create a new file called `HelloWorld.css` in the components folder.
+Let's learn how to toggle classes in React. For this section, we're going to use the `HelloWorld.css` file we created earlier.
 
 ```css title="HelloWorld.css"
 .red {
@@ -712,7 +713,7 @@ For this section, create a new file called `HelloWorld.css` in the components fo
 }
 ```
 
-Next, import that file inside `HelloWorld.jsx`. Then, use a ternary operator with the `className` prop to toggle the class. Also, add an onClick prop with an inline function that toggles the isActive state variable.
+In `HelloWorld.jsx`, use a ternary operator with the `className` prop to toggle the class. Also, add an `onClick` prop with an inline function that toggles the `isActive` state variable.
 
 ```jsx title="HelloWorld.jsx" {2} "className={isActive ? 'red' : ''}" "onClick={() => setIsActive(!isActive)}"
 import { useState } from 'react';
