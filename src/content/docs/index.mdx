@@ -21,7 +21,16 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <LinkCard title="React Quickstart" href="/guides/react/" description="Learn about JSX, props, state, and more." />
+  <LinkCard title="Vue 3 Quickstart" href="/guides/vue-3/" description="Learn about components and the Composition API." />
+  <LinkCard title="Svelte 5 Quickstart" href="/guides/svelte-5/" description="Learn about components and runes." />
+  <LinkCard title="Angular Quickstart" href="/guides/angular/" description="Learn about components and signals." />
+  <LinkCard title="Markdown Quickstart" href="/guides/markdown/" description="Learn how to write Markdown." />
+  <LinkCard title="Contributing Guide" href="/guides/contributing-guide/" description="Learn how to contribute to this project." />
+</CardGrid>
 
 ## How it works
 
@@ -30,12 +39,12 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 		Visit the quickstart for the topic you want to learn. We have quickstarts for React, Vue 3, Svelte 5, Angular, and more.
 	</Card>
 
-	<Card title="2. Download repo" icon="download">
-		Visit the link for the right training ground repo. Download it, unzip it, and open it in your code editor. (Some tutorials also have a link to a Stackblitz project, which you can open in your web browser and edit online.)
+	<Card title="2. Open the Stackblitz link" icon="download">
+		Click the Stackblitz link to open the training ground project in your browser. Alternatively, you can visit the GitHub link and download the repo, unzip it, and open it in your code editor.
 	</Card>
 
 	<Card title="3. Run commands" icon="laptop">
-		Run the commands to set up your project. (Usually you just run `npm install`, `npm run dev`, and then open the web page in your web browser.)
+		If you downloaded the project from GitHub, run the commands in the README to set up your project. If you're using Stackblitz, you can skip this part! The project will load for you.
 	</Card>
 
 	<Card title="4. Start learning!" icon="rocket">
