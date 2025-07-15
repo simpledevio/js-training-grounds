@@ -291,7 +291,31 @@ Now add an `<h1>` with an `else if` block in the middle. This message will be di
 <button onclick={increment}>Count: { count }</button>
 ```
 
+### Binding
 
+Let's learn about binding. Binding is the technique that is used to keep the vaule of an input in sync with a reactive variable.
+
+Let's reset the Hello World component back to this.
+
+```svelte title="HelloWorld.svelte"
+<h1>Hello World</h1>
+```
+
+Then, add the following code.
+
+```svelte title="HelloWorld.svelte" {1-5} /Hello (\{name\})/
+<script>
+	let name = $state('');
+</script>
+
+<input bind:value={name} />
+
+<h1>Hello {name}</h1>
+```
+
+The part that says `bind:value={name}` is how you bind the input to the name variable, which is reactive.
+
+Now the heading will update whenever you type in the input.
 
 ### List
 
@@ -496,7 +520,17 @@ The browser should now display the name you passed in.
 
 ### CSS + JS
 
-Let's learn how to toggle a class in Svelte.
+Let's learn how to toggle a class in Svelte. First, reset the Hello World component back to this:
+
+```svelte title="HelloWorld.svelte"
+<h1 class="red">Hello World</h1>
+
+<style>
+  .red {
+    color: red;
+  }
+</style>
+```
 
 Create a `<script>` element and an `isActive` variable inside it. Then, use the `$state()` rune to initialize it to `false`. Add a ternary statement to the `class` attribute. Then add a `<button>` element with an `onclick` attribute.
 
