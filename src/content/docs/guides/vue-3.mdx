@@ -447,7 +447,9 @@ const todos = [
 </template>
 ```
 
-You should now see a list in your browser.
+The `:key` attribute helps Vue keep track of all of the items in the list.
+
+After saving, you should now see a list in your browser.
 
 ### Add items
 
@@ -583,11 +585,11 @@ function removeTodo(todo) {
 </template>
 ```
 
-After saving, you should be able to hide or show the completed items.
+After saving, you should be able to hide or show the completed items. Notice that `filteredTodos` uses the `computed()` function. This means that it will automatically update whenever `todos` or `hideCompleted` changes.
 
 ### Props
 
-Let's revisit `HelloWorld.vue`. Earlier we saw how to pass content to a child component using slots. There's another way to pass information to a child component called **props**.
+Earlier we saw how to pass content to a child component using slots. There's another way to pass information to a child component called **props**. Let's revisit the `HelloWorld.vue` component and make it accept a `name` prop. This way, we can pass different names to it. To do this, we need to use the `defineProps()` function. It takes an array of strings.
 
 ```vue title="HelloWorld.vue" {2} "{{ name }}"
 <script setup>
