@@ -153,7 +153,7 @@ After saving, you should see that the `<h1>` element is still red.
 
 ### Add a variable
 
-For this section, we're going to create a new file called `Counter.svelte`. Add the following code to it.
+For this section, create a new file called `Counter.svelte`. Add the following code to it.
 
 ```svelte title="Counter.svelte" {2-4}
 <button>Count: 0</button>
@@ -186,7 +186,7 @@ Add a `<script>` element above the `<button>` element.
 
 Svelte 5 uses **runes** to make things reactive.
 
-Create a `count` variable and use the `$state()` rune to initialize it. Also, replace `0` with `{ count }` in the `<button>` element.
+Create a `count` variable and use the `$state()` rune to initialize it. Also, replace `0` with `{ count }` in the `<button>` element. (To display a variable in Svelte, you wrap it in curly braces `{}`.)
 
 ```svelte title="Counter.svelte" {2} "{ count }"
 <script>
@@ -335,7 +335,7 @@ You should now see a list in your browser.
 
 To add items to the list, first create the `newTodo` variable in the `<script>` element. Then create the `addTodo()` function. Lastly, add the `<input>` and `<button>` elements to the HTML.
 
-```svelte title="TodoList.svelte" {4, 11-16, 19-20}
+```svelte title="TodoList.svelte" {4, 11-14, 17-18}
 <script>
 	let id = 0;
 
@@ -347,10 +347,8 @@ To add items to the list, first create the `newTodo` variable in the `<script>` 
 	]);
 
 	function addTodo() {
-		if (newTodo.trim() !== '') {
-			todos.push({ id: id++, text: newTodo });
-			newTodo = '';
-		}
+		todos.push({ id: id++, text: newTodo });
+		newTodo = '';
 	}
 </script>
 
@@ -369,7 +367,7 @@ You should now be able to add items to the list by typing in the input and click
 
 To remove elements from the list, first add the `removeTodo()` function. Then add a `<button>` to each list item that calls the function with the todo's id.
 
-```svelte title="TodoList.svelte" {18-24, 33}
+```svelte title="TodoList.svelte" {16-21, 30} collapse={1-15}
 <script>
 	let id = 0;
 
@@ -381,14 +379,11 @@ To remove elements from the list, first add the `removeTodo()` function. Then ad
 	]);
 
 	function addTodo() {
-		if (newTodo.trim() !== '') {
-			todos.push({ id: id++, text: newTodo });
-			newTodo = '';
-		}
+		todos.push({ id: id++, text: newTodo });
+		newTodo = '';
 	}
 
 	function removeTodo(todoId) {
-		// Find the index and remove it from the array
 		const idx = todos.findIndex(todo => todo.id === todoId);
 		if (idx !== -1) {
 			todos.splice(idx, 1);
@@ -406,14 +401,14 @@ To remove elements from the list, first add the `removeTodo()` function. Then ad
 		</li>
 	{/each}
 </ul>
-
 ```
 
 You should now be able to delete items from the list now by clicking the "X" button next to each item.
 
 ### Derived state
 
-Let's learn how to hide completed items.
+Let's learn how to hide completed items. To do this, you need to use the `$derived()` rune. The `$derived()` rune allows you to create a variable that automatically updates when other variables update.
+
 1. Add a `done` property to each todo item.
 2. Add a `hideCompleted` variable that will be used to toggle the visibility of completed todos.
 3. Add a checkbox input to each todo item to mark it as done.
@@ -421,7 +416,7 @@ Let's learn how to hide completed items.
 5. Add a `visibleTodos` variable that filters the todos based on the `hideCompleted` state.
 6. Don't forget to change `todos` to `visibleTodos` inside the `each` block.
 
-```svelte title="TodoList.svelte" {"1":6-8} {"2": 11} {"5":27-31} {"4":36-39} {"3": 44} {"6": 42} /#each (visibleTodos)/
+```svelte title="TodoList.svelte" {"1":6-8} {"2": 11} {"5":25-29} {"4":34-37} {"3": 42} {"6": 40} collapse={12-24} /#each (visibleTodos)/
 <script>
 	let id = 0;
 
@@ -435,10 +430,8 @@ Let's learn how to hide completed items.
 	let hideCompleted = $state(false);
 
 	function addTodo() {
-		if (newTodo.trim() !== '') {
 			todos.push({ id: id++, text: newTodo, done: false });
 			newTodo = '';
-		}
 	}
 
 	function removeTodo(todoId) {
@@ -477,7 +470,7 @@ Notice that `visibleTodos` uses the `$derived()` rune. This means that it will a
 
 ### Props
 
-Let's learn how to make components more flexible. Let's revisit the `HelloWorld.svelte` component and make it accept a `name` prop. This way, we can pass different names to it. To do this, we need to use the `$props()` rune.
+Let's learn how to make components more flexible using props. **Props** allow you to pass data from a parent component into a child component. Let's revisit the `HelloWorld.svelte` component and make it accept a `name` prop. This way, we can pass different names to it. To do this, we need to use the `$props()` rune.
 
 ```svelte title="HelloWorld.svelte" {1-3} /Hello ({ name })/
 <script>
