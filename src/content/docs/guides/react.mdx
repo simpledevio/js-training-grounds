@@ -246,7 +246,7 @@ The page should display whatever name you passed in.
 
 ### Add a state variable
 
-For this section, we're going to create a new file called `Counter.jsx`. Add the following code to it.
+For this section, create a new file called `Counter.jsx`. Add the following code to it.
 
 ```jsx title="Counter.jsx"
 function Counter() {
@@ -275,7 +275,7 @@ export default App;
 
 After saving you should see the button appear on screen. It doesn't do anything yet if you click on it.
 
-Back in `Counter,jsx`, import `useState` from React and create a state variable for count. Replace the number `0` with `{count}`.
+Back in `Counter.jsx`, import `useState` from React and create a state variable called `count`. Replace the number `0` with `{count}`.
 
 ```jsx title="Counter.jsx" {1, 4} "{count}"
 import { useState } from 'react';
@@ -427,7 +427,7 @@ This will display a heading with the phrase "Good job!" in the browser if the co
 
 ### Binding
 
-Let's learn about binding. Binding is the technique that is used to keep the value of an input in sync with a reactive variable.
+Let's learn about binding. Binding is the technique that's used to keep the value of an input in sync with a reactive variable.
 
 Let's reset the Hello World component back to this.
 
@@ -553,7 +553,7 @@ function TodoList() {
 export default TodoList;
 ```
 
-
+After saving, you should be able to add items to the list.
 
 ### Remove items
 
@@ -606,11 +606,11 @@ function TodoList() {
 export default TodoList;
 ```
 
-
+After saving, you should be able to delete items from the list.
 
 ### Filter items
 
-Next, add the `toggleItem()` function and the `<input>` element. Also, add a `completed` property to each item in the list of items.
+Next, add the `toggleTodo()` function and the `<input>` element. Also, add a `completed` property to each item in the list of items.
 
 ```jsx title="TodoList.jsx" {23-29, 41-45} ", completed: false" collapse={9-22}
 import { useState } from "react";
@@ -745,7 +745,7 @@ function TodoList() {
 export default TodoList;
 ```
 
-
+After saving, you should be able to hide completed items.
 
 ### CSS + JS
 
