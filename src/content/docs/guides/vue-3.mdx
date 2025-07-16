@@ -584,7 +584,7 @@ const todos = ref([
   { id: id++, text: 'Learn Vue', done: false }
 ]);
 
-const filteredTodos = computed(() => {
+const visibleTodos = computed(() => {
   return hideCompleted.value
     ? todos.value.filter((t) => !t.done)
     : todos.value
@@ -604,7 +604,7 @@ function removeTodo(todo) {
   <input v-model="newTodo">
   <button @click="addTodo">Add Todo</button>
   <ul>
-    <li v-for="todo in filteredTodos" :key="todo.id">
+    <li v-for="todo in visibleTodos" :key="todo.id">
       <input type="checkbox" v-model="todo.done">
       {{ todo.text }}
       <button @click="removeTodo(todo)">X</button>
