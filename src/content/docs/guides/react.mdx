@@ -473,7 +473,7 @@ For this section, we're going to create a new file called `TodoList.jsx`. Add th
 import { useState } from 'react';
 
 function TodoList() {
-  const [items, setItems] = useState([
+  const [todos, setTodos] = useState([
     { id: crypto.randomUUID(), text: 'Buy groceries' },
     { id: crypto.randomUUID(), text: 'Read a book' },
     { id: crypto.randomUUID(), text: 'Go for a walk' },
@@ -482,8 +482,8 @@ function TodoList() {
   return (
     <>
       <ul>
-        {items.map((item) => (
-          <li key={item.id}>{item.text}</li>
+        {todos.map((todo) => (
+          <li key={todo.id}>{todo.text}</li>
         ))}
       </ul>
     </>
@@ -519,31 +519,31 @@ Next, add a `newItem` state variable, the `handleAdd()` function and the `<input
 import { useState } from 'react';
 
 function TodoList() {
-  const [items, setItems] = useState([
+  const [todos, setTodos] = useState([
     { id: crypto.randomUUID(), text: 'Buy groceries' },
     { id: crypto.randomUUID(), text: 'Read a book' },
     { id: crypto.randomUUID(), text: 'Go for a walk' },
   ]);
-  const [newItem, setNewItem] = useState("");
+  const [newTodo, setNewTodo] = useState("");
 
   const handleAdd = () => {
-    setItems([
-      ...items,
-      { id: crypto.randomUUID(), text: newItem }
+    setTodos([
+      ...todos,
+      { id: crypto.randomUUID(), text: newTodo }
     ]);
-    setNewItem("");
+    setNewTodo("");
   };
 
   return (
     <>
       <input
-        value={newItem}
-        onChange={(e) => setNewItem(e.target.value)}
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
       />
       <button onClick={handleAdd}>Add</button>
       <ul>
-        {items.map((item) => (
-          <li key={item.id}>{item.text}</li>
+        {todos.map((todo) => (
+          <li key={todo.id}>{todo.text}</li>
         ))}
       </ul>
     </>
@@ -563,37 +563,37 @@ Next, add the `handleDelete()` function and the `<button>` element.
 import { useState } from "react";
 
 function TodoList() {
-  const [items, setItems] = useState([
-    { id: crypto.randomUUID(), text: "Buy groceries" },
-    { id: crypto.randomUUID(), text: "Read a book" },
-    { id: crypto.randomUUID(), text: "Go for a walk" }
+  const [todos, setTodos] = useState([
+    { id: crypto.randomUUID(), text: 'Buy groceries' },
+    { id: crypto.randomUUID(), text: 'Read a book' },
+    { id: crypto.randomUUID(), text: 'Go for a walk' },
   ]);
-  const [newItem, setNewItem] = useState("");
+  const [newTodo, setNewTodo] = useState("");
 
   const handleAdd = () => {
-    setItems([
-      ...items,
-      { id: crypto.randomUUID(), text: newItem }
+    setTodos([
+      ...todos,
+      { id: crypto.randomUUID(), text: newTodo }
     ]);
-    setNewItem("");
+    setNewTodo("");
   };
 
   const handleDelete = (id) => {
-    setItems(items.filter((item) => item.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
     <>
       <input
-        value={newItem}
-        onChange={(e) => setNewItem(e.target.value)}
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
       />
       <button onClick={handleAdd}>Add</button>
       <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            {item.text}{" "}
-            <button onClick={() => handleDelete(item.id)}>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.text}{" "}
+            <button onClick={() => handleDelete(todo.id)}>
               Delete
             </button>
           </li>
@@ -616,29 +616,29 @@ Next, add the `toggleItem()` function and the `<input>` element. Also, add a `co
 import { useState } from "react";
 
 function TodoList() {
-  const [items, setItems] = useState([
+  const [todos, setTodos] = useState([
     { id: crypto.randomUUID(), text: "Buy groceries", completed: false },
     { id: crypto.randomUUID(), text: "Read a book", completed: false },
     { id: crypto.randomUUID(), text: "Go for a walk", completed: false }
   ]);
-  const [newItem, setNewItem] = useState("");
+  const [newTodo, setNewTodo] = useState("");
 
   const handleAdd = () => {
-    setItems([
-      ...items,
-      { id: crypto.randomUUID(), text: newItem }
+    setTodos([
+      ...todos,
+      { id: crypto.randomUUID(), text: newTodo }
     ]);
-    setNewItem("");
+    setNewTodo("");
   };
 
   const handleDelete = (id) => {
-    setItems(items.filter((item) => item.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const toggleItem = (id) => {
-    setItems(
-      items.map((item) =>
-        item.id === id ? { ...item, completed: !item.completed } : item
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
   };
@@ -646,20 +646,20 @@ function TodoList() {
   return (
     <>
       <input
-        value={newItem}
-        onChange={(e) => setNewItem(e.target.value)}
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
       />
       <button onClick={handleAdd}>Add</button>
       <ul>
-        {items.map((item) => (
-          <li key={item.id}>
+        {todos.map((todo) => (
+          <li key={todo.id}>
             <input
               type="checkbox"
-              checked={item.completed}
-              onChange={() => toggleItem(item.id)}
+              checked={todo.completed}
+              onChange={() => toggleTodo(todo.id)}
             />
-            {item.text}{" "}
-            <button onClick={() => handleDelete(item.id)}>
+            {todo.text}{" "}
+            <button onClick={() => handleDelete(todo.id)}>
               Delete
             </button>
           </li>
@@ -678,43 +678,43 @@ Next, add a `hideCompleted` state variable and a `filteredItems` variable.
 import { useState } from "react";
 
 function TodoList() {
-  const [items, setItems] = useState([
+  const [todos, setTodos] = useState([
     { id: crypto.randomUUID(), text: "Buy groceries", completed: false },
     { id: crypto.randomUUID(), text: "Read a book", completed: false },
     { id: crypto.randomUUID(), text: "Go for a walk", completed: false }
   ]);
-  const [newItem, setNewItem] = useState("");
+  const [newTodo, setNewTodo] = useState("");
   const [hideCompleted, setHideCompleted] = useState(false);
 
   const handleAdd = () => {
-    setItems([
-      ...items,
-      { id: crypto.randomUUID(), text: newItem }
+    setTodos([
+      ...todos,
+      { id: crypto.randomUUID(), text: newTodo }
     ]);
-    setNewItem("");
+    setNewTodo("");
   };
 
   const handleDelete = (id) => {
-    setItems(items.filter((item) => item.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const toggleItem = (id) => {
-    setItems(
-      items.map((item) =>
-        item.id === id ? { ...item, completed: !item.completed } : item
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
   };
 
-  const filteredItems = hideCompleted
-        ? items.filter((item) => !item.completed)
-        : items;
+  const visibleTodos = hideCompleted
+        ? todos.filter((todo) => !todo.completed)
+        : todos;
 
   return (
     <>
       <input
-        value={newItem}
-        onChange={(e) => setNewItem(e.target.value)}
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
       />
       <button onClick={handleAdd}>Add</button>
       <input
@@ -724,15 +724,15 @@ function TodoList() {
       />
       <label>Hide Completed</label>
       <ul>
-        {filteredItems.map((item) => (
-          <li key={item.id}>
+        {visibleTodos.map((todo) => (
+          <li key={todo.id}>
             <input
               type="checkbox"
-              checked={item.completed}
-              onChange={() => toggleItem(item.id)}
+              checked={todo.completed}
+              onChange={() => toggleTodo(todo.id)}
             />
-            {item.text}{" "}
-            <button onClick={() => handleDelete(item.id)}>
+            {todo.text}{" "}
+            <button onClick={() => handleDelete(todo.id)}>
               Delete
             </button>
           </li>
