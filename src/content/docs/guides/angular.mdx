@@ -64,6 +64,19 @@ In our `hello-world.html` file, we have an `<h1>` element already added.
 <h1>Hello John</h1>
 ```
 
+### Multiple roots
+
+Unlike some other JS frameworks, you can have more than one root element.
+
+**Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
+
+```angular-html title="src/app/hello-world/hello-world.html"
+<h1>Hello John</h1>
+<p>Lorem ipsum dolor...</p>
+```
+
+After saving, you should now see both elements in the browser.
+
 ### app.ts
 
 Before we look at our next topic, open up `app.ts` so you can see how it's importing the Hello World component.
@@ -103,6 +116,23 @@ h1 {
 ```
 
 After saving, you should see the text in the `<h1>` element change to red.
+
+### class attribute
+
+You can use a `class` attribute just like in normal HTML.
+
+**Task:** Add a `class` attribute with the value of `red`. Change the `h1` selector to `.red`.
+
+```angular-html title="src/app/hello-world/hello-world.html"
+<h1 class="red">Hello John</h1>
+<p>Lorem ipsum dolor...</p>
+```
+
+```css title="src/app/hello-world/hello-world.css"
+.red {
+  color: red;
+}
+```
 
 ## JS
 
