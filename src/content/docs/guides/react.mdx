@@ -186,21 +186,21 @@ After saving, you should see that the `<h1>` element is still red. Styles import
 
 To apply CSS classes, React uses the `className` attribute instead of `class` (because `class` is a reserved keyword in JavaScript).
 
-**Task:** In `HelloWorld.css`, change the `h1` selector to a class selector, e.g., `.heading`. Then, add `className="heading"` to the `<h1>` element in `HelloWorld.jsx`.
+**Task:** In `HelloWorld.css`, change the `h1` selector to a class selector, e.g., `.red`. Then, add `className="red"` to the `<h1>` element in `HelloWorld.jsx`.
 
-```css title="HelloWorld.css" ".heading"
-.heading {
+```css title="HelloWorld.css" ".red"
+.red {
   color: red;
 }
 ```
 
-```jsx title="HelloWorld.jsx" 'className="heading"'
+```jsx title="HelloWorld.jsx" 'className="red"'
 import './HelloWorld.css';
 
 function HelloWorld() {
   return (
     <>
-      <h1 className="heading">Hello John</h1>
+      <h1 className="red">Hello John</h1>
       <p>Lorem ipsum dolor...</p>
     </>
   );
