@@ -297,7 +297,7 @@ interface TodoItem {
   templateUrl: './todo-list.html',
 })
 export class TodoList {
-  tasks = signal<TodoItem[]>([
+  todos = signal<TodoItem[]>([
     { text: 'Learn Angular basics', completed: false },
     { text: 'Build a todo app', completed: false },
     { text: 'Practice TypeScript', completed: false }
@@ -310,9 +310,9 @@ Next, replace the contents of `todo-list.html` with the following code. Use the 
 ```angular-html title="src/app/todo-list/todo-list.html"
 <div>
 <ul>
-  @for (task of tasks(); track $index) {
+  @for (todo of todos(); track $index) {
     <li>
-      {{ task.text }}
+      {{ todo.text }}
     </li>
   }
 </ul>
@@ -325,18 +325,18 @@ To add items to the list, add the `<form>`, `<input>`, and `<button>` elements t
 
 ```angular-html title="src/app/todo-list/todo-list.html" {2-9}
 <div>
-<form (ngSubmit)="addTask()" #taskForm="ngForm">
+<form (ngSubmit)="addTodo()" #taskForm="ngForm">
   <input
-    [(ngModel)]="newTask"
-    name="newTask"
+    [(ngModel)]="newTodo"
+    name="newTodo"
   >
-  <button type="submit">Add Task</button>
+  <button type="submit">Add</button>
 </form>
 
 <ul>
-  @for (task of tasks(); track $index) {
+  @for (todo of todos(); track $index) {
     <li>
-      {{ task.text }}
+      {{ todo.text }}
     </li>
   }
 </ul>
@@ -360,17 +360,17 @@ interface TodoItem {
   templateUrl: './todo-list.html',
 })
 export class TodoList {
-  tasks = signal<TodoItem[]>([
+  todos = signal<TodoItem[]>([
     { text: 'Learn Angular basics', completed: false },
     { text: 'Build a todo app', completed: false },
     { text: 'Practice TypeScript', completed: false }
   ]);
 
-  newTask = signal('');
+  newTodo = signal('');
 
-  addTask() {
-    this.tasks.update(tasks => [...tasks, { text: this.newTask(), completed: false }]);
-    this.newTask.set('');
+  addTodo() {
+    this.todos.update(todos => [...todos, { text: this.newTodo(), completed: false }]);
+    this.newTodo.set('');
   }
 }
 ```
@@ -381,19 +381,19 @@ To delete a task, first add a `<button>` element to each task in the list.
 
 ```angular-html title="src/app/todo-list/todo-list.html" {14}
 <div>
-<form (ngSubmit)="addTask()" #taskForm="ngForm">
+<form (ngSubmit)="addTodo()" #taskForm="ngForm">
   <input
-    [(ngModel)]="newTask"
-    name="newTask"
+    [(ngModel)]="newTodo"
+    name="newTodo"
   >
-  <button type="submit">Add Task</button>
+  <button type="submit">Add</button>
 </form>
 
 <ul>
-  @for (task of tasks(); track $index) {
+  @for (todo of todos(); track $index) {
     <li>
-      {{ task.text }}
-      <button (click)="deleteTask($index)">Delete</button>
+      {{ todo.text }}
+      <button (click)="deleteTodo($index)">Delete</button>
     </li>
   }
 </ul>
@@ -417,22 +417,22 @@ interface TodoItem {
   templateUrl: './todo-list.html',
 })
 export class TodoList {
-  tasks = signal<TodoItem[]>([
+  todos = signal<TodoItem[]>([
     { text: 'Learn Angular basics', completed: false },
     { text: 'Build a todo app', completed: false },
     { text: 'Practice TypeScript', completed: false }
   ]);
 
-  newTask = signal('');
+  newTodo = signal('');
 
-  addTask() {
-    this.tasks.update(tasks => [...tasks, { text: this.newTask(), completed: false }]);
-    this.newTask.set('');
+  addTodo() {
+    this.todos.update(todos => [...todos, { text: this.newTodo(), completed: false }]);
+    this.newTodo.set('');
   }
 
-  deleteTask(index: number) {
-    const taskToDelete = this.tasks()[index];
-    this.tasks.update(tasks => tasks.filter(task => task !== taskToDelete));
+  deleteTodo(index: number) {
+    const todoToDelete = this.todos()[index];
+    this.todos.update(todos => todos.filter(todo => todo !== todoToDelete));
   }
 }
 ```
@@ -443,10 +443,10 @@ To filter the tasks, first add a checkbox `<input>` element at the top that can 
 
 ```angular-html title="src/app/todo-list/todo-list.html" {10-20, 24-28}
 <div>
-<form (ngSubmit)="addTask()" #taskForm="ngForm">
+<form (ngSubmit)="addTodo()" #taskForm="ngForm">
   <input
-    [(ngModel)]="newTask"
-    name="newTask"
+    [(ngModel)]="newTodo"
+    name="newTodo"
   >
   <button type="submit">Add Task</button>
 </form>
@@ -463,22 +463,22 @@ To filter the tasks, first add a checkbox `<input>` element at the top that can 
 </div>
 
 <ul>
-  @for (task of visibleTasks(); track $index) {
+  @for (todo of visibleTodos(); track $index) {
     <li>
         <input
           type="checkbox"
-          [checked]="task.completed"
-          (change)="toggleTask($index)"
+          [checked]="todo.completed"
+          (change)="toggleTodo($index)"
         >
-      {{ task.text }}
-      <button (click)="deleteTask($index)">Delete</button>
+      {{ todo.text }}
+      <button (click)="deleteTodo($index)">Delete</button>
     </li>
   }
 </ul>
 </div>
 ```
 
-Add the `hideCompleted` signal and the `visibleTasks` computed property in `todo-list.ts`. Then add the `toggleTask` method to handle toggling the completion status of a task.
+Add the `hideCompleted` signal and the `visibleTodos` computed property in `todo-list.ts`. Then add the `toggleTodo` method to handle toggling the completion status of a task.
 
 ```ts title="src/app/todo-list/todo-list.ts" {23-30, 45-54}
 import { Component, signal, computed } from '@angular/core';
@@ -496,42 +496,42 @@ interface TodoItem {
   templateUrl: './todo-list.html',
 })
 export class TodoList {
-  tasks = signal<TodoItem[]>([
+  todos = signal<TodoItem[]>([
     { text: 'Learn Angular basics', completed: false },
     { text: 'Build a todo app', completed: false },
     { text: 'Practice TypeScript', completed: false }
   ]);
 
-  newTask = signal('');
+  newTodo = signal('');
   hideCompleted = signal(false);
 
-  visibleTasks = computed(() => {
-    const allTasks = this.tasks();
+  visibleTodos = computed(() => {
+    const allTodos = this.todos();
     return this.hideCompleted()
-      ? allTasks.filter(task => !task.completed)
-      : allTasks;
+      ? allTodos.filter(todo => !todo.completed)
+      : allTodos;
   });
 
-  addTask() {
-    const taskText = this.newTask().trim();
-    if (taskText) {
-      this.tasks.update(tasks => [...tasks, { text: taskText, completed: false }]);
-      this.newTask.set('');
+  addTodo() {
+    const todoText = this.newTodo().trim();
+    if (todoText) {
+      this.todos.update(todos => [...todos, { text: todoText, completed: false }]);
+      this.newTodo.set('');
     }
   }
 
-    deleteTask(index: number) {
-    const taskToDelete = this.visibleTasks()[index];
-    this.tasks.update(tasks => tasks.filter(task => task !== taskToDelete));
+    deleteTodo(index: number) {
+    const todoToDelete = this.visibleTodos()[index];
+    this.todos.update(todos => todos.filter(todo => todo !== taskToDelete));
   }
 
-    toggleTask(index: number) {
-    const taskToToggle = this.visibleTasks()[index];
-    this.tasks.update(tasks =>
-      tasks.map(task =>
-        task === taskToToggle
-          ? { ...task, completed: !task.completed }
-          : task
+    toggleTodo(index: number) {
+    const todoToToggle = this.visibleTodos()[index];
+    this.todos.update(todos =>
+      todos.map(todo =>
+        todo === todoToToggle
+          ? { ...todo, completed: !todo.completed }
+          : todo
       )
     );
   }
