@@ -209,6 +209,44 @@ Now add an `<h1>` with a `@else if` template syntax in the middle. This message 
 <button (click)="increment()">Count: {{ count() }}</button>
 ```
 
+### Binding
+
+Let's learn about binding. Binding is the technique that is used to keep the value of an input in sync with a reactive variable.
+
+Let's reset the Hello World component back to this.
+
+```angular-html title="src/app/hello-world/hello-world.html"
+<h1>Hello World</h1>
+```
+
+Then, add the following code.
+
+```angular-html title="src/app/hello-world/hello-world.html"
+<input [(ngModel)]="name" />
+<h1>Hello {{ name() }}</h1>
+```
+
+Also, you'll need to import the `FormsModule` in the HelloWorld component. This is necessary for using `ngModel` in Angular. You'll also need to import the `signal` function from `@angular/core` and create the name property.
+
+```ts title="src/app/hello-world/hello-world.ts" {2, 11} ", signal" "[FormsModule]"
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-hello-world',
+  imports: [FormsModule],
+  templateUrl: './hello-world.html',
+  styleUrl: './hello-world.css'
+})
+export class HelloWorld {
+  name = signal('');
+}
+```
+
+The part that says `[(ngModel)]="name"` is how you bind the input to the name variable, which is reactive.
+
+Now the heading will update whenever you type in the input.
+
 ### List
 
 For this section, we're going to create a new TodoList component. Run the following command in your shell.
