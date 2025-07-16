@@ -321,7 +321,7 @@ Next, replace the contents of `todo-list.html` with the following code. Use the 
 
 ### Add items
 
-To add items to the list, add the `<form>`, `<input>`, and `<button>` elements to todo-list.html.
+To add items to the list, add the `<form>`, `<input>`, and `<button>` elements to `todo-list.html`.
 
 ```angular-html title="src/app/todo-list/todo-list.html" {2-9}
 <div>
@@ -343,7 +343,7 @@ To add items to the list, add the `<form>`, `<input>`, and `<button>` elements t
 </div>
 ```
 
-Import the `FormsModule` at the top. This is necessary for using `ngModel` in Angular. Then create the `newTask` signal and the `addTask` method in todo-list.ts.
+Import the `FormsModule` at the top. This is necessary for using `ngModel` in Angular. Then create the `newTodo` signal and the `addTodo()` method in todo-list.ts.
 
 ```ts title="src/app/todo-list/todo-list.ts" {2, 11, 20-26}
 import { Component, signal } from '@angular/core';
@@ -375,9 +375,11 @@ export class TodoList {
 }
 ```
 
+After saving, you should be able to add items to the list.
+
 ### Remove items
 
-To delete a task, first add a `<button>` element to each task in the list.
+To delete an item, first add a `<button>` element to each item in the list.
 
 ```angular-html title="src/app/todo-list/todo-list.html" {14}
 <div>
@@ -400,7 +402,7 @@ To delete a task, first add a `<button>` element to each task in the list.
 </div>
 ```
 
-Then create the `deleteTask()` method in `todo-list.ts`.
+Then create the `deleteTodo()` method in `todo-list.ts`.
 
 ```ts title="src/app/todo-list/todo-list.ts" {28-31}
 import { Component, signal } from '@angular/core';
@@ -437,9 +439,11 @@ export class TodoList {
 }
 ```
 
+After saving, you should be able to delete items from the list.
+
 ### Filter items
 
-To filter the tasks, first add a checkbox `<input>` element at the top that can hide completed items. Then add a checkbox `<input>` to each task that can toggle its completion status.
+To filter the items, first add a checkbox `<input>` element at the top that can hide completed items. Then add a checkbox `<input>` to each task that can toggle its completion status.
 
 ```angular-html title="src/app/todo-list/todo-list.html" {10-20, 24-28}
 <div>
@@ -537,6 +541,8 @@ export class TodoList {
   }
 }
 ```
+
+After saving, you should be able to hide completed items.
 
 ### Input properties
 
