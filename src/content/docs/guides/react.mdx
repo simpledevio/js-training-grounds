@@ -425,6 +425,46 @@ export default Counter;
 
 This will display a heading with the phrase "Good job!" in the browser if the count is larger than 10. If the count is between 5 and 10, it will say "Not bad". If it's less than 5, it will say "Let's get started". Try clicking on the button more than 10 times to test it out.
 
+### Binding
+
+Let's learn about binding. Binding is the technique that is used to keep the value of an input in sync with a reactive variable.
+
+Let's reset the Hello World component back to this.
+
+```jsx title="HelloWorld.jsx"
+function HelloWorld() {
+  return <h1>Hello World</h1>;
+}
+
+export default HelloWorld;
+```
+
+Then, add the following code.
+
+```jsx title="HelloWorld.jsx" {1, 4, 7-11} /Hello ({name})/
+import { useState } from 'react';
+
+function HelloWorld() {
+  const [name, setName] = useState('');
+
+  return (
+    <>
+      <input
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+      <h1>Hello {name}</h1>
+    </>
+  );
+}
+
+export default HelloWorld;
+```
+
+The parts that say `value={name}` and `onChange={e => setName(e.target.value)}` are how you bind the input to the name variable, which is reactive.
+
+Now the heading will update whenever you type in the input.
+
 ### List
 
 For this section, we're going to create a new file called `TodoList.jsx`. Add the following code to it.
