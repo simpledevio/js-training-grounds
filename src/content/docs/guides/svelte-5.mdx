@@ -114,6 +114,11 @@ There is another syntax called the `style:` directive. You type `style`, then a 
 <p>Lorem ipsum dolor...</p>
 ```
 
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/style" target="_blank">style</a> / <a href="https://svelte.dev/tutorial/svelte/styles" target="_blank">The style directive tutorial</a>
+</details>
+
 ### style element
 
 You can also add a `<style>` element to style a component. The styles are limited to just the component by default.
@@ -130,6 +135,11 @@ You can also add a `<style>` element to style a component. The styles are limite
   }
 </style>
 ```
+
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/scoped-styles" target="_blank">scoped styles</a> / <a href="https://svelte.dev/tutorial/svelte/styling" target="_blank">Styling tutorial</a>
+</details>
 
 ### class attribute
 
@@ -149,6 +159,11 @@ You can use a `class` attribute just like in normal HTML.
 ```
 
 After saving, you should see that the `<h1>` element is still red.
+
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/class" target="_blank">class</a> / <a href="https://svelte.dev/tutorial/svelte/classes" target="_blank">Classes tutorial</a>
+</details>
 
 ## JS
 
@@ -212,6 +227,11 @@ Next, add `onclick={ count++ }` to the `<button>` tag.
 After saving, the number on the button will go up when you click on it.
 
 The `$state()` rune makes `count` reactive, which means it will automatically update the UI when its value changes.
+
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/$state" target="_blank">$state</a> / <a href="https://svelte.dev/tutorial/svelte/state" target="_blank">State tutorial</a>
+</details>
 
 ### Use a function
 
@@ -292,6 +312,11 @@ Now add an `<h1>` with an `else if` block in the middle. This message will be di
 <button onclick={increment}>Count: { count }</button>
 ```
 
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/if" target="_blank">if</a> / <a href="https://svelte.dev/tutorial/svelte/if-blocks" target="_blank">If blocks tutorial</a>
+</details>
+
 ### Binding
 
 Let's learn about binding. Binding is the technique that is used to keep the value of an input in sync with a reactive variable.
@@ -317,6 +342,11 @@ Then, add the following code.
 The part that says `bind:value={name}` is how you bind the input to the name variable, which is reactive.
 
 Now the heading will update whenever you type in the input.
+
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/bind" target="_blank">bind</a> / <a href="https://svelte.dev/tutorial/svelte/text-inputs" target="_blank">Text inputs tutorial</a>
+</details>
 
 ### List
 
@@ -355,6 +385,11 @@ Next, make sure to import it into `App.svelte`.
 ```
 
 You should now see a list in your browser.
+
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/each" target="_blank">each</a> / <a href="https://svelte.dev/tutorial/svelte/keyed-each-blocks" target="_blank">Keyed each blocks tutorial</a>
+</details>
 
 ### Add items
 
@@ -493,6 +528,11 @@ Let's learn how to hide completed items. To do this, you need to use the `$deriv
 
 Notice that `visibleTodos` uses the `$derived()` rune. This means that it will automatically update whenever `todos` or `hideCompleted` changes.
 
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/$derived" target="_blank">$derived</a> / <a href="https://svelte.dev/tutorial/svelte/derived-state" target="_blank">Derived state tutorial</a>
+</details>
+
 ### Props
 
 Let's learn how to make components more flexible using props. **Props** allow you to pass data from a parent component into a child component. Let's revisit the `HelloWorld.svelte` component and make it accept a `name` prop. This way, we can pass different names to it. To do this, we need to use the `$props()` rune.
@@ -518,6 +558,11 @@ Inside `App.svelte`, you can now pass a `name` prop to the `HelloWorld` componen
 ```
 
 The browser should now display the name you passed in.
+
+<details>
+<summary>References</summary>
+- <a href="https://svelte.dev/docs/svelte/$props" target="_blank">$props</a> / <a href="https://svelte.dev/tutorial/svelte/declaring-props" target="_blank">Props tutorial</a>
+</details>
 
 ### CSS + JS
 
@@ -555,15 +600,3 @@ Toggle
 ```
 
 The text should now change colors when you click the button.
-
-## References
-
-- <a href="https://svelte.dev/docs/svelte/scoped-styles" target="_blank">scoped styles</a> / <a href="https://svelte.dev/tutorial/svelte/styling" target="_blank">Styling tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/style" target="_blank">style</a> / <a href="https://svelte.dev/tutorial/svelte/styles" target="_blank">The style directive tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/class" target="_blank">class</a> / <a href="https://svelte.dev/tutorial/svelte/classes" target="_blank">Classes tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/$state" target="_blank">$state</a> / <a href="https://svelte.dev/tutorial/svelte/state" target="_blank">State tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/if" target="_blank">if</a> / <a href="https://svelte.dev/tutorial/svelte/if-blocks" target="_blank">If blocks tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/bind" target="_blank">bind</a> / <a href="https://svelte.dev/tutorial/svelte/text-inputs" target="_blank">Text inputs tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/each" target="_blank">each</a> / <a href="https://svelte.dev/tutorial/svelte/keyed-each-blocks" target="_blank">Keyed each blocks tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/$derived" target="_blank">$derived</a> / <a href="https://svelte.dev/tutorial/svelte/derived-state" target="_blank">Derived state tutorial</a>
-- <a href="https://svelte.dev/docs/svelte/$props" target="_blank">$props</a> / <a href="https://svelte.dev/tutorial/svelte/declaring-props" target="_blank">Props tutorial</a>

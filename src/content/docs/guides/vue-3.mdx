@@ -128,6 +128,11 @@ import HelloWorld from './components/HelloWorld';
 
 The web page should now say "This is some slot content!".
 
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/essentials/component-basics.html#content-distribution-with-slots" target="_blank">Content Distribution with Slots</a> / <a href="https://vuejs.org/tutorial/#step-14" target="_blank">Slots tutorial</a>
+</details>
+
 #### Fallback content
 
 Now let's update the slot so it can display fallback content if nothing gets passed to the component.
@@ -299,6 +304,11 @@ const count = ref(0);
 
 After saving, the number on the button will go up when you click on it.
 
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html" target="_blank">Reactivity Fundamentals</a> / <a href="https://vuejs.org/tutorial/#step-2" target="_blank">Declarative rendering tutorial</a>
+</details>
+
 ### Shorthand
 
 Replace `v-on:` with the `@` symbol. This the shorthand syntax for `v-on:`.
@@ -315,6 +325,11 @@ const count = ref(0);
 ```
 
 After saving, the number on the button should still go up when you click on it.
+
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/essentials/event-handling.html" target="_blank">Event Handling</a> / <a href="https://vuejs.org/tutorial/#step-4" target="_blank">Event listeners tutorial</a>
+</details>
 
 ### Use a function
 
@@ -398,6 +413,11 @@ function increment() {
 </template>
 ```
 
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/essentials/conditional.html" target="_blank">Conditional Rendering</a> / <a href="https://vuejs.org/tutorial/#step-6" target="_blank">Conditional rendering tutorial</a>
+</details>
+
 ### Binding
 
 Let's learn about binding. Binding is the technique that is used to keep the value of an input in sync with a reactive variable.
@@ -428,6 +448,11 @@ const name = ref('')
 The part that says `v-model="name"` is how you bind the input to the name variable, which is reactive.
 
 Now the heading will update whenever you type in the input.
+
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/essentials/list.html" target="_blank">Form Input Bindings</a> / <a href="https://vuejs.org/tutorial/#step-5" target="_blank">Form bindings tutorial</a>
+</details>
 
 ### List
 
@@ -482,6 +507,11 @@ const todos = [
 The `:key` attribute helps Vue keep track of all of the items in the list.
 
 After saving, you should now see a list in your browser.
+
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/essentials/list.html" target="_blank">List Rendering</a> / <a href="https://vuejs.org/tutorial/#step-7" target="_blank">List rendering tutorial</a>
+</details>
 
 ### Add items
 
@@ -619,6 +649,11 @@ function removeTodo(todo) {
 
 After saving, you should be able to hide or show the completed items. Notice that `filteredTodos` uses the `computed()` function. This means that it will automatically update whenever `todos` or `hideCompleted` changes.
 
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/essentials/computed.html" target="_blank">Computed Properties</a> / <a href="https://vuejs.org/tutorial/#step-8" target="_blank">Computed property tutorial</a>
+</details>
+
 ### Props
 
 Earlier we saw how to pass content to a child component using slots. There's another way to pass information to a child component called **props**. Let's revisit the `HelloWorld.vue` component and make it accept a `name` prop. This way, we can pass different names to it. To do this, we need to use the `defineProps()` function. It takes an array of strings.
@@ -660,6 +695,11 @@ const props = defineProps({
   <h1>Hello {{ name }}</h1>
 </template>
 ```
+
+<details>
+<summary>References</summary>
+- <a href="https://vuejs.org/guide/components/props.html" target="_blank">Props</a> / <a href="https://vuejs.org/tutorial/#step-12" target="_blank">Props tutorial</a>
+</details>
 
 ### CSS + JS
 
@@ -755,13 +795,7 @@ const classObject = computed(() => ({
 </style>
 ```
 
-## References
-- <a href="https://vuejs.org/guide/essentials/component-basics.html#content-distribution-with-slots" target="_blank">Content Distribution with Slots</a> / <a href="https://vuejs.org/tutorial/#step-14" target="_blank">Slots tutorial</a>
-- <a href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html" target="_blank">Reactivity Fundamentals</a> / <a href="https://vuejs.org/tutorial/#step-2" target="_blank">Declarative rendering tutorial</a>
-- <a href="https://vuejs.org/guide/essentials/event-handling.html" target="_blank">Event Handling</a> / <a href="https://vuejs.org/tutorial/#step-4" target="_blank">Event listeners tutorial</a>
-- <a href="https://vuejs.org/guide/essentials/conditional.html" target="_blank">Conditional Rendering</a> / <a href="https://vuejs.org/tutorial/#step-6" target="_blank">Conditional rendering tutorial</a>
-- <a href="https://vuejs.org/guide/essentials/list.html" target="_blank">List Rendering</a> / <a href="https://vuejs.org/tutorial/#step-7" target="_blank">List rendering tutorial</a>
-- <a href="https://vuejs.org/guide/essentials/list.html" target="_blank">Form Input Bindings</a> / <a href="https://vuejs.org/tutorial/#step-5" target="_blank">Form bindings tutorial</a>
-- <a href="https://vuejs.org/guide/essentials/computed.html" target="_blank">Computed Properties</a> / <a href="https://vuejs.org/tutorial/#step-8" target="_blank">Computed property tutorial</a>
-- <a href="https://vuejs.org/guide/components/props.html" target="_blank">Props</a> / <a href="https://vuejs.org/tutorial/#step-12" target="_blank">Props tutorial</a>
+<details>
+<summary>References</summary>
 - <a href="https://vuejs.org/guide/essentials/class-and-style.html" target="_blank">Class and Style Bindings</a>
+</details>

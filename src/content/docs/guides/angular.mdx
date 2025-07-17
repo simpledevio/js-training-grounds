@@ -199,6 +199,12 @@ export class Counter {
 
 Angular uses **signals** to make things reactive. The `signal()` function makes `count` reactive, which means it will automatically update the UI when its value changes.
 
+<details>
+<summary>References</summary>
+- <a href="https://angular.dev/guide/signals" target="_blank">Angular Signals</a>
+- <a href="https://angular.dev/guide/templates/event-listeners" target="_blank">Adding event listeners</a> / <a href="https://angular.dev/tutorials/learn-angular/7-event-handling" target="_blank">Event handling tutorial</a>
+</details>
+
 ### Conditional
 
 Let's add a message that will display when you reach a certain count.
@@ -239,6 +245,11 @@ Now add an `<h1>` with a `@else if` template syntax in the middle. This message 
 <button (click)="increment()">Count: {{ count() }}</button>
 ```
 
+<details>
+<summary>References</summary>
+- <a href="https://angular.dev/guide/templates/control-flow" target="_blank">Control Flow</a> / <a href="https://angular.dev/tutorials/learn-angular/4-control-flow-if" target="_blank">@if tutorial</a>
+</details>
+
 ### Binding
 
 Let's learn about binding. Binding is the technique that is used to keep the value of an input in sync with a reactive variable.
@@ -276,6 +287,11 @@ export class HelloWorld {
 The part that says `[(ngModel)]="name"` is how you bind the input to the name variable, which is reactive.
 
 Now the heading will update whenever you type in the input.
+
+<details>
+<summary>References</summary>
+- <a href="https://angular.dev/guide/templates/two-way-binding" target="_blank">Two-way binding</a> / <a href="https://angular.dev/tutorials/learn-angular/15-forms" target="_blank">Forms overview tutorial</a>
+</details>
 
 ### List
 
@@ -348,6 +364,11 @@ Next, replace the contents of `todo-list.html` with the following code. Use the 
 </ul>
 </div>
 ```
+
+<details>
+<summary>References</summary>
+- <a href="https://angular.dev/guide/templates/control-flow#repeat-content-with-the-for-block" target="_blank">Repeat content with the @for block</a> / <a href="https://angular.dev/tutorials/learn-angular/5-control-flow-for" target="_blank">@for tutorial</a>
+</details>
 
 ### Add items
 
@@ -574,6 +595,11 @@ export class TodoList {
 
 After saving, you should be able to hide completed items.
 
+<details>
+<summary>References</summary>
+- <a href="https://angular.dev/guide/signals#computed-signals" target="_blank">Computed signals</a>
+</details>
+
 ### Input properties
 
 To make the HelloWorld component more flexible, let's add an input property for the name. This way, you can pass a name to the component from the parent.
@@ -606,12 +632,9 @@ export class HelloWorld {
 }
 ```
 
-## References
-{/* - <a href="" target="_blank"></a> / <a href="" target="_blank"></a> */}
-- <a href="https://angular.dev/guide/signals" target="_blank">Angular Signals</a>
-- <a href="https://angular.dev/guide/templates/event-listeners" target="_blank">Adding event listeners</a> / <a href="https://angular.dev/tutorials/learn-angular/7-event-handling" target="_blank">Event handling tutorial</a>
-- <a href="https://angular.dev/guide/templates/two-way-binding" target="_blank">Two-way binding</a> / <a href="https://angular.dev/tutorials/learn-angular/15-forms" target="_blank">Forms overview tutorial</a>
-- <a href="https://angular.dev/guide/templates/control-flow" target="_blank">Control Flow</a> / <a href="https://angular.dev/tutorials/learn-angular/4-control-flow-if" target="_blank">@if tutorial</a>
-- <a href="https://angular.dev/guide/templates/control-flow#repeat-content-with-the-for-block" target="_blank">Repeat content with the @for block</a> / <a href="https://angular.dev/tutorials/learn-angular/5-control-flow-for" target="_blank">@for tutorial</a>
-- <a href="https://angular.dev/guide/signals#computed-signals" target="_blank">Computed signals</a>
+<details>
+<summary>References</summary>
 - <a href="https://angular.dev/guide/components/inputs" target="_blank">Accepting data with input properties</a> / <a href="https://angular.dev/tutorials/learn-angular/8-input" target="_blank">Component input properties tutorial</a>
+</details>
+
+{/* - <a href="" target="_blank"></a> / <a href="" target="_blank"></a> */}
