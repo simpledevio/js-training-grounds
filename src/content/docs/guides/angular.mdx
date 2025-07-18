@@ -60,7 +60,7 @@ In our `hello-world.html` file, we have an `<h1>` element already added.
 
 **Task:** To make it more personal, change `World` to your name.
 
-```angular-html title="src/app/hello-world/hello-world.html"
+```angular-html title="src/app/hello-world/hello-world.html" "John"
 <h1>Hello John</h1>
 ```
 
@@ -70,7 +70,7 @@ Unlike some other JS frameworks, you can have more than one root element.
 
 **Task:** Add a `<p>` element after the `<h1>` element with some placeholder text.
 
-```angular-html title="src/app/hello-world/hello-world.html"
+```angular-html title="src/app/hello-world/hello-world.html" {2}
 <h1>Hello John</h1>
 <p>Lorem ipsum dolor...</p>
 ```
@@ -123,12 +123,12 @@ You can use a `class` attribute just like in normal HTML.
 
 **Task:** Add a `class` attribute with the value of `red`. Change the `h1` selector to `.red`.
 
-```angular-html title="src/app/hello-world/hello-world.html"
+```angular-html title="src/app/hello-world/hello-world.html" 'class="red"'
 <h1 class="red">Hello John</h1>
 <p>Lorem ipsum dolor...</p>
 ```
 
-```css title="src/app/hello-world/hello-world.css"
+```css title="src/app/hello-world/hello-world.css" ".red"
 .red {
   color: red;
 }
@@ -138,7 +138,7 @@ You can use a `class` attribute just like in normal HTML.
 
 For this section, we're going to create a new Counter component. Run the following command in your shell.
 
-```
+```bash showLineNumbers=false
 ng g c counter
 ```
 
@@ -300,7 +300,7 @@ Now the heading will update whenever you type in the input.
 
 For this section, we're going to create a new TodoList component. Run the following command in your shell.
 
-```
+```bash showLineNumbers=false
 ng g c todo-list
 ```
 
