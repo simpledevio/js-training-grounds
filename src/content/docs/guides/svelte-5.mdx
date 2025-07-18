@@ -116,7 +116,7 @@ There is another syntax called the `style:` directive. You type `style`, then a 
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/style" target="_blank">style</a> 
+- <a href="https://svelte.dev/docs/svelte/style" target="_blank">style</a>
 - <a href="https://svelte.dev/tutorial/svelte/styles" target="_blank">The style directive tutorial</a>
 </details>
 
@@ -139,7 +139,7 @@ You can also add a `<style>` element to style a component. The styles are limite
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/scoped-styles" target="_blank">scoped styles</a> 
+- <a href="https://svelte.dev/docs/svelte/scoped-styles" target="_blank">scoped styles</a>
 - <a href="https://svelte.dev/tutorial/svelte/styling" target="_blank">Styling tutorial</a>
 </details>
 
@@ -164,7 +164,7 @@ After saving, you should see that the `<h1>` element is still red.
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/class" target="_blank">class</a> 
+- <a href="https://svelte.dev/docs/svelte/class" target="_blank">class</a>
 - <a href="https://svelte.dev/tutorial/svelte/classes" target="_blank">Classes tutorial</a>
 </details>
 
@@ -233,7 +233,7 @@ The `$state()` rune makes `count` reactive, which means it will automatically up
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/$state" target="_blank">$state</a> 
+- <a href="https://svelte.dev/docs/svelte/$state" target="_blank">$state</a>
 - <a href="https://svelte.dev/tutorial/svelte/state" target="_blank">State tutorial</a>
 </details>
 
@@ -318,7 +318,7 @@ Now add an `<h1>` with an `else if` block in the middle. This message will be di
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/if" target="_blank">if</a> 
+- <a href="https://svelte.dev/docs/svelte/if" target="_blank">if</a>
 - <a href="https://svelte.dev/tutorial/svelte/if-blocks" target="_blank">If blocks tutorial</a>
 </details>
 
@@ -350,7 +350,7 @@ Now the heading will update whenever you type in the input.
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/bind" target="_blank">bind</a> 
+- <a href="https://svelte.dev/docs/svelte/bind" target="_blank">bind</a>
 - <a href="https://svelte.dev/tutorial/svelte/text-inputs" target="_blank">Text inputs tutorial</a>
 </details>
 
@@ -394,7 +394,7 @@ You should now see a list in your browser.
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/each" target="_blank">each</a> 
+- <a href="https://svelte.dev/docs/svelte/each" target="_blank">each</a>
 - <a href="https://svelte.dev/tutorial/svelte/keyed-each-blocks" target="_blank">Keyed each blocks tutorial</a>
 </details>
 
@@ -537,7 +537,7 @@ Notice that `visibleTodos` uses the `$derived()` rune. This means that it will a
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/$derived" target="_blank">$derived</a> 
+- <a href="https://svelte.dev/docs/svelte/$derived" target="_blank">$derived</a>
 - <a href="https://svelte.dev/tutorial/svelte/derived-state" target="_blank">Derived state tutorial</a>
 </details>
 
@@ -569,7 +569,7 @@ The browser should now display the name you passed in.
 
 <details>
 <summary>References</summary>
-- <a href="https://svelte.dev/docs/svelte/$props" target="_blank">$props</a> 
+- <a href="https://svelte.dev/docs/svelte/$props" target="_blank">$props</a>
 - <a href="https://svelte.dev/tutorial/svelte/declaring-props" target="_blank">Props tutorial</a>
 </details>
 
@@ -611,3 +611,13 @@ Toggle
 The text should now change colors when you click the button.
 
 ## Prompting
+
+Svelte 5 was released in October 2024, so most LLMs do not know how to generate Svelte code with runes in it yet. One thing you can do to fix this is to download the <a href="https://svelte.dev/llms-full.txt" target="_blank">llms-full.txt</a> file for Svelte 5 and give it to the LLM you're using. This file contains all of the Svelte 5 documentation. Tip: you should name the file `svelte-5-docs.md` so that the LLM can recognize it as Svelte 5 documentation.
+
+As an example, we created a <a href="https://chatgpt.com/g/g-6794a49f2a288191b8d9c1ccf54f6c9d-svelte-5-training-ground" target="_blank">custom Svelte 5 GPT</a> that you can try. It already has the llms-full.txt file loaded into it.
+
+Here are the instructions we used to create it:
+
+```txt wrap
+Answer questions about Svelte 5 and generate code using the attached svelte-5-docs.md file.
+```
