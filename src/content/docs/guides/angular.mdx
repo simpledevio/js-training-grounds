@@ -539,7 +539,7 @@ To filter the items, first add a checkbox `<input>` element at the top that can 
 
 Add the `hideCompleted` signal and the `visibleTodos` computed property in `todo-list.ts`. Then add the `toggleTodo` method to handle toggling the completion status of a task.
 
-```ts title="src/app/todo-list/todo-list.ts" {23-30, 45-54}
+```ts title="src/app/todo-list/todo-list.ts" {22-29, 44-53}
 import { Component, signal, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -550,7 +550,6 @@ interface TodoItem {
 
 @Component({
   selector: 'app-todo-list',
-  standalone: true,
   imports: [FormsModule],
   templateUrl: './todo-list.html',
 })
