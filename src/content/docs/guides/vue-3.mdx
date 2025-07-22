@@ -9,7 +9,7 @@ import Wip from '../../../reuse/wip-aside.md';
 
 This tutorial assumes you're already familiar with HTML, CSS, and JS. It also assumes you know what a JS framework is for.
 
-## Stackblitz
+## Online Setup
 
 If you prefer to work online, you can open the <a href="https://stackblitz.com/github/simpledevio/vue-training-ground?file=src/components/HelloWorld.vue" target="_blank">Vue training ground repo on Stackblitz</a> and start coding right away in your browser. You don't have to run any of the npm commands if you use Stackblitz.
 
@@ -94,7 +94,7 @@ Before we look at our next topic, open up `App.vue` so you can see how it's impo
 
 ```vue title="App.vue" {2, 6}
 <script setup>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
@@ -118,7 +118,7 @@ Then change `<HelloWorld />` from a self-closing tag to an opening and closing t
 
 ```vue title="App.vue" {6}
 <script setup>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
@@ -158,7 +158,7 @@ Now delete the text from the `<HelloWorld>` component in `App.vue`.
 
 ```vue title="App.vue" {6}
 <script setup>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
@@ -252,8 +252,8 @@ Next, make sure to import it into `App.vue`.
 
 ```vue title="App.vue" {3, 7}
 <script setup>
-import HelloWorld from './components/HelloWorld';
-import Counter from './components/Counter';
+import HelloWorld from './components/HelloWorld.vue';
+import Counter from './components/Counter.vue';
 </script>
 
 <template>
@@ -477,9 +477,9 @@ const todos = [
 
 ```vue title="App.vue" {4, 8}
 <script setup>
-import HelloWorld from './components/HelloWorld';
-import Counter from './components/Counter';
-import TodoList from './components/TodoList';
+import HelloWorld from './components/HelloWorld.vue';
+import Counter from './components/Counter.vue';
+import TodoList from './components/TodoList.vue';
 </script>
 
 <template>
@@ -679,9 +679,9 @@ In `App.vue`, you would add an attribute to `<HelloWorld>` called `name` with th
 
 ```vue title="App.vue" 'name="John"'
 <script setup>
-import HelloWorld from './components/HelloWorld';
-import Counter from './components/Counter';
-import TodoList from './components/TodoList';
+import HelloWorld from './components/HelloWorld.vue';
+import Counter from './components/Counter.vue';
+import TodoList from './components/TodoList.vue';
 </script>
 
 <template>
